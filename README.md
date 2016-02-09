@@ -1,10 +1,10 @@
 # Pure CSS Components
 Pack of pure css components:
-1 -- Dropdown menu
-2 -- Accordion
-3 -- Modalbox
-4 -- Tabs
-5 -- Slider
+1. Dropdown menu
+2. Accordion
+3. Modalbox
+4. Tabs
+5. Slider
 
 ## There are two way to use
 1. Simpler
