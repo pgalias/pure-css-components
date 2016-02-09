@@ -1,0 +1,49 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: @modalOverlayerColor;
+  &:not(:target) {
+    display: none;
+  }
+  &__dialog {
+    width: @modalWidth;
+    height: @modalHeight;
+    position: absolute;
+    /* center vertically and horizontally modal dialog */
+    top: 50%;
+    left: 50%;
+    .transform(translate(-50%,-50%));
+    &-header {
+      text-align: @modalHeaderTextAlign;
+      color: @modalHeaderTextColor;
+      background-color: @modalHeaderColor;
+      padding: @modalHeaderPaddings;
+      position: relative;
+      height: @modalHeaderHeight;
+      border-top-left-radius: @modalHeaderBorderRadiusTop;
+      border-top-right-radius: @modalHeaderBorderRadiusTop;
+      border-bottom-left-radius: @modalHeaderBorderRadiusBottom;
+      border-bottom-right-radius: @modalHeaderBorderRadiusBottom;
+      .modal-close {
+        position: absolute;
+        top: @modalHeaderButtonTop;
+        right: @modalHeaderButtonRight;
+      }
+    }
+    &-body {
+      background-color: @modalBodyColor;
+      color: @modalBodyTextColor;
+      text-align: @modalBodyTextAlign;
+      height: @modalBodyHeight;
+    }
+    &-footer {
+      background-color: @modalFooterColor;
+      text-align: @modalFooterTextAlign;
+      color: @modalFooterTextColor;
+      height: @modalFooterHeight;
+    }
+  }
+}

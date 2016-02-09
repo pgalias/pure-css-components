@@ -1,0 +1,44 @@
+.tabs {
+  width: @tabsWidth;
+  position: relative;
+  list-style: none;
+  & > li {
+    float: left;
+    /* width = 100% * 1/x, where x - number of tabs */
+    width: calc(100% * (1/@tabsCount));
+  }
+  input[type="radio"] {
+    display: none;
+  }
+  label {
+    display: block;
+    position: relative;
+    background: @tabsColor;
+    color: @tabsTextColor;
+    cursor: pointer;
+    .transition(@tabsTransition);
+    padding: @tabsLabelPaddings;
+    border-top-left-radius: @tabsBorderRadius;
+    border-top-right-radius: @tabsBorderRadius;
+    top: @tabsLabelTop;
+    &:hover {
+      background: @tabsColorHover;
+    }
+  }
+  [id^=@{tabsLabelIdNameBegin}]:checked ~ [id^=@{tabsContentIdNameBegin}] {
+    display: block;
+    background: @tabsColorChecked;
+  }
+  [id^=@{tabsLabelIdNameBegin}]:checked + label {
+    padding: @tabsLabelCheckedPaddings;
+    top: @tabsLabelCheckedTop;
+    background: @tabsColorChecked;
+  }
+  &__content {
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

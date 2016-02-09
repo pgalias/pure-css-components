@@ -1,0 +1,47 @@
+.accordion {
+  width: @accordionWidth;
+  display: block;
+  list-style: none;
+  /* center accordion */
+  margin: auto;
+  &__object > a {
+    background: @accordionHeaderColorBackground;
+    .border-radius(@accordionHeaderBorderRadius);
+    font-size: 180%;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    color: @accordionHeaderColor;
+    padding: @accordionHeaderPaddings;
+    margin: @accordionHeaderMargins;
+    &:hover {
+      background: @accordionHeaderColorBackgroundHover;
+    }
+  }
+  &__object &__content {
+    .border-radius(@accordionHeaderBorderRadius);
+    background: @accordionContentColorBackground;
+    .transition(@accordionContentTransition);
+    margin: @accordionContentMargins;
+    /* your other styles starts here
+      eg for headings, paragraphs etc */
+  }
+  &__object span {
+    display: none;
+    position: fixed;
+    & + .accordion__content {
+      .opacity(1);
+      visibility: visible;
+      height: auto;
+      padding: @accordionContentPaddings;
+      .transform(translate(0, 0));
+    }
+    &:not(:target) + .accordion__content {
+      .opacity(0);
+      visibility: hidden;
+      height: 0;
+      padding: 0;
+      .transform(translate(0, -10px));
+    }
+  }
+}
