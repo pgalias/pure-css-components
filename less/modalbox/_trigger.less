@@ -1,0 +1,16 @@
+.modal {
+  &__trigger[type=checkbox] {
+    // input type checkbox
+    display: none;
+
+    &:not(:checked) ~ .modal__overlay {
+      display: none;
+    }
+    &:checked ~ .modal__overlay {
+      display: block;
+    }
+    & ~ label {
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,131 @@
+.slider {
+  position: relative;
+  .center-horizontal;
+
+  input[type=radio] {
+    display: none;
+
+    .render-transition(@i:1) when (@i <= @max-slides) {
+      &:nth-of-type(@{i}):checked {
+        & ~ ul > li:first-of-type {
+          margin-left: ~`(function() {
+            var result = (-100 * (@{i} - 1));
+            return result + (result !== 0 ? '%' : '');
+          })()`;
+        }
+      }
+      .render-transition(@i + 1);
+    }
+
+    .render-transition();
+  }
+
+  ul {
+    list-style: none;
+
+    position: relative;
+    z-index: 1;
+
+    line-height: 0;
+    margin: 0 auto;
+    padding: 0;
+
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 0;
+
+    box-sizing: border-box;
+
+    li {
+      position: relative;
+
+      width: 100%;
+      height: 100%;
+
+      overflow: hidden;
+
+      display: inline-block;
+
+      img {
+        display: block;
+        margin: auto;
+      }
+    }
+  }
+
+  &--full-width {
+    ul {
+      width: 100%;
+    }
+  }
+  &--fixed-width {
+    ul {
+      width: @slider-width;
+    }
+  }
+  &--full-width,
+  &--fixed-width {
+    ul {
+      height: @slider-height;
+    }
+  }
+
+  &--blue {
+    ul {
+      background: @blue-base;
+      border: extract(@blue-border,1) * @slider-border-width extract(@blue-border,2) extract(@blue-border,3);
+      border-radius: @blue-border-radius;
+    }
+
+    input[type=radio] {
+      &:first-of-type:checked {
+        & ~ .arrows label:last-of-type {
+          order: 1;
+        }
+        & ~ .arrows label:nth-of-type(2) {
+          order: 2;
+        }
+      }
+    }
+  }
+}
+.create-selector(@pattern, @iterator:1, @count: @max-slides) {
+  @repeat: ~'@{pattern}';
+  @result: ~`(function() {
+    var result = '';
+    for (var i=@{iterator}; i <= @{count}; i++) {
+      result += "@{repeat}\n"
+        .replace(/\:nth-of-type\(\s*\$ipp\s*\)/g, i + 1 > @{count} ? ':first-of-type' : ':nth-of-type(' + (i + 1) + ')')
+      	.replace(/\:nth-of-type\(\s*\$imm\s*\)/g, i - 1 == 0 ? ':last-of-type' : ':nth-of-type(' + (i - 1) + ')')
+        .replace(/\s*\$i\s*/g, i);
+    }
+    return result.replace(/[,\s]+$/,'');
+  })()`;
+}
+& {
+  .create-selector('.slider--blue input[type=radio]:nth-of-type( $i ):checked ~ .arrows label:nth-of-type( $imm ),\n.slider--blue input[type=radio]:nth-of-type( $i ):checked ~ .arrows label:nth-of-type( $ipp ),');
+  @{result} {
+    display: flex;
+  }
+}
+& {
+  .create-selector('.slider--blue input[type=radio]:nth-of-type( $i ):checked ~ .arrows label:nth-of-type( $imm ) span::after,');
+  @{result} {
+    content: '\003c';
+    display: block;
+  }
+}
+& {
+  .create-selector('.slider--blue input[type=radio]:nth-of-type( $i ):checked ~ .arrows label:nth-of-type( $ipp ) span::after,');
+  @{result} {
+    content: '\003e';
+    display: block;
+  }
+}
+& {
+  .create-selector('.slider--blue input[type=radio]:nth-of-type( $i ):checked ~ .slider__pills label:nth-of-type( $i ),');
+  @{result} {
+    color: fade(@blue-base, 80%);
+    text-shadow: @navigation-shadow;
+  }
+}

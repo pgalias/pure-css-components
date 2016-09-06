@@ -1,0 +1,17 @@
+.same(@value, @properties) {
+  .each(@i:1) when (@i <= length(@properties)) {
+    @prop: extract(@properties, @i);
+    @{prop}: @value;
+    .each(@i+1);
+  }
+  .each();
+}
+
+.visibility(@val) when (@val = visible), (@val = 'visible'), (@val = v), (@val = 'v') {
+  visibility: visible;
+  opacity: 1;
+}
+.visibility(@val) when (@val = hidden), (@val = 'hidden'), (@val = h), (@val = 'h') {
+  visibility: hidden;
+  opacity: 0;
+}

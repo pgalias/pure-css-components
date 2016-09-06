@@ -1,0 +1,8 @@
+.transition(@properties, @values...) {
+  .value(@i:1) when (@i <= length(@properties)) {
+    @prop: extract(@properties, @i);
+    transition+: ~"@{prop} @{values}";
+    .value(@i+1);
+  }
+  .value();
+}

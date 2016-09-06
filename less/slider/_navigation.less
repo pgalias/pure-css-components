@@ -1,0 +1,93 @@
+.slider {
+  &__pills {
+    text-align: center;
+
+    label {
+      cursor: pointer;
+      font-size: @navigation-size;
+      margin: @navigation-margin;
+    }
+
+    &--top {
+      top: -@navigation-size;
+    }
+    &--bottom {
+      bottom: -@navigation-size;
+    }
+    &--left {
+      left: 0;
+    }
+    &--right {
+      right: 0;
+    }
+    &--top,
+    &--left,
+    &--right,
+    &--bottom {
+      position: absolute;
+    }
+    &--top,
+    &--bottom {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &--left,
+    &--right {
+      top: 50%;
+      transform: translateY(-50%);
+
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__arrows {
+    position: absolute;
+    .same(0, top left);
+
+    display: flex;
+    justify-content: space-between;
+
+    label {
+      display: none;
+      height: 100%;
+
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &--blue {
+    .slider__pills {
+      label {
+        color: @blue-header-color;
+      }
+    }
+    .slider__arrows {
+      height: calc(100% - @slider-border-width*2);
+      width: calc(100% - @slider-border-width*2);
+      margin: @slider-border-width;
+
+      label {
+        margin: 0;
+        padding: @arrows-padding;
+
+        color: @blue-header-color;
+        .transition(background color, @arrows-transition);
+        &:hover {
+          color: @blue-base;
+        }
+      }
+    }
+  }
+  &--full-width &--blue {
+    .slider-arrows {
+      label {
+        background: fade(@blue-header-color, 40%);
+        &:hover {
+          background: fade(@blue-header-color, 60%);
+        }
+      }
+    }
+  }
+}

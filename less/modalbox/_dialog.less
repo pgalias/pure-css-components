@@ -1,0 +1,51 @@
+.modal {
+  &__dialog {
+    .center-both;
+
+    &--wide {
+      min-height: @modal-size;
+    }
+    &--wide,
+    &--wide-short {
+      width: 100%;
+      margin: 4em;
+    }
+    &--fixed-size {
+      width: @modal-size;
+      min-height: @modal-size;
+    }
+  }
+  &__header {
+    position: relative;
+    .text-align(c);
+    label.close {
+      font-size: 1.4em;
+      cursor: pointer;
+      &::after {
+        content: '\00d7';
+        display: block;
+      }
+    }
+  }
+
+  &__dialog--blue {
+    border-radius: @blue-border-radius;
+    border: @blue-border;
+
+    background: @blue-content-background;
+    color: @blue-text-color;
+    & > .modal__header {
+      &::after {
+        content: '';
+        display: block;
+        width: 70%;
+        height: 2px;
+        background: @blue-divider-color;
+        border-radius: 3px;
+      }
+      label.close {
+        color: @blue-close-icon;
+      }
+    }
+  }
+}
