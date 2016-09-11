@@ -1,8 +1,8 @@
 {
   "name": "pure.css.components",
-  "version": "1.0.0",
-  "description": "Some components (modal, slider, etc.) in pure css",
-  "main": "components.css",
+  "version": "2.0.0",
+  "description": "Pure CSS components, few javascsript-free, fully-customizable and reusable components",
+  "main": "css/components.css",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
