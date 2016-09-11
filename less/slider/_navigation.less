@@ -1,9 +1,12 @@
 .slider {
+  label {
+    cursor: pointer;
+  }
+
   &__pills {
     text-align: center;
 
     label {
-      cursor: pointer;
       font-size: @navigation-size;
       margin: @navigation-margin;
     }
@@ -58,14 +61,12 @@
   }
 
   &--blue {
-    .slider__pills {
-      label {
-        color: @blue-header-color;
-      }
+    label {
+      color: @blue-header-color;
     }
     .slider__arrows {
-      height: calc(100% - @slider-border-width*2);
-      width: calc(100% - @slider-border-width*2);
+      height: calc(~"100% - @{slider-border-width}*2");
+      width: calc(~"100% - @{slider-border-width}*2");
       margin: @slider-border-width;
 
       label {
@@ -73,15 +74,18 @@
         padding: @arrows-padding;
 
         color: @blue-header-color;
+        font-size: 3.5em;
+
         .transition(background color, @arrows-transition);
         &:hover {
           color: @blue-base;
+          font-weight: bolder;
         }
       }
     }
   }
-  &--full-width &--blue {
-    .slider-arrows {
+  &--full-width&--blue {
+    .slider__arrows {
       label {
         background: fade(@blue-header-color, 40%);
         &:hover {

@@ -4,10 +4,20 @@
     display: none;
 
     &:not(:checked) ~ .modal__overlay {
-      display: none;
+      .visibility(h);
+      //.transition(opacity visibility, @modal-overlay-transition-out);
+      .modal__dialog {
+        //transition: @modal-dialog-transition-out;
+        transform: translate(200%, 200%) rotate(180deg);
+      }
     }
     &:checked ~ .modal__overlay {
-      display: block;
+      .visibility(v);
+      .transition(opacity visibility, @modal-overlay-transition-in);
+      .modal__dialog {
+        transition: @modal-dialog-transition-in;
+        transform: translate(-50%, -50%);
+      }
     }
     & ~ label {
       cursor: pointer;

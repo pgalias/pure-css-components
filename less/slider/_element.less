@@ -18,12 +18,20 @@
     }
 
     .render-transition();
+
+    &:first-of-type:checked {
+      & ~ .slider__arrows label:last-of-type {
+        order: 1;
+      }
+      & ~ .slider__arrows label:nth-of-type(2) {
+        order: 2;
+      }
+    }
   }
 
   ul {
     list-style: none;
 
-    position: relative;
     z-index: 1;
 
     line-height: 0;
@@ -46,9 +54,12 @@
 
       display: inline-block;
 
+      transition: @slide-transition;
+
       img {
         display: block;
         margin: auto;
+        width: 100%;
       }
     }
   }
@@ -76,17 +87,6 @@
       border: extract(@blue-border,1) * @slider-border-width extract(@blue-border,2) extract(@blue-border,3);
       border-radius: @blue-border-radius;
     }
-
-    input[type=radio] {
-      &:first-of-type:checked {
-        & ~ .arrows label:last-of-type {
-          order: 1;
-        }
-        & ~ .arrows label:nth-of-type(2) {
-          order: 2;
-        }
-      }
-    }
   }
 }
 .create-selector(@pattern, @iterator:1, @count: @max-slides) {
@@ -103,20 +103,20 @@
   })()`;
 }
 & {
-  .create-selector('.slider--blue input[type=radio]:nth-of-type( $i ):checked ~ .arrows label:nth-of-type( $imm ),\n.slider--blue input[type=radio]:nth-of-type( $i ):checked ~ .arrows label:nth-of-type( $ipp ),');
+  .create-selector('.slider--blue input[type=radio]:nth-of-type( $i ):checked ~ .slider__arrows label:nth-of-type( $imm ),\n.slider--blue input[type=radio]:nth-of-type( $i ):checked ~ .slider__arrows label:nth-of-type( $ipp ),');
   @{result} {
     display: flex;
   }
 }
 & {
-  .create-selector('.slider--blue input[type=radio]:nth-of-type( $i ):checked ~ .arrows label:nth-of-type( $imm ) span::after,');
+  .create-selector('.slider--blue input[type=radio]:nth-of-type( $i ):checked ~ .slider__arrows label:nth-of-type( $imm ) span::after,');
   @{result} {
     content: '\003c';
     display: block;
   }
 }
 & {
-  .create-selector('.slider--blue input[type=radio]:nth-of-type( $i ):checked ~ .arrows label:nth-of-type( $ipp ) span::after,');
+  .create-selector('.slider--blue input[type=radio]:nth-of-type( $i ):checked ~ .slider__arrows label:nth-of-type( $ipp ) span::after,');
   @{result} {
     content: '\003e';
     display: block;

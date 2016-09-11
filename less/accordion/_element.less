@@ -6,20 +6,22 @@
     input[type=radio] {
       display: none;
 
-      &:not(:checked) ~ .accordion__content {
+      &:checked ~ .accordion__content {
         .visibility(v);
         height: auto;
         padding: @content-padding;
         transform: translateY(0);
+        .transition(opacity visibility height padding transform, @content-transition);
       }
-      &:checked ~ .accordion__content {
+      &:not(:checked) ~ .accordion__content {
         .visibility(h);
         .same(0, height padding);
         transform: translateY(@content-visible-transform);
+        .transition(height padding transform, @content-transition);
       }
     }
 
-    label&__header {
+    label.accordion__header {
       /* styles for each accordion header */
       padding: @header-padding;
 
@@ -34,7 +36,7 @@
 
   &__content {
     /* styles for each accordion element */
-    .transition(opacity visibility height padding transform, @content-transition);
+
 
     margin: @content-margin;
   }

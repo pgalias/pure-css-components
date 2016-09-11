@@ -1,14 +1,18 @@
 .modal {
   &__dialog {
     .center-both;
-
+    box-sizing: border-box;
     &--wide {
       min-height: @modal-size;
     }
     &--wide,
     &--wide-short {
+      width: calc(~"100% - @{modal-wide-margin}");
+      margin: auto;
+    }
+    &--full-size {
       width: 100%;
-      margin: 4em;
+      height: 100%;
     }
     &--fixed-size {
       width: @modal-size;
@@ -19,8 +23,13 @@
     position: relative;
     .text-align(c);
     label.close {
-      font-size: 1.4em;
+      font-size: 2.5em;
       cursor: pointer;
+      display: block;
+
+      position: absolute;
+      top: 0;
+      right: 1em;
       &::after {
         content: '\00d7';
         display: block;
@@ -30,11 +39,19 @@
 
   &__dialog--blue {
     border-radius: @blue-border-radius;
-    border: @blue-border;
+    border: extract(@blue-border, 1) * 5 extract(@blue-border, 2) extract(@blue-border, 3);
 
     background: @blue-content-background;
     color: @blue-text-color;
+
+    padding: @blue-modal-padding;
+
     & > .modal__header {
+      padding: @modal-header-padding;
+      & > * {
+        padding: inherit;
+      }
+
       &::after {
         content: '';
         display: block;
@@ -42,6 +59,7 @@
         height: 2px;
         background: @blue-divider-color;
         border-radius: 3px;
+        margin: auto;
       }
       label.close {
         color: @blue-close-icon;

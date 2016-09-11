@@ -1,42 +1,135 @@
 .dropdown {
-  position: relative;
-
   &__menu {
-    list-style: none;
+    width: 100%;
     box-sizing: border-box;
+    font-size: @item-font-size;
+  }
 
-    position: absolute;
+  input[type=checkbox] {
+    &:not(:checked) {
+      & ~ .dropdown__menu {
+        .visibility(h)
+      }
+      & ~ label .trigger {
+        background-image: url(@trigger-icon-plus);
+      }
+    }
 
-    .same(100%, top width);
-    .visibility(h);
-    transform: translateY(@menu-transform-hidden);
-
-    .transition(transform visibility opacity, @menu-transition);
-    a {
-      display: block;
-
-      text-decoration: none;
-      .text-align(c);
-
-      padding: @item-padding;
-
-      &:hover {
-        text-shadow: @item-shadow;
+    &:checked {
+      & ~ .dropdown__menu {
+        .visibility(v);
+      }
+      & ~ label .trigger {
+        background-image: url(@trigger-icon-minus);
       }
     }
   }
 
-  &:hover &__menu {
-    .visibility(v);
-    transform: translateY(@menu-transform-visible);
+  &--out {
+    > .dropdown__menu {
+      .transition(visibility opacity transform, @menu-transition);
+
+      position: absolute;
+      //top: 0;
+      left: 0;
+      & > .dropdown--down > .dropdown__menu,
+      & > .dropdown--up > .dropdown__menu {
+        top: auto;
+      }
+      & > .dropdown--down > .dropdown__menu,
+      & > .dropdown--up > .dropdown__menu,
+      & > .dropdown--left > .dropdown__menu,
+      & > .dropdown--right > .dropdown__menu {
+        left: 0;
+      }
+    }
+
+    &.dropdown--down {
+      > input[type=checkbox] {
+        &:checked ~ .dropdown__menu {
+          transform: translateY(100%);
+        }
+        &:not(:checked) ~ .dropdown__menu {
+          transform: translateY(-30px);
+        }
+      }
+    }
+
+    &.dropdown--up {
+      > input[type=checkbox] {
+        &:checked ~ .dropdown__menu {
+          transform: translateY(-@menu-font-size - 2px);
+        }
+        &:not(:checked) ~ .dropdown__menu {
+          transform: translateY(-30px);
+        }
+      }
+      .dropdown__menu {
+        top: auto;
+        left: 0;
+      }
+    }
+
+    &.dropdown--left {
+      > input[type=checkbox] {
+        &:checked ~ .dropdown__menu {
+          transform: translate(-100%, calc(~"100% - @{item-font-size}"));
+        }
+        &:not(:checked) ~ .dropdown__menu {
+          transform: translateX(30px);
+        }
+      }
+    }
+
+    &.dropdown--right {
+      > input[type=checkbox] {
+        &:checked ~ .dropdown__menu {
+          transform: translate(100%, calc(~"100% - @{item-font-size}"));
+        }
+        &:not(:checked) ~ .dropdown__menu {
+          transform: translateX(-30px);
+        }
+      }
+    }
   }
 
-  &__trigger {
-    cursor: pointer;
+  &--in {
+    > .dropdown__menu {
+      .transition(visibility opacity height padding transform, @menu-transition);
+    }
 
-    background: @trigger-icon no-repeat ~"@{trigger-position}/@{trigger-size}";
-    padding: @trigger-padding;
+    > input[type=checkbox] {
+      &:checked ~ .dropdown__menu {
+        .visibility(v);
+        height: auto;
+        padding: @item-out-padding;
+        transform: translateY(0);
+      }
+      &:not(:checked) ~ .dropdown__menu {
+        .visibility(h);
+        height: 0;
+        padding: 0;
+        transform: translate(-15px);
+      }
+    }
   }
+
+  @directions: up left down right;
+  .loop-through-directions(@i:1) when (@i <= length(@directions)) {
+    @direction: extract(@directions, @i);
+    &--@{direction} {
+      & > input[type=checkbox] {
+        &:checked,
+        &:not(:checked) {
+          & ~ label > .trigger.arrow {
+            background-image: url(~"@{trigger-icon-@{direction}}");
+          }
+        }
+      }
+    }
+    .loop-through-directions(@i+1);
+  }
+  .loop-through-directions;
 }
 
 .dropdown--blue {
@@ -47,10 +140,14 @@
 
   .dropdown__menu {
     background: @blue-content-background;
-    border: @blue-border;
+    border: extract(@blue-border,1)*2 extract(@blue-border,2) extract(@blue-border,3);
 
-    a {
+    a,
+    label {
       color: @blue-text-color;
     }
+  }
+  .dropdown--in .dropdown__menu {
+    border: 0;
   }
 }

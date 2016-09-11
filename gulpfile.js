@@ -4,7 +4,8 @@ const gulp =        require('gulp'),
     autoprefixer =  require('gulp-autoprefixer'),
     less =          require('gulp-less'),
     LessPrefix =    require('less-plugin-autoprefix'),
-    cssnano =       require('gulp-cssnano');
+    cssnano =       require('gulp-cssnano'),
+    rename =        require('gulp-rename');
 
 const prefixOpt = {browsers: ['last 2 versions']};
 
@@ -19,14 +20,17 @@ gulp.task('sass:compile', () => {
 
 gulp.task('less:compile', () => {
     gulp.src('./less/components.less')
+        .pipe(sourcemaps.init())
         .pipe(less({
             plugins: [new LessPrefix(prefixOpt)]
         }))
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./css'))
 });
 
 gulp.task('css:minify', () => {
-    gulp.src('./css/*.css')
+    gulp.src('./css/components.css')
         .pipe(cssnano())
-        .pipe(gulp.dest('./'))
+        .pipe(rename('components.min.css'))
+        .pipe(gulp.dest('./css/'))
 });
