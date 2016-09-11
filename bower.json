@@ -1,0 +1,28 @@
+{
+  "name": "pure.css.components",
+  "description": "Pure CSS components, few javascsript-free, fully-customizable and reusable components",
+  "main": "css/components.css",
+  "authors": [
+    "Paweł Galias"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "components",
+    "pure",
+    "css",
+    "sass",
+    "less"
+  ],
+  "homepage": "https://github.com/pgalias/pure-css-components",
+  "moduleType": [
+    "es6"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
