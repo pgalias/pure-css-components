@@ -1,0 +1,24 @@
+$features-font-size: (h3 p), 2.2em;
+
+.main-content {
+  .features {
+    color: $blue-content-txt;
+
+    img {
+      width: 128px;
+      height: 128px;
+
+      display: block;
+
+      margin: auto;
+    }
+
+    @for $i from 1 through length(nth($features-font-size, 1)) {
+      $font-size: nth($features-font-size, 2)/$i;
+      $selector: nth(nth($features-font-size, 1), $i);
+      #{$selector} {
+        font-size: $font-size;
+      }
+    }
+  }
+}

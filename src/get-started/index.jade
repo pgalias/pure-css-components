@@ -1,0 +1,96 @@
+extends ../_layouts/two-col
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+  - title = 'Get Started'
+  - var currentVersion = 'v2.0.0'
+
+block side-menu
+  ul.side-menu
+    each position in site.data.getstarted
+      li
+        a(href='#{position.link}') #{position.name}
+
+block main
+  article#download
+    h1 #[a(href='#download') Download]
+    p PCC (now in #{currentVersion}) can be downloaded in two different ways.
+    .row
+      .col-xs-12.col-sm-6
+        h3 Compiled
+        p Compiled and minified CSS file, ready for including and using in your project.
+        a(href='#').btn.btn-lg.btn-blue-inverse Download compiled
+      .col-xs-12.col-sm-6
+        h3 Source
+        p Source LESS code and Gulp file. Requires LESS compiler to compiling code and Gulp to running tasks.
+        a(href='https://github.com/pgalias/pure-css-components/archive/#{currentVersion}.zip').btn.btn-lg.btn-blue-inverse Download source
+  article#clone-repo
+    h1 #[a(href='#clone-repo') Clone Repo]
+    p Use following command in terminal
+    pre
+      code.bash
+        | git clone https://github.com/pgalias/pure-css-components.git
+  article#bower
+    h1 #[a(href='#bower') Bower]
+    p You can also download PCC using #[a(href='https://bower.io/') Bower]
+    pre
+      code.bash
+        | bower install pure.css.components
+  article#npm
+    h1 #[a(href='#npm') NPM]
+    p You can also download via #[a(href='https://www.npmjs.com/') NPM]
+    pre
+      code.bash
+        | npm install pure.css.components --save
+  article#compiling-css
+    h1 #[a(href='#compiling-css') Compiling CSS]
+    p PCC uses #[a(href='http://gulpjs.com/') Gulp] for working and building library.
+    h2 Available Gulp commands
+    ul
+      li
+        pre
+          code.bash
+            | gulp less:compile
+        p Generates CSS file with maps in css/ folder
+      li
+        pre
+          code.bash
+            | gulp less:watch
+        p Watches for any LESS file changes and regenerates it to CSS file
+      li
+        pre
+          code.bash
+            | gulp css:minify
+        p Minifies CSS file and save it with .min suffix
+  article#usage
+    h1 #[a(href='#usage') Usage]
+    p PCC provides three CSS files in dist. You can use it in your project in three various ways
+    ul
+      li
+        p Simply include components.css file into your head section. It contains all components and their themes in one file
+        pre
+          code.html
+            | &lt;head&gt;
+            |   ...
+            |   &lt;link rel='stylesheet' href='path/to/components.min.css'&gt;
+            | &lt;/head&gt;
+      li
+        p Include separated components-alone.css with desired theme.css file into your head section.
+        pre
+          code.html
+            | &lt;head&gt;
+            |   ...
+            |   &lt;link rel='stylesheet' href='path/to/components-alone.min.css'&gt;
+            |   &lt;link rel='stylesheet' href='path/to/components-{name}.theme.min.css'&gt;
+            | &lt;/head&gt;
+      li
+        p Include only components-alone.css file. It has only raw styles without margins, paddings, font sizes, etc.
+        pre
+          code.html
+            | &lt;head&gt;
+            |   ...
+            |   &lt;link rel='stylesheet' href='path/to/components-alone.min.css'&gt;
+            | &lt;/head&gt;
+  article#creating-own-themes
+    h1 #[a(href='#creating-own-themes') Creating own themes]

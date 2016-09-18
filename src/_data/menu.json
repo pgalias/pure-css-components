@@ -1,0 +1,16 @@
+[{
+  "name": "Home",
+  "link": "/"
+}, {
+  "name": "Get Started",
+  "link": "/get-started"
+}, {
+  "name": "Components",
+  "link": "/components"
+}, {
+  "name": "Github",
+  "link": "https://github.com/pgalias/pure-css-components"
+}, {
+  "name": "Author",
+  "link": "http://galias.com"
+}]

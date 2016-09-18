@@ -1,8 +1,12 @@
+include ../_modules/footer/footer
+include ../_modules/menu/menu
+
 //- Custom Configuration
 block config
   //- Setup site's base URL to match the "baseUrl" key within `package.json`
   //- Otherwise default to relative pathing
   - var baseUrl = config.baseUrl || './'
+  - var title = 'config'
 
 doctype html
 
@@ -16,10 +20,12 @@ doctype html
 head
   meta(charset='utf-8')
   meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-  title Documentation
+  title Documentation :: #{title}
   meta(name='description', content= 'A new Yeogurt application')
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
   block stylesheets
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Oswald:700|Slabo+27px')
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u", crossorigin="anonymous")
     link(rel='stylesheet', href= baseUrl + 'styles/main.css')
 
 body
@@ -27,9 +33,19 @@ body
   <p class='browsehappy'>You are using an <strong>outdated</strong> browser. Please <a href='http://browsehappy.com/'>upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
+  block menu
+    +menu({__class: 'main-menu'})(class='navbar navbar-default')
+
+  block header
+
   block content
 
+  block footer
+    +footer({__class: 'main-footer'})
+
   block scripts
+    script(src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa", crossorigin="anonymous")
     script(src= baseUrl + 'scripts/main.js')
 
 </html>

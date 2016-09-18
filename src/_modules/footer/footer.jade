@@ -1,0 +1,20 @@
+mixin footer(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+  - spec.text = spec.text || 'Default text'
+
+  footer(class=spec.__class)&attributes(attributes)
+    .container
+      if spec.__class == 'main-footer'
+        p.copyright Pure CSS Components designed and developed by #[a(href='http://galias.com') Paweł Galias]
+        p #[small Code licensed #[a(href='https://github.com/pgalias/pure-css-components/blob/master/LICENCE.md') MIT], docs created with #[a(href='https://github.com/larsonjj/generator-yeogurt') Yeoman Generator Yeogurt]]
+        p #[small If you spot any bugs or if you have any ideas how to improve this project don&apos;t hesitate to create new issue or open pull request]
+        nav
+          ul.inline
+            each link in site.data.footer
+              li
+                a(href=link.link) #{link.name}
+      else if block
+        block
+      else
+        != spec.text

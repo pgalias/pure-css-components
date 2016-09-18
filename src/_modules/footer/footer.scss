@@ -1,0 +1,69 @@
+$main-footer-padding: (top bottom), 50px;
+$main-footer-margin: (top), 100px;
+
+.main-footer {
+  background: $blue;
+
+  @each $padding in nth($main-footer-padding,1) {
+    padding-#{$padding}: nth($main-footer-padding,2);
+  }
+  @each $margin in nth($main-footer-margin,1) {
+    margin-#{$margin}: nth($main-footer-margin,2);
+  }
+
+  @include alignment(c);
+
+  box-shadow: -2px -2px 2px #008a94;
+
+  font-size: 18px;
+  font-family: $header-font;
+  color: $blue-header-txt;
+  @include small-phone {
+    font-size: 16px;
+  }
+  p {
+    small {
+      font-size: .7em;
+    }
+  }
+
+  .copyright {
+    line-height: 2;
+  }
+
+  nav {
+    ul.inline {
+      list-style: none;
+
+      width: 50%;
+      margin: 35px auto 0;
+      padding: 0;
+
+      color: inherit;
+
+      display: flex;
+      flex-flow: row wrap;
+      li {
+        flex-grow: 1;
+
+        font-size: .7em;
+      }
+
+      // max 767px
+      @include all-phones {
+        width: 100%;
+      }
+    }
+  }
+
+  a {
+    cursor: pointer;
+
+    color: inherit;
+    border-bottom: 1px dotted $blue-header-txt;
+    text-decoration: none;
+    &:hover {
+      border-bottom-color: lighten($blue-header-txt, 25%);
+    }
+  }
+}

@@ -1,0 +1,29 @@
+$header-margin: (bottom), 100px;
+
+.main-header {
+  background: $blue;
+
+  font-family: $header-font;
+
+  box-shadow: 1px 1px 4px #008a94;
+
+  .jumbotron {
+    background: inherit;
+  }
+
+  @each $margin in nth($header-margin, 1) {
+    margin-#{$margin}: nth($header-margin, 2);
+  }
+
+  h1 {
+    text-shadow: 2px 3px 8px $blue-lighter, 9px 8px 0 rgba(0,0,0,.15);
+  }
+
+  a {
+    color: inherit;
+    @include small-phone {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@import "features";
+@import "article";
+
+$content-margin: (top), 50px;
+
+.main-content {
+  font-family: $content-font;
+  color: $blue-content-txt;
+
+  @include laptop-and-desktop() {
+    @each $margin in nth($content-margin, 1) {
+      margin-#{$margin}: nth($content-margin, 2);
+    }
+  }
+}

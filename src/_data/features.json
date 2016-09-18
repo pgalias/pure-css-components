@@ -1,0 +1,17 @@
+[{
+  "title": "Javascript-Free",
+  "desc": "Components are pure CSS so you don't need to use javascript.",
+  "icon": "no-js.svg"
+}, {
+  "title": "Preprocessor",
+  "desc": "Components are coded with LESS Preprocessor. Use precompiled CSS or build it with the LESS source.",
+  "icon": "less.svg"
+}, {
+  "title": "Build tools",
+  "desc": "Includes Gulpfile for compiling LESS to CSS with Autoprefixer.",
+  "icon": "gulp.svg"
+}, {
+  "title": "Fully customizable",
+  "desc": "PCC's very basic style can be extended and customized with themes.",
+  "icon": "customize.svg"
+}]

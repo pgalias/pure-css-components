@@ -1,0 +1,21 @@
+extend ./base
+
+// Add extra stylesheets
+block append stylesheets
+  link(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/mono-blue.min.css")
+
+block content
+  //- Provides layout level markup
+  section.main-content
+    .container
+      .row
+        .col-xs-12.col-md-4
+          block side-menu
+        .col-xs-12.col-md-8
+          block main
+
+// Add extra scripts
+block append scripts
+  script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js")
+  script
+    |hljs.initHighlightingOnLoad()

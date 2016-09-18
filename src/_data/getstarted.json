@@ -1,0 +1,22 @@
+[{
+  "name": "Download",
+  "link": "#download"
+}, {
+  "name": "Clone repo",
+  "link": "#clone-repo"
+}, {
+  "name": "Bower",
+  "link": "#bower"
+}, {
+  "name": "NPM",
+  "link": "#npm"
+}, {
+  "name": "Compiling CSS",
+  "link": "#compiling-css"
+}, {
+  "name": "Usage",
+  "link": "#usage"
+}, {
+  "name": "Creating own themes",
+  "link": "#creating-own-themes"
+}]

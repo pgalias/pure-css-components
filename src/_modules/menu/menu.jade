@@ -1,0 +1,26 @@
+mixin menu(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+  - spec.text = spec.text || 'Default text'
+
+  nav(class=spec.__class)&attributes(attributes)
+    .container
+      if spec.__class == 'main-menu'
+        .navbar-header
+          button(type='button' data-toggle='collapse' data-target='.main-menu__collapse' aria-expanded='false').navbar-toggle.collapsed
+            span.sr-only Toggle navigation
+            - for (var i=0; i<3; i++)
+              span.icon-bar
+          a(href='/').navbar-brand P.C.C.
+
+        .collapse.navbar-collapse.main-menu__collapse
+          ul.nav.navbar-nav.navbar-right
+            each link in site.data.menu
+              li(class=link.name == title ? 'active' : '')
+                a(href=link.link) #{link.name}
+      else if spec.__class == 'side-menu'
+
+      else if block
+        block
+      else
+        != spec.text

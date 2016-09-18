@@ -1,0 +1,144 @@
+.main-menu {
+  background: $blue-header-bg;
+
+  box-shadow: 1px 1px 4px #008a94;
+  border-radius: 0;
+  border: none;
+
+  margin-bottom: 0;
+
+  color: $blue-header-txt;
+  a {
+    color: inherit;
+    cursor: pointer;
+  }
+
+  .navbar-toggle {
+    border-color: $blue-darker;
+    .icon-bar {
+      background: $blue-darker;
+    }
+
+    &:focus,
+    &:hover {
+      background: none;
+    }
+  }
+
+  .navbar-brand {
+    font: 1.6em/1 $header-font;
+  }
+
+  .navbar-nav {
+    > li {
+      > a {
+        color: $blue-content-txt;
+        font: 1.05em $header-font;
+      }
+    }
+  }
+
+  .nav {
+    > li {
+      > a {
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          background: $blue-lighter;
+        }
+      }
+      &.active {
+        background: $blue-lightest;
+        > a {
+          background: transparent;
+          &:hover {
+            background: inherit;
+            color: inherit;
+          }
+        }
+      }
+    }
+  }
+}
+
+.main-content {
+  .side-menu,
+  .side-menu ul {
+    list-style: none;
+
+    padding: 0;
+  }
+
+  .side-menu {
+    font-size: 1.2em;
+    li {
+      margin: 0.5em 0;
+      padding: 10px 0;
+
+      a, label {
+        cursor: pointer;
+
+        color: inherit;
+        font-weight: 400;
+
+        border-left: 1px solid $blue-content-txt;
+        padding-left: 5px;
+
+        &:hover {
+          text-decoration: underline;
+
+          border-left: 2px solid $blue-darker;
+          padding-left: 4px;
+        }
+      }
+
+      &.current {
+        a, label {
+          color: $blue-darkest;
+          font-weight: 600;
+
+          border-left: 3px solid $blue;
+          padding-left: 3px;
+        }
+      }
+
+      &.accordion {
+        .accordion__object {
+          margin: 0;
+        }
+
+        input[type=checkbox],
+        input[type=radio] {
+          &:checked ~ label {
+            &::after {
+              content: '-';
+            }
+          }
+          &:not(:checked) ~ label {
+            &::after {
+              content: '+';
+            }
+          }
+        }
+
+        label {
+          position: relative;
+          &::after {
+            position: absolute;
+            top: 0;
+            right: -100%;
+
+            display: block;
+
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    &.fixed {
+      position: fixed;
+      top: 0;
+    }
+  }
+}

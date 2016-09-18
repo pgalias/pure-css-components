@@ -1,0 +1,14 @@
+@mixin alignment($align) {
+  @if $align == l or $align == left or $align == 'l' or $align == 'left' {
+    text-align: left;
+  }
+  @else if $align == r or $align == right or $align == 'r' or $align == 'right' {
+    text-align: right;
+  }
+  @else if $align == c or $align == center or $align == 'c' or $align == 'center' {
+    text-align: center;
+  }
+  @else if $align == j or $align == justify or $align == 'j' or $align == 'justify' {
+    text-align: justify;
+  }
+}

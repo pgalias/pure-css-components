@@ -1,0 +1,69 @@
+$screen-xs: 480px;
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+
+$screen-xs-min: $screen-xs;
+$screen-xs-max: $screen-sm - 1;
+
+$screen-sm-min: $screen-sm;
+$screen-sm-max: $screen-md - 1;
+
+$screen-md-min: $screen-md;
+$screen-md-max: $screen-lg - 1;
+
+$screen-lg-min: $screen-lg;
+
+@mixin small-phone() {
+  @media screen and (max-width: $screen-xs-min) {
+    @content;
+  }
+}
+
+@mixin phone() {
+  @media screen and (min-width: $screen-xs-min) and (max-width: $screen-xs-max) {
+    @content;
+  }
+}
+
+@mixin all-phones() {
+  @media screen and (max-width: $screen-xs-max) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    @content;
+  }
+}
+
+@mixin tablet-and-phone() {
+  @media screen and (max-width: $screen-sm-max) {
+    @content;
+  }
+}
+
+@mixin laptop() {
+  @media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    @content;
+  }
+}
+
+@mixin laptop-and-mobile() {
+  @media screen and (max-width: $screen-md-max) {
+    @content;
+  }
+}
+
+@mixin laptop-and-desktop() {
+  @media screen and (min-width: $screen-md-min) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media screen and (min-width: $screen-lg-min) {
+    @content;
+  }
+}

@@ -1,0 +1,34 @@
+$blue-base: #00bac7;
+
+$blue: $blue-base;
+$blue-lighter: lighten($blue, 5%);
+$blue-lightest: lighten($blue, 10%);
+$blue-darker: darken($blue, 5%);
+$blue-darkest: darken($blue, 10%);
+
+$blue-header-bg: $blue-base;
+$blue-header-txt: #333;
+
+$blue-content-bg: #fff;
+$blue-content-txt: #666;
+
+
+$blue-border-width: 1px;
+$blue-border-color: $blue-base;
+$blue-border-style: solid;
+
+.btn-blue {
+  background-color: $blue;
+  border: 2px solid $blue-header-txt;
+  font-size: 1.7em;
+  margin-right: 15px;
+  color: $blue-header-txt;
+}
+
+.btn-blue-inverse {
+  background-color: transparent;
+  border: 2px solid $blue;
+  font-size: 1.3em;
+  margin-right: 15px;
+  color: $blue-content-txt;
+}

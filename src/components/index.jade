@@ -1,0 +1,212 @@
+extends ../_layouts/two-col
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+  - title = 'Components'
+
+block side-menu
+  ul.side-menu
+    each position in site.data.components
+      li
+        a(href='#{position.link}') #{position.name}
+
+block main
+  article#accordion
+    h1 #[a(href='#accordion') Accordion]
+    p The word "accordion" may be imagined as a musical instrument of your favorite band, but in web design/developing accordion is a collapsible component for presenting information in limited space. On start user see only headers but when he click on one of them it will expand its content like the musical instrument. It might be used with menus, widgets, contents areas, etc.
+    div
+      .row
+        div.acc-width-opt.col-xs-4
+          h3 Width options
+          div.input-group
+            input(type='radio' name='acc-width' data-class-name='--full-width' checked=true)#acc-width-1
+            label(for='acc-width-1') Full width
+          div.input-group
+            input(type='radio' name='acc-width' data-class-name='--fixed-width')#acc-width-2
+            label(for='acc-width-2') Fixed width - default: 60%
+
+        div.acc-type-opt.col-xs-4
+          h3 One/multi collapsing
+          div.input-group
+            input(type='radio' name='acc-type' data-class-name="radio" checked=true)#acc-type-1
+            label(for='acc-type-1') One
+          div.input-group
+            input(type='radio' name='acc-type' data-class-name="checkbox")#acc-type-2
+            label(for='acc-type-2') Multiple
+
+        div.acc-theme-opt.col-xs-4
+          h3 Themes
+          div.input-group
+            input(type='checkbox' name='acc-themes' data-class-name='accordion--blue' checked=true)#acc-themes-1
+            label(for='acc-themes-1') Add theme
+
+      .accordion.accordion--full-width.accordion--blue
+        each accordion in site.data.accordion
+          .accordion__object
+            input(type=accordion.input.type name=accordion.input.name id=accordion.input.id checked=accordion.input.checked)
+            label(for=accordion.input.id).accordion__header #{accordion.content.heading}
+            .accordion__content
+              h2 #{accordion.content.heading}
+              p #{accordion.content.paragraph}
+      pre
+        code.html
+          |&lt;div class=&quot;accordion accordion--full-width accordion--blue&quot;&gt;
+          |&nbsp;
+          |   &lt;div class=&quot;accordion__object&quot;&gt;
+          |     &lt;input type=&quot;radio&quot; id=&quot;acc1&quot; name=&quot;accordion&quot;&gt;
+          |     &lt;label for=&quot;acc1&quot; class=&quot;accordion__header&quot;&gt;Accordion #1&lt;/label&gt;
+          |     &lt;div class=&quot;accordion__content&quot;&gt;
+          |       &lt;h2&gt;Accordion 1&lt;/h2&gt;
+          |       &lt;p&gtLorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis distinctio doloremque magni quod repudiandae, voluptas voluptates. Atque delectus dignissimos dolores, esse eum ipsa maxime minima officia qui repellat ullam voluptate!&lt;/p&gt;
+          |     &lt;/div&gt; &lt;!-- /.accordion__content --&gt;
+          |   &lt;/div&gt; &lt;!-- /.accordion__object --&gt;
+          |&nbsp;
+          |   &lt;div class=&quot;accordion__object&quot;&gt;
+          |     &lt;input type=&quot;radio&quot; id=&quot;acc2&quot; name=&quot;accordion&quot;&gt;
+          |     &lt;label for=&quot;acc2&quot; class=&quot;accordion__header&quot;&gt;Accordion #2&lt;/label&gt;
+          |     &lt;div class=&quot;accordion__content&quot;&gt;
+          |       &lt;h2&gt;Accordion 2&lt;/h2&gt;
+          |       &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, commodi deleniti dolor doloremque eaque fugit iste nobis reprehenderit sint veritatis vitae voluptates! Accusantium consequuntur error hic labore provident ut voluptas?&lt;/p&gt;
+          |     &lt;/div&gt; &lt;!-- /.accordion__content --&gt;
+          |   &lt;/div&gt; &lt;!-- /.accordion__object --&gt;
+          |&nbsp;
+          |   &lt;div class=&quot;accordion__object&quot;&gt;
+          |     &lt;input type=&quot;radio&quot; id=&quot;acc2&quot; name=&quot;accordion&quot;&gt;
+          |     &lt;label for=&quot;acc2&quot; class=&quot;accordion__header&quot;&gt;Accordion #3&lt;/label&gt;
+          |     &lt;div class=&quot;accordion__content&quot;&gt;
+          |       &lt;h2&gt;Accordion 3&lt;/h2&gt;
+          |       &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex labore libero officiis soluta? Animi architecto blanditiis commodi consequatur, distinctio ipsum repellendus tempora! A aperiam eius facere in libero nemo, officiis?&lt;/p&gt;
+          |     &lt;/div&gt; &lt;!-- /.accordion__content --&gt;
+          |   &lt;/div&gt; &lt;!-- /.accordion__object --&gt;
+          |&nbsp;
+          |&lt;/div&gt; &lt;!-- /.accordion --&gt;
+
+  article#dropdown
+    h1 #[a(href='#dropdown') Dropdown]
+
+  article#modalbox
+    h1 #[a(href='#modalbox') Modalbox]
+    p Displays dialog with various informations. It can be used for dialog boxes, showing informations, confirmations.
+    div
+      .row
+        .modalbox-width-opt.col-xs-6
+          h3 Width options
+          .input-group
+            input(type='radio' name='modalbox-width' data-class-name='--full-size')#modalbox-width-1
+            label(for='modalbox-width-1') Full width
+          .input-group
+            input(type='radio' name='modalbox-width' data-class-name='--fixed-size' checked=true)#modalbox-width-2
+            label(for='modalbox-width-2') Fixed width - default 60%
+          .input-group
+            input(type='radio' name='modalbox-width' data-class-name='--wide')#modalbox-width-3
+            label(for='modalbox-width-3') Wide
+          .input-group
+            input(type='radio' name='modalbox-width' data-class-name='--wide-short')#modalbox-width-4
+            label(for='modalbox-width-4') Wide short
+        .modalbox-theme-opt.col-xs-6
+          h3 Theme
+          .input-group
+            input(type='checkbox' name='modalbox-theme' data-class-name="modal__dialog--blue" checked=true)#modalbox-theme
+            label(for='modalbox-theme') Theme
+
+      div
+        input(type='checkbox' name='modal')#modal.modal__trigger
+        label(for='modal').btn.btn-lg.btn-blue-inverse Launch Modal
+        .modal__overlay
+          .modal__dialog.modal__dialog--fixed-size.modal__dialog--blue
+            .modal__header
+              h3 Modal
+              label(for='modal').close
+            .modal__body
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci aspernatur debitis eaque, esse hic iure labore laboriosam magni, nemo neque placeat quae quod quos reiciendis rerum voluptatum. Ea, magni!
+
+      pre
+        code.html
+          | &lt;div&gt;
+          |   &lt;input type=&quot;checkbox&quot; name=&quot;modal&quot; id=&quot;modal&quot; class=&quot;modal__trigger&quot;&gt;
+          |   &lt;label for=&quot;modal&quot; class=&quot;btn btn-lg btn-blue-inverse&quot;&gt;Launch modal&lt;/label&gt;
+          |   &lt;div class=&quot;modal__overlay&quot; role=&quot;dialog&quot;&gt;
+          |     &lt;div class=&quot;modal__dialog modal__dialog--fixed-size modal__dialog--blue"&gt;
+          |       &lt;div class=&quot;modal__header"&gt;
+          |         &lt;h3&gt;Modal&lt;/h3&gt;
+          |         &lt;label for=&quot;modal&quot; class=&quot;close&quot;&gt;&lt;/label&gt;
+          |       &lt;div class=&quot;modal__body&quot;&gt;
+          |         &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci aspernatur debitis eaque, esse hic iure labore laboriosam magni, nemo neque placeat quae quod quos reiciendis rerum voluptatum. Ea, magni!&lt;/p&gt;
+          |       &lt;/div&gt; &lt;!-- /.modal__body --&gt;
+          |     &lt;/div&gt; &lt;!-- /.modal__dialog --&gt;
+          |   &lt;/div&gt; &lt;!-- /.modal__overlay --&gt;
+          | &lt;/div&gt; &lt;!-- / container --&gt;
+
+
+  article#slider
+    h1 #[a(href='#slider') Slider]
+
+  article#tabs
+    h1 #[a(href='#tabs') Tabs]
+    p Like in #[a(href='#accordion') accordion], this component is used to show informations in limited amount of space. Instead of accordion, tabs shows data in form of table or bookmarks. #[strong Note:] Because of absolute positioning of each tab content it need to set to the tab__content class height property (default: 200px) and equivalent margin bottom for tabs container.
+    div
+      .row
+        .tabs-width-opt.col-xs-6
+          h3 Width options
+          .input-group
+            input(type='radio' name='tabs-width' data-class-name="--full-width" checked=true)#tabs-width-1
+            label(for='tabs-width-1') Full width
+          div.input-group
+            input(type='radio' name='tabs-width' data-class-name="--fixed-width")#tabs-width-2
+            label(for='tabs-width-2') Fixed width - default 70%
+        .tabs-theme-opt.col-xs-6
+          h3 Theme
+          .input-group
+            input(type='checkbox' name='tabs-theme' data-class-name="tabs--blue" checked=true)#tabs-theme
+            label(for='tabs-theme') Theme
+
+      ul.tabs.tabs--full-width.tabs--blue
+        each tab in site.data.tabs
+          li
+            input(type=tab.input.type, name=tab.input.name, id=tab.input.id, checked=tab.input.checked)
+            label(for=tab.input.id) #{tab.input.id.replace('s-', ' ')}
+            .tab__content
+              h2 #{tab.content.heading}
+              p #{tab.content.paragraph}
+      pre
+        code.html
+          | &lt;ul class=&quot;tabs tabs--full-width tabs--blue&quot;&gt;
+          |&nbsp;
+          |   &lt;li&gt;
+          |     &lt;input type=&quot;radio&quot; name=&quot;tabs&quot; id=&quot;tab1&quot checked&gt;
+          |     &lt;label for=&quot;tab1&quot;&gt;tab1 header&lt;/label&gt;
+          |     &lt;div class=&quot;tab__content&quot;&gt;
+          |       &lt;h2&gt;Tab 1&lt;/h2&gt;
+          |        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, amet, architecto consequuntur culpa eius eligendi est et eveniet ipsam laudantium minima modi nobis quam, quisquam repudiandae sunt veniam! Ad, molestias!&lt;/p&gt;
+          |     &lt;/div&gt; &lt;!-- /.tab__content --&gt;
+          |   &lt;/li&gt; &lt;!-- /tab element --&gt;
+          |&nbsp;
+          |   &lt;li&gt;
+          |     &lt;input type=&quot;radio&quot; name=&quot;tabs&quot; id=&quot;tab2&quot;&gt;
+          |     &lt;label for=&quot;tab2&quot;&gt;tab2 header&lt;/label&gt;
+          |     &lt;div class=&quot;tab__content&quot;&gt;
+          |       &lt;h2&gt;Tab 2&lt;/h2&gt;
+          |       &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, inventore, nisi! Accusantium ad aliquam beatae culpa dignissimos eligendi esse explicabo fugit laboriosam maxime modi nam nulla, obcaecati odit, provident vero!&lt;/p&gt;
+          |     &lt;/div&gt; &lt;!-- /.tab__content --&gt;
+          |   &lt;/li&gt; &lt;!-- /tab element --&gt;
+          |&nbsp;
+          |   &lt;li&gt;
+          |     &lt;input type=&quot;radio&quot; name=&quot;tabs&quot; id=&quot;tab3&quot;&gt;
+          |     &lt;label for=&quot;tab3&quot;&gt;tab3 header&lt;/label&gt;
+          |     &lt;div class=&quot;tab__content&quot;&gt;
+          |       &lt;h2&gt;Tab 3&lt;/h2&gt;
+          |        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis non, nostrum obcaecati quos suscipit temporibus ut! Animi, blanditiis culpa ducimus et fuga illo illum pariatur quam, quo rerum sunt, totam.&lt;/p&gt;
+          |     &lt;/div&gt; &lt;!-- /.tab__content --&gt;
+          |   &lt;/li&gt; &lt;!-- /tab element --&gt;
+          |&nbsp;
+          |   &lt;li&gt;
+          |     &lt;input type=&quot;radio&quot; name=&quot;tabs&quot; id=&quot;tab4&quot;&gt;
+          |     &lt;label for=&quot;tab4&quot;&gt;tab4 header&lt;/label&gt;
+          |     &lt;div class=&quot;tab__content&quot;&gt;
+          |       &lt;h2&gt;Tab 4&lt;/h2&gt;
+          |       &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab architecto assumenda dicta dolor eligendi eos esse, et eum ex hic illo inventore laboriosam maiores nisi quia sit unde voluptas voluptatem.&lt;/p&gt;
+          |     &lt;/div&gt; &lt;!-- /.tab__content --&gt;
+          |   &lt;/li&gt; &lt;!-- /tab element --&gt;
+          |&nbsp;
+          | &lt;/ul&gt; &lt;!-- /.tabs --&gt;

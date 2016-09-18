@@ -1,0 +1,12 @@
+mixin header(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+
+  header(class=spec.__class)&attributes(attributes)
+    .jumbotron
+      .container
+        h1 Pure CSS Components
+        p The CSS toolkit
+        .btns
+          a(href='/components').btn.btn-lg.btn-blue Read the docs
+          a(href='/get-started').btn.btn-lg.btn-blue Download
