@@ -1,0 +1,49 @@
+[{
+  "input": {
+    "type": "radio",
+    "name": "slider",
+    "id": "slide-1",
+    "checked": true
+  },
+  "content": {
+    "heading": "slide #1",
+    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, inventore, nisi! Accusantium ad aliquam beatae culpa dignissimos eligendi esse explicabo fugit laboriosam maxime modi nam nulla, obcaecati odit, provident vero!",
+    "image": "https://placekitten.com/800/600",
+    "animated": false
+  }
+}, {
+  "input": {
+    "type": "radio",
+    "name": "slider",
+    "id": "slide-2",
+    "checked": false
+  },
+  "content": {
+    "heading": "slide #2",
+    "image": "https://placekitten.com/850/600",
+    "animated": true
+  }
+}, {
+  "input": {
+    "type": "radio",
+    "name": "slider",
+    "id": "slide-3",
+    "checked": false
+  },
+  "content": {
+    "image": "https://placekitten.com/900/600",
+    "animated": false
+  }
+}, {
+  "input": {
+    "type": "radio",
+    "name": "slider",
+    "id": "slide-4",
+    "checked": false
+  },
+  "content": {
+    "heading": "slide #4",
+    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab architecto assumenda dicta dolor eligendi eos esse, et eum ex hic illo inventore laboriosam maiores nisi quia sit unde voluptas voluptatem.",
+    "animated": false
+  }
+}]

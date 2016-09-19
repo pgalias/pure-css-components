@@ -1,0 +1,42 @@
+.slider {
+  .slide__content {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    background: rgba(0,0,0,.4);
+    color: #fff;
+
+    font-size: 16px;
+    line-height: 1.2;
+    > p {
+      font-size: 1em;
+      white-space: initial;
+    }
+    > h2 {
+      font-size: 1.9em;
+      text-transform: capitalize;
+    }
+
+    &.animated {
+      overflow: hidden;
+      width: 0;
+      height: 0;
+      border-radius: 0 5px 5px 0;
+      > * {
+        transform: translate(110%);
+      }
+    }
+  }
+  @for $i from 1 through 4 {
+    > input:nth-of-type(#{$i}):checked ~ ul li:nth-of-type(#{$i}) .slide__content.animated {
+      transition: .5s .4s;
+      width: 60%;
+      height: auto;
+      padding: 10px;
+      > * {
+        transform: translate(0);
+        transition: .5s .9s;
+      }
+    }
+  }
+}

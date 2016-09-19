@@ -84,6 +84,213 @@ block main
 
   article#dropdown
     h1 #[a(href='#dropdown') Dropdown]
+    p Dropdown is a list of items that appears when user click on.
+    div
+      article#dropdown-simple
+        h2 #[a(href='#dropdown-simple') Simple dropdown]
+        p There are two basic classes: #[code.html .dropdown--out] and #[code.html .dropdown--in]. The first one has absolutely positioned content and second one has content inside menu so when dropdown is clicked then content below will slide down to make place. Moreover the first one can have one of four additional class: #[code.html .dropdown--down] #[code.html .dropdown--up] #[code.html .dropdown--left] #[code.html .dropdown--right]. It determines on which side of container content will appear.
+        .row
+          .ddm-position-opt.col-xs-6
+            h3 Content position
+            .input-group
+              input(type='radio' name='dd-pos' data-class-name='--down' checked)#dd-pos-1
+              label(for='dd-pos-1') Down
+            .input-group
+              input(type='radio' name='dd-pos' data-class-name='--up')#dd-pos-2
+              label(for='dd-pos-2') Up
+            .input-group
+              input(type='radio' name='dd-pos' data-class-name='--left')#dd-pos-3
+              label(for='dd-pos-3') Left
+            .input-group
+              input(type='radio' name='dd-pos' data-class-name='--right')#dd-pos-4
+              label(for='dd-pos-4') Right
+          .ddm-theme-opt.col-xs-6
+            h3 Themes
+            .input-group
+              input(type='checkbox' name='dd-themes' data-class-name='dropdown--blue' checked=true)#dd-themes-1
+              label(for='dd-themes-1') Add theme
+
+        div.dropdown.dropdown--blue.dropdown--out.dropdown--down(style='width:30%')
+          input(type='checkbox' name='dropdown' id='dd-1')
+          label(for='dd-1') Dropdown Menu #[span.trigger.arrow]
+          ul.dropdown__menu
+            - for (var i=0; i<5; i++)
+              li
+                a(href='#')
+                  label(for='dd-1') Item #{i+1}
+
+        pre
+          code.html
+            | &lt;div class=&quot;dropdown dropdown--blue dropdown--out dropdown--down&quot;&gt;
+            |   &lt;input type=&quot;checkbox&quot; name=&quot;dropdown&quot; id=&quot;dd-1&quot;&gt;
+            |   &lt;label for=&quot;dd-1&quot;&gt;Dropdown Menu &lt;span class=&quot;trigger arrow&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+            |   &lt;ul class=&quot;dropdown__menu&quot;&gt;
+            |     &lt;li&gt;
+            |       &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-1&quot;&gt;Item 1&lt;/label&gt;&lt;/a&gt;
+            |     &lt;/li&gt;
+            |     &lt;li&gt;
+            |       &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-1&quot;&gt;Item 2&lt;/label&gt;&lt;/a&gt;
+            |     &lt;/li&gt;
+            |     &lt;li&gt;
+            |       &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-1&quot;&gt;Item 3&lt;/label&gt;&lt;/a&gt;
+            |     &lt;/li&gt;
+            |     &lt;li&gt;
+            |       &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-1&quot;&gt;Item 4&lt;/label&gt;&lt;/a&gt;
+            |     &lt;/li&gt;
+            |     &lt;li&gt;
+            |       &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-1&quot;&gt;Item 5&lt;/label&gt;&lt;/a&gt;
+            |     &lt;/li&gt;
+            |   &lt;/ul&gt;
+            | &lt;/div&gt;
+
+      article#dropdown-nested
+      h2 #[a(href='#dropdown-nested') Nested dropdown]
+      p There are two types of trigger icons (icons placed next to dropdown labels) - plus/minus sign or arrows. To use first one simply put #[code.html span.trigger] into #[code.html label] tag and to use second one add to the #[code.html span] tag #[code.html .arrow] class. Direction of arrow is related to position of menu.
+
+      nav
+        ul
+          li.dropdown.dropdown--blue.dropdown--out.dropdown--left
+            input(type='checkbox' name='dropdown-nested' id='dd-n-1')
+            label(for='dd-n-1') Dropdown Menu 1 #[span.trigger.arrow]
+            ul.dropdown__menu
+              - for (var i=0; i<3; i++)
+                li
+                  a(href='#')
+                    label(for='dd-n-1') Item #{i+1}
+              li.dropdown.dropdown--in
+                input(type='checkbox' name='dropdown-nested' id='dd-n-2')
+                label(for='dd-n-2') Item 4 #[span.trigger]
+                ul.dropdown__menu
+                  - for (var i=0; i<4; i++)
+                    li
+                      a(href='#')
+                        label(for='dd-n-1') Subitem #{i+1}
+              li
+                a(href='#')
+                  label(for='dd-n-1') Item 5
+          li.dropdown.dropdown--blue.dropdown--out.dropdown--down
+            input(type='checkbox' name='dropdown-nested' id='dd-n-3')
+            label(for='dd-n-3') Dropdown Menu 2 #[span.trigger.arrow]
+            ul.dropdown__menu
+              - for (var i=0; i<3; i++)
+                li
+                  a(href='#')
+                    label(for='dd-n-3') Item #{i + 1}
+              li.dropdown.dropdown--out.dropdown--right
+                input(type='checkbox' name='dropdown-nested' id='dd-n-4')
+                label(for='dd-n-4') Item 4 #[span.trigger.arrow]
+                ul.dropdown__menu
+                  li.dropdown.dropdown--out.dropdown--up
+                    input(type='checkbox' name='dropdown-nested' id='dd-n-5')
+                    label(for='dd-n-5') Subitem 1 #[span.trigger.arrow]
+                    ul.dropdown__menu
+                      - for (var i=0; i<3; i++)
+                        li
+                          a(href='#')
+                            label(for='dd-n-3') Subsubitem #{i + 1)
+                  - for (var i=1; i<4; i++)
+                    li
+                      a(href='#')
+                        label(for='dd-n-3') Subitem #{i + 1}
+              li
+                a(href='#')
+                  label(for='dd-n-3') Item 5
+
+      pre
+        code.html
+          | &lt;nav&gt;
+          |     &lt;ul&gt;
+          |&nbsp;
+          |         &lt;li class=&quot;dropdown dropdown--blue dropdown--out dropdown--left&quot;&gt;
+          |             &lt;input type=&quot;checkbox&quot; name=&quot;dropdown-nested&quot; id=&quot;dd-n-1&quot;&gt;
+          |             &lt;label for=&quot;dd-n-1&quot;&gt;Dropdown Menu 1 &lt;span class=&quot;trigger arrow&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+          |             &lt;ul class=&quot;dropdown__menu&quot;&gt;
+          |                 &lt;li&gt;
+          |                     &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Item 1&lt;/label&gt;&lt;/a&gt;
+          |                 &lt;/li&gt;
+          |                 &lt;li&gt;
+          |                     &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Item 2&lt;/label&gt;&lt;/a&gt;
+          |                 &lt;/li&gt;
+          |                 &lt;li&gt;
+          |                     &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Item 3&lt;/label&gt;&lt;/a&gt;
+          |                 &lt;/li&gt;
+          |                 &lt;li class=&quot;dropdown dropdown--in&quot;&gt;
+          |                     &lt;input type=&quot;checkbox&quot; name=&quot;dropdown-nested&quot; id=&quot;dd-n-2&quot;&gt;
+          |                     &lt;label for=&quot;dd-n-2&quot;&gt;Item 4 &lt;span class=&quot;trigger&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+          |                     &lt;ul class=&quot;dropdown__menu&quot;&gt;
+          |                         &lt;li&gt;
+          |                             &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Subitem 1&lt;/label&gt;&lt;/a&gt;
+          |                         &lt;/li&gt;
+          |                         &lt;li&gt;
+          |                             &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Subitem 2&lt;/label&gt;&lt;/a&gt;
+          |                         &lt;/li&gt;
+          |                         &lt;li&gt;
+          |                             &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Subitem 3&lt;/label&gt;&lt;/a&gt;
+          |                         &lt;/li&gt;
+          |                         &lt;li&gt;
+          |                             &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Subitem 4&lt;/label&gt;&lt;/a&gt;
+          |                         &lt;/li&gt;
+          |                     &lt;/ul&gt; &lt;!-- /nested .dropdown__menu --&gt;
+          |                 &lt;/li&gt; &lt;!-- /nested .dropdown --&gt;
+          |                 &lt;li&gt;
+          |                     &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Item 5&lt;/label&gt;&lt;/a&gt;
+          |                 &lt;/li&gt;
+          |             &lt;/ul&gt; &lt;!-- /.dropdown__menu --&gt;
+          |         &lt;/li&gt; &lt;!-- /.dropdown --&gt;
+          |&nbsp;
+          |         &lt;li class=&quot;dropdown dropdown--blue dropdown--out dropdown--down&quot;&gt;
+          |             &lt;input type=&quot;checkbox&quot; name=&quot;dropdown-nested&quot; id=&quot;dd-n-3&quot;&gt;
+          |             &lt;label for=&quot;dd-n-3&quot;&gt;Dropdown Menu 2 &lt;span class=&quot;trigger arrow&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+          |             &lt;ul class=&quot;dropdown__menu&quot;&gt;
+          |                 &lt;li&gt;
+          |                     &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Item 1&lt;/label&gt;&lt;/a&gt;
+          |                 &lt;/li&gt;
+          |                 &lt;li&gt;
+          |                     &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Item 2&lt;/label&gt;&lt;/a&gt;
+          |                 &lt;/li&gt;
+          |                 &lt;li&gt;
+          |                     &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Item 3&lt;/label&gt;&lt;/a&gt;
+          |                 &lt;/li&gt;
+          |                 &lt;li class=&quot;dropdown dropdown--out dropdown--right&quot;&gt;
+          |                     &lt;input type=&quot;checkbox&quot; name=&quot;dropdown-nested&quot; id=&quot;dd-n-4&quot;&gt;
+          |                     &lt;label for=&quot;dd-n-4&quot;&gt;Item 4 &lt;span class=&quot;trigger arrow&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+          |                     &lt;ul class=&quot;dropdown__menu&quot;&gt;
+          |                         &lt;li class=&quot;dropdown dropdown--out dropdown--up&quot;&gt;
+          |                             &lt;input type=&quot;checkbox&quot; name=&quot;dropdown-nested&quot; id=&quot;dd-n-5&quot;&gt;
+          |                             &lt;label for=&quot;dd-n-5&quot;&gt;Subitem 1 &lt;span class=&quot;trigger arrow&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+          |                             &lt;ul class=&quot;dropdown__menu&quot;&gt;
+          |                                 &lt;li&gt;
+          |                                     &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Subsubitem 1&lt;/label&gt;&lt;/a&gt;
+          |                                 &lt;/li&gt;
+          |                                 &lt;li&gt;
+          |                                     &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Subsubitem 2&lt;/label&gt;&lt;/a&gt;
+          |                                 &lt;/li&gt;
+          |                                 &lt;li&gt;
+          |                                     &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Subsubitem 3&lt;/label&gt;&lt;/a&gt;
+          |                                 &lt;/li&gt;
+          |                             &lt;/ul&gt; &lt;!-- /second nested .dropdown__menu --&gt;
+          |                         &lt;/li&gt; &lt;!-- /second nested .dropdown --&gt;
+          |                         &lt;li&gt;
+          |                             &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Subitem 2&lt;/label&gt;&lt;/a&gt;
+          |                         &lt;/li&gt;
+          |                         &lt;li&gt;
+          |                             &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Subitem 3&lt;/label&gt;&lt;/a&gt;
+          |                         &lt;/li&gt;
+          |                         &lt;li&gt;
+          |                             &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Subitem 4&lt;/label&gt;&lt;/a&gt;
+          |                         &lt;/li&gt;
+          |                     &lt;/ul&gt; &lt;!-- /first nested .dropdown__menu --&gt;
+          |                 &lt;/li&gt; &lt;!-- /first nested .dropdown --&gt;
+          |                 &lt;li&gt;
+          |                     &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Item 5&lt;/label&gt;&lt;/a&gt;
+          |                 &lt;/li&gt;
+          |             &lt;/ul&gt; &lt;!-- /first .dropdown__menu --&gt;
+          |         &lt;/li&gt;
+          |&nbsp;
+          |     &lt;/ul&gt;
+          | &lt;/nav&gt;
+
+
 
   article#modalbox
     h1 #[a(href='#modalbox') Modalbox]
@@ -141,10 +348,118 @@ block main
 
   article#slider
     h1 #[a(href='#slider') Slider]
+    p Also known as carousel or slideshow. This component can be a convenient way to display multiple images, videos, slides with text, etc. on website. #[strong Note:] If you do not want to have slider pills (navigation dots) or slider arrows in your page simply delete div #[code.html .slider__pills] or #[code.html .slider__arrows] with their content from this code snippet.
+    div
+      .row
+        .slider-width-opt.col-xs-4
+          h3 Width options
+          .input-group
+            input(type='radio' name='slider-width' data-class-name='--full-width')#slider-width-1
+            label(for='slider-width-1') Full width
+          .input-group
+            input(type='radio' name='slider-width' data-class-name='--fixed-width' checked)#slider-width-2
+            label(for='slider-width-2') Fixed width - default 80%
+        .slider-pills-position-opt.col-xs-4
+          h3 Pills position
+          .input-group
+            input(type='radio' name='slider-pills' data-class-name='bottom' checked)#slider-pills-1
+            label(for='slider-pills-1') Bottom
+          .input-group
+            input(type='radio' name='slider-pills' data-class-name='top')#slider-pills-2
+            label(for='slider-pills-2') Top
+          .input-group
+            input(type='radio' name='slider-pills' data-class-name='left')#slider-pills-3
+            label(for='slider-pills-3') Left
+          .input-group
+            input(type='radio' name='slider-pills' data-class-name='right')#slider-pills-4
+            label(for='slider-pills-4') Right
+        .slider-theme-opt.col-xs-4
+          h3 Theme
+          .input-group
+            input(type='checkbox' name='slider-theme' data-class-name='slider--blue' checked)#slider-theme
+            label(for='slider-theme') Theme
+
+      .slider.slider--fixed-width.slider--blue
+        each slide in site.data.slider
+          input(type=slide.input.type name=slide.input.name id=slide.input.id checked=slide.input.checked)
+        ul
+          each slide in site.data.slider
+            li
+              - if (slide.content.image)
+                img(src=slide.content.image)
+              .slide__content(class=slide.content.animated ? 'animated' : '')
+                - if (slide.content.heading)
+                  h2 #{slide.content.heading}
+                - if (slide.content.paragraph)
+                  p #{slide.content.paragraph}
+        .slider__pills.slider__pills--bottom
+          each slide in site.data.slider
+            label(for=slide.input.id) &bull;
+        .slider__arrows
+          each slide in site.data.slider
+            label(for=slide.input.id)
+              span
+          label(for='slide-1') #[span]
+          label(for='slide-4') #[span]
+
+      pre
+        code.html
+          | &lt;div class=&quot;slider slider--fixed-width slider--blue&quot;&gt;
+          |&nbsp;
+          |   &lt;input type=&quot;radio&quot; name=&quot;slider&quot; id=&quot;slide-1&quot; checked=&quot;&quot;&gt;
+          |   &lt;input type=&quot;radio&quot; name=&quot;slider&quot; id=&quot;slide-2&quot;&gt;
+          |   &lt;input type=&quot;radio&quot; name=&quot;slider&quot; id=&quot;slide-3&quot;&gt;
+          |   &lt;input type=&quot;radio&quot; name=&quot;slider&quot; id=&quot;slide-4&quot;&gt;
+          |&nbsp;
+          |   &lt;ul&gt;
+          |     &lt;li&gt;
+          |       &lt;img src=&quot;https://placekitten.com/800/600&quot;&gt;
+          |       &lt;div class=&quot;slide__content&quot;&gt;
+          |         &lt;h2&gt;slide #1&lt;/h2&gt;
+          |         &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, inventore, nisi! Accusantium ad aliquam beatae culpa dignissimos eligendi esse explicabo fugit laboriosam maxime modi nam nulla, obcaecati odit, provident vero!&lt;/p&gt;
+          |       &lt;/div&gt;
+          |     &lt;/li&gt; &lt;!-- /slide 1 --&gt;
+          |     &lt;li&gt;
+          |       &lt;img src=&quot;https://placekitten.com/850/600&quot;&gt;
+          |       &lt;div class=&quot;slide__content animated&quot;&gt;
+          |         &lt;h2&gt;slide #2&lt;/h2&gt;
+          |       &lt;/div&gt;
+          |     &lt;/li&gt; &lt;!-- /slide 2 --&gt;
+          |     &lt;li&gt;
+          |       &lt;img src=&quot;https://placekitten.com/900/600&quot;&gt;
+          |       &lt;div class=&quot;slide__content&quot;&gt;
+          |       &lt;/div&gt;
+          |     &lt;/li&gt; &lt;!-- /slide 3 --&gt;
+          |     &lt;li&gt;
+          |       &lt;div class=&quot;slide__content&quot;&gt;
+          |         &lt;h2&gt;slide #4&lt;/h2&gt;
+          |         &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab architecto assumenda dicta dolor eligendi eos esse, et eum ex hic illo inventore laboriosam maiores nisi quia sit unde voluptas voluptatem.&lt;/p&gt;
+          |       &lt;/div&gt;
+          |     &lt;/li&gt; &lt;!-- /slide 4 --&gt;
+          |   &lt;/ul&gt; &lt;!-- /slider images --&gt;
+          |&nbsp;
+          |   &lt;div class=&quot;slider__pills slider__pills--bottom&quot;&gt;
+          |     &lt;label for=&quot;slide-1&quot;&gt;&bull;&lt;/label&gt;
+          |     &lt;label for=&quot;slide-2&quot;&gt;&bull;&lt;/label&gt;
+          |     &lt;label for=&quot;slide-3&quot;&gt;&bull;&lt;/label&gt;
+          |     &lt;label for=&quot;slide-4&quot;&gt;&bull;&lt;/label&gt;
+          |   &lt;/div&gt; &lt;!-- /.slider__pills --&gt;
+          |&nbsp;
+          |   &lt;div class=&quot;slider__arrows&quot;&gt;
+          |     &lt;label for=&quot;slide-1&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;
+          |     &lt;label for=&quot;slide-2&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;
+          |     &lt;label for=&quot;slide-3&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;
+          |     &lt;label for=&quot;slide-4&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;
+          |     &lt;label for=&quot;slide-1&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;
+          |     &lt;label for=&quot;slide-4&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;
+          |   &lt;/div&gt; &lt;!-- /.slider__arrows --&gt;
+          |&nbsp;
+          | &lt;/div&gt; &lt;!-- /.slider --&gt;
+
 
   article#tabs
     h1 #[a(href='#tabs') Tabs]
-    p Like in #[a(href='#accordion') accordion], this component is used to show informations in limited amount of space. Instead of accordion, tabs shows data in form of table or bookmarks. #[strong Note:] Because of absolute positioning of each tab content it need to set to the tab__content class height property (default: 200px) and equivalent margin bottom for tabs container.
+    p Like in #[a(href='#accordion') accordion], this component is used to show informations in limited amount of space. Instead of accordion, tabs shows data in form of table or bookmarks. #[strong Note:] Because of absolute positioning of each tab content it need to set to the #[code.html .tab__content] class height property (default: 200px) and equivalent #[code.html margin-bottom] for tabs container.
     div
       .row
         .tabs-width-opt.col-xs-6
