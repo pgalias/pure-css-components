@@ -11,13 +11,13 @@ mixin menu(spec)
             span.sr-only Toggle navigation
             - for (var i=0; i<3; i++)
               span.icon-bar
-          a(href='/').navbar-brand P.C.C.
+          a(href=config.domain).navbar-brand P.C.C.
 
         .collapse.navbar-collapse.main-menu__collapse
           ul.nav.navbar-nav.navbar-right
             each link in site.data.menu
               li(class=link.name == title ? 'active' : '')
-                a(href=link.link) #{link.name}
+                a(href=(link.external ? link.link : config.domain + link.link)) #{link.name}
       else if spec.__class == 'side-menu'
 
       else if block

@@ -3,18 +3,18 @@ extends _layouts/base
 include _modules/header/header
 
 block config
-    - baseUrl = config.baseUrl || './'
-    - title = 'Home'
+  - baseUrl = config.baseUrl || './'
+  - title = 'Home'
 
 block header
-    +header({__class: 'main-header'})
+  +header({__class: 'main-header'})
 
 block content
-    section.main-content
-        .container
-            .row.features
-                each feature in site.data.features
-                    .col-xs-12.col-sm-6.col-md-3
-                        img(src='images/#{feature.icon}' alt='feature header')
-                        h3 #{feature.title}
-                        p #{feature.desc}
+  section.main-content
+    .container
+      .row.features
+        each feature in site.data.features
+          .col-xs-12.col-sm-6.col-md-3
+            img(src='images/#{feature.icon}' alt='feature header')
+            h3 #{feature.title}
+            p #{feature.desc}

@@ -1,16 +1,21 @@
 [{
   "name": "Home",
-  "link": "/pure-css-components"
+  "link": "pure-css-components/",
+  "external": false
 }, {
   "name": "Get Started",
-  "link": "pure-css-components/get-started"
+  "link": "get-started/",
+  "external": false
 }, {
   "name": "Components",
-  "link": "pure-css-components/components"
+  "link": "components/",
+  "external": false
 }, {
   "name": "Github",
-  "link": "https://github.com/pgalias/pure-css-components"
+  "link": "https://github.com/pgalias/pure-css-components",
+  "external": true
 }, {
   "name": "Author",
-  "link": "http://galias.com"
+  "link": "http://galias.com",
+  "external": true
 }]

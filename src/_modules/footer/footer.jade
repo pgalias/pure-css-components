@@ -13,7 +13,7 @@ mixin footer(spec)
           ul.inline
             each link in site.data.footer
               li
-                a(href=link.link) #{link.name}
+                a(href=(link.external ? link.link : config.domain + link.link)) #{link.name}
       else if block
         block
       else

@@ -1,13 +1,17 @@
 [{
   "name": "GitHub",
-  "link": "https://github.com/pgalias/pure-css-components"
+  "link": "https://github.com/pgalias/pure-css-components",
+  "external": true
 }, {
   "name": "Issues",
-  "link": "https://github.com/pgalias/pure-css-components/issues"
+  "link": "https://github.com/pgalias/pure-css-components/issues",
+  "external": true
 }, {
   "name": "Components",
-  "link": "pure-css-components/components"
+  "link": "components/",
+  "external": false
 }, {
   "name": "Get started",
-  "link": "pure-css-components/get-started"
+  "link": "get-started/",
+  "external": false
 }]
