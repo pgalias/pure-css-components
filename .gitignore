@@ -1,6 +1,7 @@
 node_modules
 *.log
 tmp
+build
 .grunt
 .DS_Store
 .idea/

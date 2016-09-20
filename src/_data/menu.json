@@ -1,12 +1,12 @@
 [{
   "name": "Home",
-  "link": "/"
+  "link": "/pure-css-components"
 }, {
   "name": "Get Started",
-  "link": "/get-started"
+  "link": "pure-css-components/get-started"
 }, {
   "name": "Components",
-  "link": "/components"
+  "link": "pure-css-components/components"
 }, {
   "name": "Github",
   "link": "https://github.com/pgalias/pure-css-components"

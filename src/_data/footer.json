@@ -6,8 +6,8 @@
   "link": "https://github.com/pgalias/pure-css-components/issues"
 }, {
   "name": "Components",
-  "link": "/components"
+  "link": "pure-css-components/components"
 }, {
   "name": "Get started",
-  "link": "/get-started"
+  "link": "pure-css-components/get-started"
 }]

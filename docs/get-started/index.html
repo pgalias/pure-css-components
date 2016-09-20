@@ -1,0 +1,159 @@
+<!DOCTYPE html><!--[if lt IE 9]>
+<html class='lt-ie9 no-js' lang='en'>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Documentation :: Get Started</title>
+  <meta name="description" content="A new Yeogurt application">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:700|Slabo+27px">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/mono-blue.min.css">
+</head>
+<body>
+  <!--[if lt IE 9]>
+  <p class='browsehappy'>You are using an <strong>outdated</strong> browser. Please <a href='http://browsehappy.com/'>upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+  <nav class="main-menu navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" data-toggle="collapse" data-target=".main-menu__collapse" aria-expanded="false" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button><a href="/" class="navbar-brand">P.C.C.</a>
+      </div>
+      <div class="collapse navbar-collapse main-menu__collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/pure-css-components">Home</a></li>
+          <li class="active"><a href="pure-css-components/get-started">Get Started</a></li>
+          <li><a href="pure-css-components/components">Components</a></li>
+          <li><a href="https://github.com/pgalias/pure-css-components">Github</a></li>
+          <li><a href="http://galias.com">Author</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section class="main-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-4">
+          <ul class="side-menu">
+            <li><a href="#download">Download</a></li>
+            <li><a href="#clone-repo">Clone repo</a></li>
+            <li><a href="#bower">Bower</a></li>
+            <li><a href="#npm">NPM</a></li>
+            <li><a href="#compiling-css">Compiling CSS</a></li>
+            <li><a href="#usage">Usage</a></li>
+            <li><a href="#creating-own-themes">Creating own themes</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-md-8">
+          <article id="download">
+            <h1><a href="#download">Download</a></h1>
+            <p>PCC (now in v2.0.0) can be downloaded in two different ways.</p>
+            <div class="row">
+              <div class="col-xs-12 col-sm-6">
+                <h3>Compiled</h3>
+                <p>Compiled and minified CSS file, ready for including and using in your project.</p><a href="#" class="btn btn-lg btn-blue-inverse">Download compiled</a>
+              </div>
+              <div class="col-xs-12 col-sm-6">
+                <h3>Source</h3>
+                <p>Source LESS code and Gulp file. Requires LESS compiler to compiling code and Gulp to running tasks.</p><a href="https://github.com/pgalias/pure-css-components/archive/v2.0.0.zip" class="btn btn-lg btn-blue-inverse">Download source</a>
+              </div>
+            </div>
+          </article>
+          <article id="clone-repo">
+            <h1><a href="#clone-repo">Clone Repo</a></h1>
+            <p>Use following command in terminal</p>
+            <pre><code class="bash">git clone https://github.com/pgalias/pure-css-components.git</code></pre>
+          </article>
+          <article id="bower">
+            <h1><a href="#bower">Bower</a></h1>
+            <p>You can also download PCC using <a href="https://bower.io/">Bower</a></p>
+            <pre><code class="bash">bower install pure.css.components</code></pre>
+          </article>
+          <article id="npm">
+            <h1><a href="#npm">NPM</a></h1>
+            <p>You can also download via <a href="https://www.npmjs.com/">NPM</a></p>
+            <pre><code class="bash">npm install pure.css.components --save</code></pre>
+          </article>
+          <article id="compiling-css">
+            <h1><a href="#compiling-css">Compiling CSS</a></h1>
+            <p>PCC uses <a href="http://gulpjs.com/">Gulp</a> for working and building library.</p>
+            <h2>Available Gulp commands</h2>
+            <ul>
+              <li>
+                <pre><code class="bash">gulp less:compile</code></pre>
+                <p>Generates CSS file with maps in css/ folder</p>
+              </li>
+              <li>
+                <pre><code class="bash">gulp less:watch</code></pre>
+                <p>Watches for any LESS file changes and regenerates it to CSS file</p>
+              </li>
+              <li>
+                <pre><code class="bash">gulp css:minify</code></pre>
+                <p>Minifies CSS file and save it with .min suffix</p>
+              </li>
+            </ul>
+          </article>
+          <article id="usage">
+            <h1><a href="#usage">Usage</a></h1>
+            <p>PCC provides three CSS files in dist. You can use it in your project in three various ways</p>
+            <ul>
+              <li>
+                <p>Simply include components.css file into your head section. It contains all components and their themes in one file</p>
+                <pre><code class="html">&lt;head&gt;
+  ...
+  &lt;link rel='stylesheet' href='path/to/components.min.css'&gt;
+&lt;/head&gt;</code></pre>
+              </li>
+              <li>
+                <p>Include separated components-alone.css with desired theme.css file into your head section.</p>
+                <pre><code class="html">&lt;head&gt;
+  ...
+  &lt;link rel='stylesheet' href='path/to/components-alone.min.css'&gt;
+  &lt;link rel='stylesheet' href='path/to/components-{name}.theme.min.css'&gt;
+&lt;/head&gt;</code></pre>
+                <p>where <code class="html">{name}</code> is name of theme</p>
+              </li>
+              <li>
+                <p>Include only components-alone.css file. It has only raw styles without margins, paddings, font sizes, etc.</p>
+                <pre><code class="html">&lt;head&gt;
+  ...
+  &lt;link rel='stylesheet' href='path/to/components-alone.min.css'&gt;
+&lt;/head&gt;</code></pre>
+              </li>
+            </ul>
+          </article>
+          <article id="creating-own-themes">
+            <h1><a href="#creating-own-themes">Creating own themes</a></h1>
+            <p>Coming soon</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="main-footer">
+    <div class="container">
+      <p class="copyright">Pure CSS Components designed and developed by <a href="http://galias.com">Paweł Galias</a></p>
+      <p><small>Code licensed <a href="https://github.com/pgalias/pure-css-components/blob/master/LICENCE.md">MIT</a>, docs created with <a href="https://github.com/larsonjj/generator-yeogurt">Yeoman Generator Yeogurt</a></small></p>
+      <p><small>If you spot any bugs or if you have any ideas how to improve this project don&apos;t hesitate to create new issue or open pull request</small></p>
+      <nav>
+        <ul class="inline">
+          <li><a href="https://github.com/pgalias/pure-css-components">GitHub</a></li>
+          <li><a href="https://github.com/pgalias/pure-css-components/issues">Issues</a></li>
+          <li><a href="pure-css-components/components">Components</a></li>
+          <li><a href="pure-css-components/get-started">Get started</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad()</script>
+</body></html>
