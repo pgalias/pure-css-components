@@ -1,23 +1,29 @@
-# Pure CSS Components
-Pack of pure css components:
+# [Pure CSS Components](http://pgalias.github.io/pure-css-components/)
+Pure CSS Components is simple, CSS library containing some components. Pure CSS. No JS! Created by [Paweł Galias](http://galias.com).
 
-1. Dropdown menu
-2. Accordion
-3. Modalbox
-4. Tabs
-5. Slider
+To get started, check out [documentation](http://pgalias.github.io/pure-css-components/)
 
-## There are two way to use
-1. Simpler
-Just simply add components.css file to your document
-2. Harder
-Use .less files to manipulate styles of components or use only those use need
+## Table of content
 
-See demo [here](http://codepen.io/pgalias/full/dYKrjb/)
+## Quick start
+Few quick start options available:
 
-See how it works [here](http://pawgalias.eu/article/Pure-CSS-Components)
+1. Clone repo: `git clone https://github.com/pgalias/pure-css-components`
 
-I used LESS mixins library - prefixer.less which you can get it there http://lessprefixer.com/
+2. Install with bower `bower install pure.css.components`
+
+3. Install with npm `npm install pure.css.components`
+
+Read [get started](http://pgalias.github.io/pure-css-components/get-started/) page for more informations
+
+## Documentation
+Documentation included in this repo in `docs` branch is created with [Yeoman Generator Yeogurt](https://github.com/larsonjj/generator-yeogurt) and hosted on Github Pages at address [http://pgalias.github.io/pure-css-components/](http://pgalias.github.io/pure-css-components/)
+
+## Bugs and requests
+Spotted bug or have a feature request? Please first search for opened and closed (issues)[https://github.com/pgalias/pure-css-components/issues]. If you don't find your problem or request then open new issue.
+
+## Changelog
+See [changelog](https://github.com/pgalias/pure-css-components/blob/master/CHANGELOG.md)
 
 ## License
 [MIT License](https://github.com/pgalias/pure-css-components/blob/master/LICENSE.md) - © Paweł Galias
