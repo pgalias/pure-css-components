@@ -18,3 +18,6 @@ See demo [here](http://codepen.io/pgalias/full/dYKrjb/)
 See how it works [here](http://pawgalias.eu/article/Pure-CSS-Components)
 
 I used LESS mixins library - prefixer.less which you can get it there http://lessprefixer.com/
+
+## Licence
+[MIT Licence](https://github.com/pgalias/pure-css-components/blob/master/LICENCE.md) - © Paweł Galias
