@@ -1,47 +1,38 @@
-// Main javascript entry point
-// Should handle bootstrapping/starting application
-
 'use strict';
 
 import {} from '../_modules/menu/menu';
+import onChange from './onchange';
 
 $(() => {
   $('.side-menu').FixedMenu().CurrentTarget();
 
-  function onChange(self, child, regexp, replace = '', checkbox = false) {
-    const txt = self.attr('data-class-name');
-    const selector = self.closest('article').find('pre').find(child);
-    const type = child === 'code' ? 'html' : 'text';
-    const code = selector[type]();
+  const check = 'input[type=checkbox]';
+  const radio = 'input[type=radio]';
+  const widthOpt = '-width-opt';
+  const themeOpt = '-theme-opt';
 
-    replace = checkbox === true
-        ? (code.match(regexp) ? code.replace(regexp, '') : `${code.substr(0,code.length-1)}${txt}"`)
-        : (replace || txt);
-
-    replace = checkbox !== true
-        ? code.replace(regexp, replace)
-        : replace;
-
-    selector[type](replace);
-  }
-
-  $('.acc-width-opt input[type=radio],.tabs-width-opt input[type=radio],.modalbox-width-opt input[type=radio],.slider-width-opt input[type=radio]').on('change', function() {
+  $(`.acc${widthOpt} ${radio},.tabs${widthOpt} ${radio},.modalbox${widthOpt} ${radio},.slider${widthOpt} ${radio},.ddm-position-opt ${radio}`).on('change', function() {
     const self = $(this);
 
-    const regexp = /(--full-width|--fixed-width|--wide-short|--wide|--full-size|--fixed-size)/g;
+    const regexp = /(--full-width|--fixed-width|--wide-short|--wide|--full-size|--fixed-size|--down|--up|--left|--right)/g;
     onChange(self, 'code', regexp);
 
-    self.closest('article').find('.accordion, .tabs, .slider').toggleClass((index, element) => {
-      let elementArray = element.split(' ');
-      return `${elementArray[0]}--full-width ${elementArray[0]}--fixed-width`
-    });
+    const article = self.closest('article');
 
-    self.closest('article').find('.modal__dialog')
+    article.find('.accordion, .tabs, .slider').toggleClass((index, element) => {
+      let elementArray = element.split(' ');
+      return `${elementArray[0]}--full-width ${elementArray[0]}--fixed-width`;
+    });
+    article.find('.modal__dialog')
         .removeClass('modal__dialog--full-size modal__dialog--fixed-size modal__dialog--wide modal__dialog--wide-short')
         .addClass(`modal__dialog${self.attr('data-class-name')}`);
+
+    article.find('.first-dd')
+        .removeClass('dropdown--down dropdown--up dropdown--left dropdown--right')
+        .addClass(`dropdown${self.attr('data-class-name')}`);
   });
 
-  $('.acc-type-opt input[type=radio]').on('change', function() {
+  $(`.acc-type-opt ${radio}`).on('change', function() {
     const self = $(this);
     const txt = self.attr('data-class-name');
     const regexp = /<span class="hljs-attr">type<\/span>=<span class="hljs-string">(["'])(?:(?=(\\?))\2.)*?\1<\/span>/;
@@ -52,7 +43,7 @@ $(() => {
     self.closest('article').find('.accordion :input').each((index, element) => $(element).attr('type', txt));
   });
 
-  $('.slider-pills-position-opt input[type=radio]').on('change', function() {
+  $(`.slider-pills-position-opt ${radio}`).on('change', function() {
     const self = $(this);
     const txt = self.attr('data-class-name');
     const regexp = /(bottom|top|left|right)/;
@@ -62,26 +53,15 @@ $(() => {
     self.closest('article').find('.slider__pills').removeClass('slider__pills--bottom slider__pills--top slider__pills--left slider__pills--right').addClass(`slider__pills--${txt}`);
   });
 
-  $('.acc-theme-opt input[type=checkbox], .tabs-theme-opt input[type=checkbox], .slider-theme-opt input[type=checkbox]').on('change', function() {
+  $(`.acc${themeOpt} ${check}, .tabs${themeOpt} ${check}, .slider${themeOpt} ${check}, .ddm${themeOpt} ${check}, .modalbox${themeOpt} ${check}`).on('change', function() {
     const self = $(this);
     const txt = self.attr('data-class-name');
-    const regexp = /(accordion--blue|tabs--blue|slider--blue)/;
+    const regexp = /(accordion--blue|tabs--blue|slider--blue|dropdown--blue|modal__dialog--blue)/;
+    const child = self.attr('name').match('modalbox') ? '.hljs-tag:eq(5) .hljs-string' : '.hljs-tag:first .hljs-string';
 
-    onChange(self, '.hljs-tag:first .hljs-string', regexp, '', true);
+    onChange(self, child, regexp, '', true);
 
-    self.closest('article').find('.accordion, .tabs, .slider').toggleClass((index, element) => {
-      let elementArray = element.split(' ');
-      return `${elementArray[0]}${txt.replace(elementArray[0], '')}`;
-    });
+    self.closest('article').find('.accordion, .tabs, .slider, .first-dd, .modal__dialog').toggleClass(txt);
   });
 
-  $('.modalbox-theme-opt input[type=checkbox]').on('change', function() {
-    const self = $(this);
-    const txt = self.attr('data-class-name');
-    const regexp = /modal__dialog--blue/;
-
-    onChange(self, '.hljs-tag:eq(5) .hljs-string', regexp, '', true);
-
-    self.closest('article').find('.modal__dialog').toggleClass(txt);
-  });
 });

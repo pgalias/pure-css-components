@@ -93,7 +93,7 @@
       }
 
       &.current {
-        a, label {
+        > a {
           color: $blue-darkest;
           font-weight: 600;
 
@@ -132,6 +132,14 @@
 
             font-weight: 600;
           }
+        }
+      }
+
+      & > ul {
+        margin-left: 10px;
+        li {
+          margin-bottom: 0;
+          padding-bottom: 0;
         }
       }
     }

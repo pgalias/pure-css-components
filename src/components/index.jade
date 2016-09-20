@@ -9,7 +9,12 @@ block side-menu
   ul.side-menu
     each position in site.data.components
       li
-        a(href='#{position.link}') #{position.name}
+        a(href=position.link) #{position.name}
+        - if (position.sub)
+          ul
+            each subposition in position.sub
+              li
+                a(href=subposition.link) #{subposition.name}
 
 block main
   article#accordion
@@ -110,7 +115,7 @@ block main
               input(type='checkbox' name='dd-themes' data-class-name='dropdown--blue' checked=true)#dd-themes-1
               label(for='dd-themes-1') Add theme
 
-        div.dropdown.dropdown--blue.dropdown--out.dropdown--down(style='width:30%')
+        div.dropdown.first-dd.dropdown--out.dropdown--down.dropdown--blue(style='width:30%')
           input(type='checkbox' name='dropdown' id='dd-1')
           label(for='dd-1') Dropdown Menu #[span.trigger.arrow]
           ul.dropdown__menu
@@ -121,7 +126,7 @@ block main
 
         pre
           code.html
-            | &lt;div class=&quot;dropdown dropdown--blue dropdown--out dropdown--down&quot;&gt;
+            | &lt;div class=&quot;dropdown dropdown--out dropdown--down dropdown--blue&quot;&gt;
             |   &lt;input type=&quot;checkbox&quot; name=&quot;dropdown&quot; id=&quot;dd-1&quot;&gt;
             |   &lt;label for=&quot;dd-1&quot;&gt;Dropdown Menu &lt;span class=&quot;trigger arrow&quot;&gt;&lt;/span&gt;&lt;/label&gt;
             |   &lt;ul class=&quot;dropdown__menu&quot;&gt;
@@ -144,151 +149,151 @@ block main
             | &lt;/div&gt;
 
       article#dropdown-nested
-      h2 #[a(href='#dropdown-nested') Nested dropdown]
-      p There are two types of trigger icons (icons placed next to dropdown labels) - plus/minus sign or arrows. To use first one simply put #[code.html span.trigger] into #[code.html label] tag and to use second one add to the #[code.html span] tag #[code.html .arrow] class. Direction of arrow is related to position of menu.
+        h2 #[a(href='#dropdown-nested') Nested dropdown]
+        p There are two types of trigger icons (icons placed next to dropdown labels) - plus/minus sign or arrows. To use first one simply put #[code.html span.trigger] into #[code.html label] tag and to use second one add to the #[code.html span] tag #[code.html .arrow] class. Direction of arrow is related to position of menu.
 
-      nav
-        ul
-          li.dropdown.dropdown--blue.dropdown--out.dropdown--left
-            input(type='checkbox' name='dropdown-nested' id='dd-n-1')
-            label(for='dd-n-1') Dropdown Menu 1 #[span.trigger.arrow]
-            ul.dropdown__menu
-              - for (var i=0; i<3; i++)
+        nav
+          ul
+            li.dropdown.dropdown--blue.dropdown--out.dropdown--left
+              input(type='checkbox' name='dropdown-nested' id='dd-n-1')
+              label(for='dd-n-1') Dropdown Menu 1 #[span.trigger.arrow]
+              ul.dropdown__menu
+                - for (var i=0; i<3; i++)
+                  li
+                    a(href='#')
+                      label(for='dd-n-1') Item #{i+1}
+                li.dropdown.dropdown--in
+                  input(type='checkbox' name='dropdown-nested' id='dd-n-2')
+                  label(for='dd-n-2') Item 4 #[span.trigger]
+                  ul.dropdown__menu
+                    - for (var i=0; i<4; i++)
+                      li
+                        a(href='#')
+                          label(for='dd-n-1') Subitem #{i+1}
                 li
                   a(href='#')
-                    label(for='dd-n-1') Item #{i+1}
-              li.dropdown.dropdown--in
-                input(type='checkbox' name='dropdown-nested' id='dd-n-2')
-                label(for='dd-n-2') Item 4 #[span.trigger]
-                ul.dropdown__menu
-                  - for (var i=0; i<4; i++)
-                    li
-                      a(href='#')
-                        label(for='dd-n-1') Subitem #{i+1}
-              li
-                a(href='#')
-                  label(for='dd-n-1') Item 5
-          li.dropdown.dropdown--blue.dropdown--out.dropdown--down
-            input(type='checkbox' name='dropdown-nested' id='dd-n-3')
-            label(for='dd-n-3') Dropdown Menu 2 #[span.trigger.arrow]
-            ul.dropdown__menu
-              - for (var i=0; i<3; i++)
+                    label(for='dd-n-1') Item 5
+            li.dropdown.dropdown--blue.dropdown--out.dropdown--down
+              input(type='checkbox' name='dropdown-nested' id='dd-n-3')
+              label(for='dd-n-3') Dropdown Menu 2 #[span.trigger.arrow]
+              ul.dropdown__menu
+                - for (var i=0; i<3; i++)
+                  li
+                    a(href='#')
+                      label(for='dd-n-3') Item #{i + 1}
+                li.dropdown.dropdown--out.dropdown--right
+                  input(type='checkbox' name='dropdown-nested' id='dd-n-4')
+                  label(for='dd-n-4') Item 4 #[span.trigger.arrow]
+                  ul.dropdown__menu
+                    li.dropdown.dropdown--out.dropdown--up
+                      input(type='checkbox' name='dropdown-nested' id='dd-n-5')
+                      label(for='dd-n-5') Subitem 1 #[span.trigger.arrow]
+                      ul.dropdown__menu
+                        - for (var i=0; i<3; i++)
+                          li
+                            a(href='#')
+                              label(for='dd-n-3') Subsubitem #{i + 1)
+                    - for (var i=1; i<4; i++)
+                      li
+                        a(href='#')
+                          label(for='dd-n-3') Subitem #{i + 1}
                 li
                   a(href='#')
-                    label(for='dd-n-3') Item #{i + 1}
-              li.dropdown.dropdown--out.dropdown--right
-                input(type='checkbox' name='dropdown-nested' id='dd-n-4')
-                label(for='dd-n-4') Item 4 #[span.trigger.arrow]
-                ul.dropdown__menu
-                  li.dropdown.dropdown--out.dropdown--up
-                    input(type='checkbox' name='dropdown-nested' id='dd-n-5')
-                    label(for='dd-n-5') Subitem 1 #[span.trigger.arrow]
-                    ul.dropdown__menu
-                      - for (var i=0; i<3; i++)
-                        li
-                          a(href='#')
-                            label(for='dd-n-3') Subsubitem #{i + 1)
-                  - for (var i=1; i<4; i++)
-                    li
-                      a(href='#')
-                        label(for='dd-n-3') Subitem #{i + 1}
-              li
-                a(href='#')
-                  label(for='dd-n-3') Item 5
+                    label(for='dd-n-3') Item 5
 
-      pre
-        code.html
-          | &lt;nav&gt;
-          |     &lt;ul&gt;
-          |&nbsp;
-          |         &lt;li class=&quot;dropdown dropdown--blue dropdown--out dropdown--left&quot;&gt;
-          |             &lt;input type=&quot;checkbox&quot; name=&quot;dropdown-nested&quot; id=&quot;dd-n-1&quot;&gt;
-          |             &lt;label for=&quot;dd-n-1&quot;&gt;Dropdown Menu 1 &lt;span class=&quot;trigger arrow&quot;&gt;&lt;/span&gt;&lt;/label&gt;
-          |             &lt;ul class=&quot;dropdown__menu&quot;&gt;
-          |                 &lt;li&gt;
-          |                     &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Item 1&lt;/label&gt;&lt;/a&gt;
-          |                 &lt;/li&gt;
-          |                 &lt;li&gt;
-          |                     &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Item 2&lt;/label&gt;&lt;/a&gt;
-          |                 &lt;/li&gt;
-          |                 &lt;li&gt;
-          |                     &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Item 3&lt;/label&gt;&lt;/a&gt;
-          |                 &lt;/li&gt;
-          |                 &lt;li class=&quot;dropdown dropdown--in&quot;&gt;
-          |                     &lt;input type=&quot;checkbox&quot; name=&quot;dropdown-nested&quot; id=&quot;dd-n-2&quot;&gt;
-          |                     &lt;label for=&quot;dd-n-2&quot;&gt;Item 4 &lt;span class=&quot;trigger&quot;&gt;&lt;/span&gt;&lt;/label&gt;
-          |                     &lt;ul class=&quot;dropdown__menu&quot;&gt;
-          |                         &lt;li&gt;
-          |                             &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Subitem 1&lt;/label&gt;&lt;/a&gt;
-          |                         &lt;/li&gt;
-          |                         &lt;li&gt;
-          |                             &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Subitem 2&lt;/label&gt;&lt;/a&gt;
-          |                         &lt;/li&gt;
-          |                         &lt;li&gt;
-          |                             &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Subitem 3&lt;/label&gt;&lt;/a&gt;
-          |                         &lt;/li&gt;
-          |                         &lt;li&gt;
-          |                             &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Subitem 4&lt;/label&gt;&lt;/a&gt;
-          |                         &lt;/li&gt;
-          |                     &lt;/ul&gt; &lt;!-- /nested .dropdown__menu --&gt;
-          |                 &lt;/li&gt; &lt;!-- /nested .dropdown --&gt;
-          |                 &lt;li&gt;
-          |                     &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Item 5&lt;/label&gt;&lt;/a&gt;
-          |                 &lt;/li&gt;
-          |             &lt;/ul&gt; &lt;!-- /.dropdown__menu --&gt;
-          |         &lt;/li&gt; &lt;!-- /.dropdown --&gt;
-          |&nbsp;
-          |         &lt;li class=&quot;dropdown dropdown--blue dropdown--out dropdown--down&quot;&gt;
-          |             &lt;input type=&quot;checkbox&quot; name=&quot;dropdown-nested&quot; id=&quot;dd-n-3&quot;&gt;
-          |             &lt;label for=&quot;dd-n-3&quot;&gt;Dropdown Menu 2 &lt;span class=&quot;trigger arrow&quot;&gt;&lt;/span&gt;&lt;/label&gt;
-          |             &lt;ul class=&quot;dropdown__menu&quot;&gt;
-          |                 &lt;li&gt;
-          |                     &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Item 1&lt;/label&gt;&lt;/a&gt;
-          |                 &lt;/li&gt;
-          |                 &lt;li&gt;
-          |                     &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Item 2&lt;/label&gt;&lt;/a&gt;
-          |                 &lt;/li&gt;
-          |                 &lt;li&gt;
-          |                     &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Item 3&lt;/label&gt;&lt;/a&gt;
-          |                 &lt;/li&gt;
-          |                 &lt;li class=&quot;dropdown dropdown--out dropdown--right&quot;&gt;
-          |                     &lt;input type=&quot;checkbox&quot; name=&quot;dropdown-nested&quot; id=&quot;dd-n-4&quot;&gt;
-          |                     &lt;label for=&quot;dd-n-4&quot;&gt;Item 4 &lt;span class=&quot;trigger arrow&quot;&gt;&lt;/span&gt;&lt;/label&gt;
-          |                     &lt;ul class=&quot;dropdown__menu&quot;&gt;
-          |                         &lt;li class=&quot;dropdown dropdown--out dropdown--up&quot;&gt;
-          |                             &lt;input type=&quot;checkbox&quot; name=&quot;dropdown-nested&quot; id=&quot;dd-n-5&quot;&gt;
-          |                             &lt;label for=&quot;dd-n-5&quot;&gt;Subitem 1 &lt;span class=&quot;trigger arrow&quot;&gt;&lt;/span&gt;&lt;/label&gt;
-          |                             &lt;ul class=&quot;dropdown__menu&quot;&gt;
-          |                                 &lt;li&gt;
-          |                                     &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Subsubitem 1&lt;/label&gt;&lt;/a&gt;
-          |                                 &lt;/li&gt;
-          |                                 &lt;li&gt;
-          |                                     &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Subsubitem 2&lt;/label&gt;&lt;/a&gt;
-          |                                 &lt;/li&gt;
-          |                                 &lt;li&gt;
-          |                                     &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Subsubitem 3&lt;/label&gt;&lt;/a&gt;
-          |                                 &lt;/li&gt;
-          |                             &lt;/ul&gt; &lt;!-- /second nested .dropdown__menu --&gt;
-          |                         &lt;/li&gt; &lt;!-- /second nested .dropdown --&gt;
-          |                         &lt;li&gt;
-          |                             &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Subitem 2&lt;/label&gt;&lt;/a&gt;
-          |                         &lt;/li&gt;
-          |                         &lt;li&gt;
-          |                             &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Subitem 3&lt;/label&gt;&lt;/a&gt;
-          |                         &lt;/li&gt;
-          |                         &lt;li&gt;
-          |                             &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Subitem 4&lt;/label&gt;&lt;/a&gt;
-          |                         &lt;/li&gt;
-          |                     &lt;/ul&gt; &lt;!-- /first nested .dropdown__menu --&gt;
-          |                 &lt;/li&gt; &lt;!-- /first nested .dropdown --&gt;
-          |                 &lt;li&gt;
-          |                     &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Item 5&lt;/label&gt;&lt;/a&gt;
-          |                 &lt;/li&gt;
-          |             &lt;/ul&gt; &lt;!-- /first .dropdown__menu --&gt;
-          |         &lt;/li&gt;
-          |&nbsp;
-          |     &lt;/ul&gt;
-          | &lt;/nav&gt;
+        pre
+          code.html
+            | &lt;nav&gt;
+            |   &lt;ul&gt;
+            |&nbsp;
+            |     &lt;li class=&quot;dropdown dropdown--blue dropdown--out dropdown--left&quot;&gt;
+            |       &lt;input type=&quot;checkbox&quot; name=&quot;dropdown-nested&quot; id=&quot;dd-n-1&quot;&gt;
+            |       &lt;label for=&quot;dd-n-1&quot;&gt;Dropdown Menu 1 &lt;span class=&quot;trigger arrow&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+            |       &lt;ul class=&quot;dropdown__menu&quot;&gt;
+            |         &lt;li&gt;
+            |           &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Item 1&lt;/label&gt;&lt;/a&gt;
+            |         &lt;/li&gt;
+            |         &lt;li&gt;
+            |           &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Item 2&lt;/label&gt;&lt;/a&gt;
+            |         &lt;/li&gt;
+            |         &lt;li&gt;
+            |           &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Item 3&lt;/label&gt;&lt;/a&gt;
+            |         &lt;/li&gt;
+            |         &lt;li class=&quot;dropdown dropdown--in&quot;&gt;
+            |           &lt;input type=&quot;checkbox&quot; name=&quot;dropdown-nested&quot; id=&quot;dd-n-2&quot;&gt;
+            |           &lt;label for=&quot;dd-n-2&quot;&gt;Item 4 &lt;span class=&quot;trigger&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+            |           &lt;ul class=&quot;dropdown__menu&quot;&gt;
+            |             &lt;li&gt;
+            |               &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Subitem 1&lt;/label&gt;&lt;/a&gt;
+            |             &lt;/li&gt;
+            |             &lt;li&gt;
+            |               &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Subitem 2&lt;/label&gt;&lt;/a&gt;
+            |             &lt;/li&gt;
+            |             &lt;li&gt;
+            |               &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Subitem 3&lt;/label&gt;&lt;/a&gt;
+            |             &lt;/li&gt;
+            |             &lt;li&gt;
+            |               &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Subitem 4&lt;/label&gt;&lt;/a&gt;
+            |             &lt;/li&gt;
+            |           &lt;/ul&gt; &lt;!-- /nested .dropdown__menu --&gt;
+            |         &lt;/li&gt; &lt;!-- /nested .dropdown --&gt;
+            |         &lt;li&gt;
+            |           &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Item 5&lt;/label&gt;&lt;/a&gt;
+            |         &lt;/li&gt;
+            |       &lt;/ul&gt; &lt;!-- /.dropdown__menu --&gt;
+            |     &lt;/li&gt; &lt;!-- /.dropdown --&gt;
+            |&nbsp;
+            |     &lt;li class=&quot;dropdown dropdown--blue dropdown--out dropdown--down&quot;&gt;
+            |       &lt;input type=&quot;checkbox&quot; name=&quot;dropdown-nested&quot; id=&quot;dd-n-3&quot;&gt;
+            |       &lt;label for=&quot;dd-n-3&quot;&gt;Dropdown Menu 2 &lt;span class=&quot;trigger arrow&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+            |       &lt;ul class=&quot;dropdown__menu&quot;&gt;
+            |         &lt;li&gt;
+            |           &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Item 1&lt;/label&gt;&lt;/a&gt;
+            |         &lt;/li&gt;
+            |         &lt;li&gt;
+            |           &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Item 2&lt;/label&gt;&lt;/a&gt;
+            |         &lt;/li&gt;
+            |         &lt;li&gt;
+            |           &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Item 3&lt;/label&gt;&lt;/a&gt;
+            |         &lt;/li&gt;
+            |         &lt;li class=&quot;dropdown dropdown--out dropdown--right&quot;&gt;
+            |           &lt;input type=&quot;checkbox&quot; name=&quot;dropdown-nested&quot; id=&quot;dd-n-4&quot;&gt;
+            |           &lt;label for=&quot;dd-n-4&quot;&gt;Item 4 &lt;span class=&quot;trigger arrow&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+            |           &lt;ul class=&quot;dropdown__menu&quot;&gt;
+            |             &lt;li class=&quot;dropdown dropdown--out dropdown--up&quot;&gt;
+            |               &lt;input type=&quot;checkbox&quot; name=&quot;dropdown-nested&quot; id=&quot;dd-n-5&quot;&gt;
+            |               &lt;label for=&quot;dd-n-5&quot;&gt;Subitem 1 &lt;span class=&quot;trigger arrow&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+            |               &lt;ul class=&quot;dropdown__menu&quot;&gt;
+            |                 &lt;li&gt;
+            |                   &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Subsubitem 1&lt;/label&gt;&lt;/a&gt;
+            |                 &lt;/li&gt;
+            |                 &lt;li&gt;
+            |                   &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Subsubitem 2&lt;/label&gt;&lt;/a&gt;
+            |                 &lt;/li&gt;
+            |                 &lt;li&gt;
+            |                   &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Subsubitem 3&lt;/label&gt;&lt;/a&gt;
+            |                 &lt;/li&gt;
+            |               &lt;/ul&gt; &lt;!-- /second nested .dropdown__menu --&gt;
+            |             &lt;/li&gt; &lt;!-- /second nested .dropdown --&gt;
+            |             &lt;li&gt;
+            |               &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Subitem 2&lt;/label&gt;&lt;/a&gt;
+            |             &lt;/li&gt;
+            |             &lt;li&gt;
+            |               &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Subitem 3&lt;/label&gt;&lt;/a&gt;
+            |             &lt;/li&gt;
+            |             &lt;li&gt;
+            |               &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Subitem 4&lt;/label&gt;&lt;/a&gt;
+            |             &lt;/li&gt;
+            |           &lt;/ul&gt; &lt;!-- /first nested .dropdown__menu --&gt;
+            |         &lt;/li&gt; &lt;!-- /first nested .dropdown --&gt;
+            |         &lt;li&gt;
+            |           &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Item 5&lt;/label&gt;&lt;/a&gt;
+            |         &lt;/li&gt;
+            |       &lt;/ul&gt; &lt;!-- /first .dropdown__menu --&gt;
+            |     &lt;/li&gt;
+            |&nbsp;
+            |   &lt;/ul&gt;
+            | &lt;/nav&gt;
 
 
 

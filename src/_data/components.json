@@ -3,7 +3,14 @@
   "link": "#accordion"
 }, {
   "name": "Dropdown",
-  "link": "#dropdown"
+  "link": "#dropdown",
+  "sub": [{
+    "name": "Simple Dropdown",
+    "link": "#dropdown-simple"
+  }, {
+    "name": "Nested Dropdown",
+    "link": "#dropdown-nested"
+  }]
 }, {
   "name": "Modalbox",
   "link": "#modalbox"
