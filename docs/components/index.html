@@ -1,0 +1,719 @@
+<!DOCTYPE html><!--[if lt IE 9]>
+<html class='lt-ie9 no-js' lang='en'>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Documentation :: Components</title>
+  <meta name="description" content="A new Yeogurt application">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:700|Slabo+27px">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/mono-blue.min.css">
+</head>
+<body>
+  <!--[if lt IE 9]>
+  <p class='browsehappy'>You are using an <strong>outdated</strong> browser. Please <a href='http://browsehappy.com/'>upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+  <nav class="main-menu navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" data-toggle="collapse" data-target=".main-menu__collapse" aria-expanded="false" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button><a href="/" class="navbar-brand">P.C.C.</a>
+      </div>
+      <div class="collapse navbar-collapse main-menu__collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/">Home</a></li>
+          <li><a href="/get-started">Get Started</a></li>
+          <li class="active"><a href="/components">Components</a></li>
+          <li><a href="https://github.com/pgalias/pure-css-components">Github</a></li>
+          <li><a href="http://galias.com">Author</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section class="main-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-4">
+          <ul class="side-menu">
+            <li><a href="#accordion">Accordion</a>
+            </li>
+            <li><a href="#dropdown">Dropdown</a>
+              <ul>
+                <li><a href="#dropdown-simple">Simple Dropdown</a></li>
+                <li><a href="#dropdown-nested">Nested Dropdown</a></li>
+              </ul>
+            </li>
+            <li><a href="#modalbox">Modalbox</a>
+            </li>
+            <li><a href="#slider">Slider</a>
+            </li>
+            <li><a href="#tabs">Tabs</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-md-8">
+          <article id="accordion">
+            <h1><a href="#accordion">Accordion</a></h1>
+            <p>The word "accordion" may be imagined as a musical instrument of your favorite band, but in web design/developing accordion is a collapsible component for presenting information in limited space. On start user see only headers but when he click on one of them it will expand its content like the musical instrument. It might be used with menus, widgets, contents areas, etc.</p>
+            <div>
+              <div class="row">
+                <div class="acc-width-opt col-xs-4">
+                  <h3>Width options</h3>
+                  <div class="input-group">
+                    <input type="radio" name="acc-width" data-class-name="--full-width" checked id="acc-width-1">
+                    <label for="acc-width-1">Full width</label>
+                  </div>
+                  <div class="input-group">
+                    <input type="radio" name="acc-width" data-class-name="--fixed-width" id="acc-width-2">
+                    <label for="acc-width-2">Fixed width - default: 60%</label>
+                  </div>
+                </div>
+                <div class="acc-type-opt col-xs-4">
+                  <h3>One/multi collapsing</h3>
+                  <div class="input-group">
+                    <input type="radio" name="acc-type" data-class-name="radio" checked id="acc-type-1">
+                    <label for="acc-type-1">One</label>
+                  </div>
+                  <div class="input-group">
+                    <input type="radio" name="acc-type" data-class-name="checkbox" id="acc-type-2">
+                    <label for="acc-type-2">Multiple</label>
+                  </div>
+                </div>
+                <div class="acc-theme-opt col-xs-4">
+                  <h3>Themes</h3>
+                  <div class="input-group">
+                    <input type="checkbox" name="acc-themes" data-class-name="accordion--blue" checked id="acc-themes-1">
+                    <label for="acc-themes-1">Add theme</label>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion accordion--full-width accordion--blue">
+                <div class="accordion__object">
+                  <input type="radio" name="accordion" id="acc-1" checked>
+                  <label for="acc-1" class="accordion__header">Accordion #1</label>
+                  <div class="accordion__content">
+                    <h2>Accordion #1</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, amet, architecto consequuntur culpa eius eligendi est et eveniet ipsam laudantium minima modi nobis quam, quisquam repudiandae sunt veniam! Ad, molestias!</p>
+                  </div>
+                </div>
+                <div class="accordion__object">
+                  <input type="radio" name="accordion" id="acc-2">
+                  <label for="acc-2" class="accordion__header">Accordion #2</label>
+                  <div class="accordion__content">
+                    <h2>Accordion #2</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, inventore, nisi! Accusantium ad aliquam beatae culpa dignissimos eligendi esse explicabo fugit laboriosam maxime modi nam nulla, obcaecati odit, provident vero!</p>
+                  </div>
+                </div>
+                <div class="accordion__object">
+                  <input type="radio" name="accordion" id="acc-3">
+                  <label for="acc-3" class="accordion__header">Accordion #3</label>
+                  <div class="accordion__content">
+                    <h2>Accordion #3</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis non, nostrum obcaecati quos suscipit temporibus ut! Animi, blanditiis culpa ducimus et fuga illo illum pariatur quam, quo rerum sunt, totam.</p>
+                  </div>
+                </div>
+              </div>
+              <pre><code class="html">&lt;div class=&quot;accordion accordion--full-width accordion--blue&quot;&gt;
+&nbsp;
+  &lt;div class=&quot;accordion__object&quot;&gt;
+    &lt;input type=&quot;radio&quot; id=&quot;acc1&quot; name=&quot;accordion&quot;&gt;
+    &lt;label for=&quot;acc1&quot; class=&quot;accordion__header&quot;&gt;Accordion #1&lt;/label&gt;
+    &lt;div class=&quot;accordion__content&quot;&gt;
+      &lt;h2&gt;Accordion 1&lt;/h2&gt;
+      &lt;p&gtLorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis distinctio doloremque magni quod repudiandae, voluptas voluptates. Atque delectus dignissimos dolores, esse eum ipsa maxime minima officia qui repellat ullam voluptate!&lt;/p&gt;
+    &lt;/div&gt; &lt;!-- /.accordion__content --&gt;
+  &lt;/div&gt; &lt;!-- /.accordion__object --&gt;
+&nbsp;
+  &lt;div class=&quot;accordion__object&quot;&gt;
+    &lt;input type=&quot;radio&quot; id=&quot;acc2&quot; name=&quot;accordion&quot;&gt;
+    &lt;label for=&quot;acc2&quot; class=&quot;accordion__header&quot;&gt;Accordion #2&lt;/label&gt;
+    &lt;div class=&quot;accordion__content&quot;&gt;
+      &lt;h2&gt;Accordion 2&lt;/h2&gt;
+      &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, commodi deleniti dolor doloremque eaque fugit iste nobis reprehenderit sint veritatis vitae voluptates! Accusantium consequuntur error hic labore provident ut voluptas?&lt;/p&gt;
+    &lt;/div&gt; &lt;!-- /.accordion__content --&gt;
+  &lt;/div&gt; &lt;!-- /.accordion__object --&gt;
+&nbsp;
+  &lt;div class=&quot;accordion__object&quot;&gt;
+    &lt;input type=&quot;radio&quot; id=&quot;acc2&quot; name=&quot;accordion&quot;&gt;
+    &lt;label for=&quot;acc2&quot; class=&quot;accordion__header&quot;&gt;Accordion #3&lt;/label&gt;
+    &lt;div class=&quot;accordion__content&quot;&gt;
+      &lt;h2&gt;Accordion 3&lt;/h2&gt;
+      &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex labore libero officiis soluta? Animi architecto blanditiis commodi consequatur, distinctio ipsum repellendus tempora! A aperiam eius facere in libero nemo, officiis?&lt;/p&gt;
+    &lt;/div&gt; &lt;!-- /.accordion__content --&gt;
+  &lt;/div&gt; &lt;!-- /.accordion__object --&gt;
+&nbsp;
+&lt;/div&gt; &lt;!-- /.accordion --&gt;</code></pre>
+            </div>
+          </article>
+          <article id="dropdown">
+            <h1><a href="#dropdown">Dropdown</a></h1>
+            <p>Dropdown is a list of items that appears when user click on.</p>
+            <div>
+              <article id="dropdown-simple">
+                <h2><a href="#dropdown-simple">Simple dropdown</a></h2>
+                <p>There are two basic classes: <code class="html">.dropdown--out</code> and <code class="html">.dropdown--in</code>. The first one has absolutely positioned content and second one has content inside menu so when dropdown is clicked then content below will slide down to make place. Moreover the first one can have one of four additional class: <code class="html">.dropdown--down</code> <code class="html">.dropdown--up</code> <code class="html">.dropdown--left</code> <code class="html">.dropdown--right</code>. It determines on which side of container content will appear.</p>
+                <div class="row">
+                  <div class="ddm-position-opt col-xs-6">
+                    <h3>Content position</h3>
+                    <div class="input-group">
+                      <input type="radio" name="dd-pos" data-class-name="--down" checked id="dd-pos-1">
+                      <label for="dd-pos-1">Down</label>
+                    </div>
+                    <div class="input-group">
+                      <input type="radio" name="dd-pos" data-class-name="--up" id="dd-pos-2">
+                      <label for="dd-pos-2">Up</label>
+                    </div>
+                    <div class="input-group">
+                      <input type="radio" name="dd-pos" data-class-name="--left" id="dd-pos-3">
+                      <label for="dd-pos-3">Left</label>
+                    </div>
+                    <div class="input-group">
+                      <input type="radio" name="dd-pos" data-class-name="--right" id="dd-pos-4">
+                      <label for="dd-pos-4">Right</label>
+                    </div>
+                  </div>
+                  <div class="ddm-theme-opt col-xs-6">
+                    <h3>Themes</h3>
+                    <div class="input-group">
+                      <input type="checkbox" name="dd-themes" data-class-name="dropdown--blue" checked id="dd-themes-1">
+                      <label for="dd-themes-1">Add theme</label>
+                    </div>
+                  </div>
+                </div>
+                <div style="width:30%" class="dropdown first-dd dropdown--out dropdown--down dropdown--blue">
+                  <input type="checkbox" name="dropdown" id="dd-1">
+                  <label for="dd-1">Dropdown Menu <span class="trigger arrow"></span></label>
+                  <ul class="dropdown__menu">
+                    <li><a href="#">
+                        <label for="dd-1">Item 1</label></a></li>
+                    <li><a href="#">
+                        <label for="dd-1">Item 2</label></a></li>
+                    <li><a href="#">
+                        <label for="dd-1">Item 3</label></a></li>
+                    <li><a href="#">
+                        <label for="dd-1">Item 4</label></a></li>
+                    <li><a href="#">
+                        <label for="dd-1">Item 5</label></a></li>
+                  </ul>
+                </div>
+                <pre><code class="html">&lt;div class=&quot;dropdown dropdown--out dropdown--down dropdown--blue&quot;&gt;
+  &lt;input type=&quot;checkbox&quot; name=&quot;dropdown&quot; id=&quot;dd-1&quot;&gt;
+  &lt;label for=&quot;dd-1&quot;&gt;Dropdown Menu &lt;span class=&quot;trigger arrow&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+  &lt;ul class=&quot;dropdown__menu&quot;&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-1&quot;&gt;Item 1&lt;/label&gt;&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-1&quot;&gt;Item 2&lt;/label&gt;&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-1&quot;&gt;Item 3&lt;/label&gt;&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-1&quot;&gt;Item 4&lt;/label&gt;&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-1&quot;&gt;Item 5&lt;/label&gt;&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+              </article>
+              <article id="dropdown-nested">
+                <h2><a href="#dropdown-nested">Nested dropdown</a></h2>
+                <p>There are two types of trigger icons (icons placed next to dropdown labels) - plus/minus sign or arrows. To use first one simply put <code class="html">span.trigger</code> into <code class="html">label</code> tag and to use second one add to the <code class="html">span</code> tag <code class="html">.arrow</code> class. Direction of arrow is related to position of menu.</p>
+                <nav>
+                  <ul>
+                    <li class="dropdown dropdown--blue dropdown--out dropdown--left">
+                      <input type="checkbox" name="dropdown-nested" id="dd-n-1">
+                      <label for="dd-n-1">Dropdown Menu 1 <span class="trigger arrow"></span></label>
+                      <ul class="dropdown__menu">
+                        <li><a href="#">
+                            <label for="dd-n-1">Item 1</label></a></li>
+                        <li><a href="#">
+                            <label for="dd-n-1">Item 2</label></a></li>
+                        <li><a href="#">
+                            <label for="dd-n-1">Item 3</label></a></li>
+                        <li class="dropdown dropdown--in">
+                          <input type="checkbox" name="dropdown-nested" id="dd-n-2">
+                          <label for="dd-n-2">Item 4 <span class="trigger"></span></label>
+                          <ul class="dropdown__menu">
+                            <li><a href="#">
+                                <label for="dd-n-1">Subitem 1</label></a></li>
+                            <li><a href="#">
+                                <label for="dd-n-1">Subitem 2</label></a></li>
+                            <li><a href="#">
+                                <label for="dd-n-1">Subitem 3</label></a></li>
+                            <li><a href="#">
+                                <label for="dd-n-1">Subitem 4</label></a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">
+                            <label for="dd-n-1">Item 5</label></a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown dropdown--blue dropdown--out dropdown--down">
+                      <input type="checkbox" name="dropdown-nested" id="dd-n-3">
+                      <label for="dd-n-3">Dropdown Menu 2 <span class="trigger arrow"></span></label>
+                      <ul class="dropdown__menu">
+                        <li><a href="#">
+                            <label for="dd-n-3">Item 1</label></a></li>
+                        <li><a href="#">
+                            <label for="dd-n-3">Item 2</label></a></li>
+                        <li><a href="#">
+                            <label for="dd-n-3">Item 3</label></a></li>
+                        <li class="dropdown dropdown--out dropdown--right">
+                          <input type="checkbox" name="dropdown-nested" id="dd-n-4">
+                          <label for="dd-n-4">Item 4 <span class="trigger arrow"></span></label>
+                          <ul class="dropdown__menu">
+                            <li class="dropdown dropdown--out dropdown--up">
+                              <input type="checkbox" name="dropdown-nested" id="dd-n-5">
+                              <label for="dd-n-5">Subitem 1 <span class="trigger arrow"></span></label>
+                              <ul class="dropdown__menu">
+                                <li><a href="#">
+                                    <label for="dd-n-3">Subsubitem 1</label></a></li>
+                                <li><a href="#">
+                                    <label for="dd-n-3">Subsubitem 2</label></a></li>
+                                <li><a href="#">
+                                    <label for="dd-n-3">Subsubitem 3</label></a></li>
+                              </ul>
+                            </li>
+                            <li><a href="#">
+                                <label for="dd-n-3">Subitem 2</label></a></li>
+                            <li><a href="#">
+                                <label for="dd-n-3">Subitem 3</label></a></li>
+                            <li><a href="#">
+                                <label for="dd-n-3">Subitem 4</label></a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">
+                            <label for="dd-n-3">Item 5</label></a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <pre><code class="html">&lt;nav&gt;
+  &lt;ul&gt;
+&nbsp;
+    &lt;li class=&quot;dropdown dropdown--blue dropdown--out dropdown--left&quot;&gt;
+      &lt;input type=&quot;checkbox&quot; name=&quot;dropdown-nested&quot; id=&quot;dd-n-1&quot;&gt;
+      &lt;label for=&quot;dd-n-1&quot;&gt;Dropdown Menu 1 &lt;span class=&quot;trigger arrow&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+      &lt;ul class=&quot;dropdown__menu&quot;&gt;
+        &lt;li&gt;
+          &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Item 1&lt;/label&gt;&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Item 2&lt;/label&gt;&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Item 3&lt;/label&gt;&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;dropdown dropdown--in&quot;&gt;
+          &lt;input type=&quot;checkbox&quot; name=&quot;dropdown-nested&quot; id=&quot;dd-n-2&quot;&gt;
+          &lt;label for=&quot;dd-n-2&quot;&gt;Item 4 &lt;span class=&quot;trigger&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+          &lt;ul class=&quot;dropdown__menu&quot;&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Subitem 1&lt;/label&gt;&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Subitem 2&lt;/label&gt;&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Subitem 3&lt;/label&gt;&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Subitem 4&lt;/label&gt;&lt;/a&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt; &lt;!-- /nested .dropdown__menu --&gt;
+        &lt;/li&gt; &lt;!-- /nested .dropdown --&gt;
+        &lt;li&gt;
+          &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-1&quot;&gt;Item 5&lt;/label&gt;&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt; &lt;!-- /.dropdown__menu --&gt;
+    &lt;/li&gt; &lt;!-- /.dropdown --&gt;
+&nbsp;
+    &lt;li class=&quot;dropdown dropdown--blue dropdown--out dropdown--down&quot;&gt;
+      &lt;input type=&quot;checkbox&quot; name=&quot;dropdown-nested&quot; id=&quot;dd-n-3&quot;&gt;
+      &lt;label for=&quot;dd-n-3&quot;&gt;Dropdown Menu 2 &lt;span class=&quot;trigger arrow&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+      &lt;ul class=&quot;dropdown__menu&quot;&gt;
+        &lt;li&gt;
+          &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Item 1&lt;/label&gt;&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Item 2&lt;/label&gt;&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Item 3&lt;/label&gt;&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;dropdown dropdown--out dropdown--right&quot;&gt;
+          &lt;input type=&quot;checkbox&quot; name=&quot;dropdown-nested&quot; id=&quot;dd-n-4&quot;&gt;
+          &lt;label for=&quot;dd-n-4&quot;&gt;Item 4 &lt;span class=&quot;trigger arrow&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+          &lt;ul class=&quot;dropdown__menu&quot;&gt;
+            &lt;li class=&quot;dropdown dropdown--out dropdown--up&quot;&gt;
+              &lt;input type=&quot;checkbox&quot; name=&quot;dropdown-nested&quot; id=&quot;dd-n-5&quot;&gt;
+              &lt;label for=&quot;dd-n-5&quot;&gt;Subitem 1 &lt;span class=&quot;trigger arrow&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+              &lt;ul class=&quot;dropdown__menu&quot;&gt;
+                &lt;li&gt;
+                  &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Subsubitem 1&lt;/label&gt;&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                  &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Subsubitem 2&lt;/label&gt;&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                  &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Subsubitem 3&lt;/label&gt;&lt;/a&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt; &lt;!-- /second nested .dropdown__menu --&gt;
+            &lt;/li&gt; &lt;!-- /second nested .dropdown --&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Subitem 2&lt;/label&gt;&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Subitem 3&lt;/label&gt;&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Subitem 4&lt;/label&gt;&lt;/a&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt; &lt;!-- /first nested .dropdown__menu --&gt;
+        &lt;/li&gt; &lt;!-- /first nested .dropdown --&gt;
+        &lt;li&gt;
+          &lt;a href=&quot;#&quot;&gt;&lt;label for=&quot;dd-n-3&quot;&gt;Item 5&lt;/label&gt;&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt; &lt;!-- /first .dropdown__menu --&gt;
+    &lt;/li&gt;
+&nbsp;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+              </article>
+            </div>
+          </article>
+          <article id="modalbox">
+            <h1><a href="#modalbox">Modalbox</a></h1>
+            <p>Displays dialog with various informations. It can be used for dialog boxes, showing informations, confirmations.</p>
+            <div>
+              <div class="row">
+                <div class="modalbox-width-opt col-xs-6">
+                  <h3>Width options</h3>
+                  <div class="input-group">
+                    <input type="radio" name="modalbox-width" data-class-name="--full-size" id="modalbox-width-1">
+                    <label for="modalbox-width-1">Full width</label>
+                  </div>
+                  <div class="input-group">
+                    <input type="radio" name="modalbox-width" data-class-name="--fixed-size" checked id="modalbox-width-2">
+                    <label for="modalbox-width-2">Fixed width - default 60%</label>
+                  </div>
+                  <div class="input-group">
+                    <input type="radio" name="modalbox-width" data-class-name="--wide" id="modalbox-width-3">
+                    <label for="modalbox-width-3">Wide</label>
+                  </div>
+                  <div class="input-group">
+                    <input type="radio" name="modalbox-width" data-class-name="--wide-short" id="modalbox-width-4">
+                    <label for="modalbox-width-4">Wide short</label>
+                  </div>
+                </div>
+                <div class="modalbox-theme-opt col-xs-6">
+                  <h3>Theme</h3>
+                  <div class="input-group">
+                    <input type="checkbox" name="modalbox-theme" data-class-name="modal__dialog--blue" checked id="modalbox-theme">
+                    <label for="modalbox-theme">Theme</label>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <input type="checkbox" name="modal" id="modal" class="modal__trigger">
+                <label for="modal" class="btn btn-lg btn-blue-inverse">Launch Modal</label>
+                <div class="modal__overlay">
+                  <div class="modal__dialog modal__dialog--fixed-size modal__dialog--blue">
+                    <div class="modal__header">
+                      <h3>Modal</h3>
+                      <label for="modal" class="close"></label>
+                    </div>
+                    <div class="modal__body">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci aspernatur debitis eaque, esse hic iure labore laboriosam magni, nemo neque placeat quae quod quos reiciendis rerum voluptatum. Ea, magni!</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <pre><code class="html">&lt;div&gt;
+  &lt;input type=&quot;checkbox&quot; name=&quot;modal&quot; id=&quot;modal&quot; class=&quot;modal__trigger&quot;&gt;
+  &lt;label for=&quot;modal&quot; class=&quot;btn btn-lg btn-blue-inverse&quot;&gt;Launch modal&lt;/label&gt;
+  &lt;div class=&quot;modal__overlay&quot; role=&quot;dialog&quot;&gt;
+    &lt;div class=&quot;modal__dialog modal__dialog--fixed-size modal__dialog--blue"&gt;
+      &lt;div class=&quot;modal__header"&gt;
+        &lt;h3&gt;Modal&lt;/h3&gt;
+        &lt;label for=&quot;modal&quot; class=&quot;close&quot;&gt;&lt;/label&gt;
+      &lt;div class=&quot;modal__body&quot;&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci aspernatur debitis eaque, esse hic iure labore laboriosam magni, nemo neque placeat quae quod quos reiciendis rerum voluptatum. Ea, magni!&lt;/p&gt;
+      &lt;/div&gt; &lt;!-- /.modal__body --&gt;
+    &lt;/div&gt; &lt;!-- /.modal__dialog --&gt;
+  &lt;/div&gt; &lt;!-- /.modal__overlay --&gt;
+&lt;/div&gt; &lt;!-- / container --&gt;</code></pre>
+            </div>
+          </article>
+          <article id="slider">
+            <h1><a href="#slider">Slider</a></h1>
+            <p>Also known as carousel or slideshow. This component can be a convenient way to display multiple images, videos, slides with text, etc. on website. <strong>Note:</strong> If you do not want to have slider pills (navigation dots) or slider arrows in your page simply delete div <code class="html">.slider__pills</code> or <code class="html">.slider__arrows</code> with their content from this code snippet.</p>
+            <div>
+              <div class="row">
+                <div class="slider-width-opt col-xs-4">
+                  <h3>Width options</h3>
+                  <div class="input-group">
+                    <input type="radio" name="slider-width" data-class-name="--full-width" id="slider-width-1">
+                    <label for="slider-width-1">Full width</label>
+                  </div>
+                  <div class="input-group">
+                    <input type="radio" name="slider-width" data-class-name="--fixed-width" checked id="slider-width-2">
+                    <label for="slider-width-2">Fixed width - default 80%</label>
+                  </div>
+                </div>
+                <div class="slider-pills-position-opt col-xs-4">
+                  <h3>Pills position</h3>
+                  <div class="input-group">
+                    <input type="radio" name="slider-pills" data-class-name="bottom" checked id="slider-pills-1">
+                    <label for="slider-pills-1">Bottom</label>
+                  </div>
+                  <div class="input-group">
+                    <input type="radio" name="slider-pills" data-class-name="top" id="slider-pills-2">
+                    <label for="slider-pills-2">Top</label>
+                  </div>
+                  <div class="input-group">
+                    <input type="radio" name="slider-pills" data-class-name="left" id="slider-pills-3">
+                    <label for="slider-pills-3">Left</label>
+                  </div>
+                  <div class="input-group">
+                    <input type="radio" name="slider-pills" data-class-name="right" id="slider-pills-4">
+                    <label for="slider-pills-4">Right</label>
+                  </div>
+                </div>
+                <div class="slider-theme-opt col-xs-4">
+                  <h3>Theme</h3>
+                  <div class="input-group">
+                    <input type="checkbox" name="slider-theme" data-class-name="slider--blue" checked id="slider-theme">
+                    <label for="slider-theme">Theme</label>
+                  </div>
+                </div>
+              </div>
+              <div class="slider slider--fixed-width slider--blue">
+                <input type="radio" name="slider" id="slide-1" checked>
+                <input type="radio" name="slider" id="slide-2">
+                <input type="radio" name="slider" id="slide-3">
+                <input type="radio" name="slider" id="slide-4">
+                <ul>
+                  <li><img src="https://placekitten.com/800/600">
+                    <div class="slide__content">
+                      <h2>slide #1</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, inventore, nisi! Accusantium ad aliquam beatae culpa dignissimos eligendi esse explicabo fugit laboriosam maxime modi nam nulla, obcaecati odit, provident vero!</p>
+                    </div>
+                  </li>
+                  <li><img src="https://placekitten.com/850/600">
+                    <div class="slide__content animated">
+                      <h2>slide #2</h2>
+                    </div>
+                  </li>
+                  <li><img src="https://placekitten.com/900/600">
+                    <div class="slide__content">
+                    </div>
+                  </li>
+                  <li>
+                    <div class="slide__content">
+                      <h2>slide #4</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab architecto assumenda dicta dolor eligendi eos esse, et eum ex hic illo inventore laboriosam maiores nisi quia sit unde voluptas voluptatem.</p>
+                    </div>
+                  </li>
+                </ul>
+                <div class="slider__pills slider__pills--bottom">
+                  <label for="slide-1">&bull;</label>
+                  <label for="slide-2">&bull;</label>
+                  <label for="slide-3">&bull;</label>
+                  <label for="slide-4">&bull;</label>
+                </div>
+                <div class="slider__arrows">
+                  <label for="slide-1"><span></span></label>
+                  <label for="slide-2"><span></span></label>
+                  <label for="slide-3"><span></span></label>
+                  <label for="slide-4"><span></span></label>
+                  <label for="slide-1"><span></span></label>
+                  <label for="slide-4"><span></span></label>
+                </div>
+              </div>
+              <pre><code class="html">&lt;div class=&quot;slider slider--fixed-width slider--blue&quot;&gt;
+&nbsp;
+  &lt;input type=&quot;radio&quot; name=&quot;slider&quot; id=&quot;slide-1&quot; checked=&quot;&quot;&gt;
+  &lt;input type=&quot;radio&quot; name=&quot;slider&quot; id=&quot;slide-2&quot;&gt;
+  &lt;input type=&quot;radio&quot; name=&quot;slider&quot; id=&quot;slide-3&quot;&gt;
+  &lt;input type=&quot;radio&quot; name=&quot;slider&quot; id=&quot;slide-4&quot;&gt;
+&nbsp;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;img src=&quot;https://placekitten.com/800/600&quot;&gt;
+      &lt;div class=&quot;slide__content&quot;&gt;
+        &lt;h2&gt;slide #1&lt;/h2&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, inventore, nisi! Accusantium ad aliquam beatae culpa dignissimos eligendi esse explicabo fugit laboriosam maxime modi nam nulla, obcaecati odit, provident vero!&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/li&gt; &lt;!-- /slide 1 --&gt;
+    &lt;li&gt;
+      &lt;img src=&quot;https://placekitten.com/850/600&quot;&gt;
+      &lt;div class=&quot;slide__content animated&quot;&gt;
+        &lt;h2&gt;slide #2&lt;/h2&gt;
+      &lt;/div&gt;
+    &lt;/li&gt; &lt;!-- /slide 2 --&gt;
+    &lt;li&gt;
+      &lt;img src=&quot;https://placekitten.com/900/600&quot;&gt;
+      &lt;div class=&quot;slide__content&quot;&gt;
+      &lt;/div&gt;
+    &lt;/li&gt; &lt;!-- /slide 3 --&gt;
+    &lt;li&gt;
+      &lt;div class=&quot;slide__content&quot;&gt;
+        &lt;h2&gt;slide #4&lt;/h2&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab architecto assumenda dicta dolor eligendi eos esse, et eum ex hic illo inventore laboriosam maiores nisi quia sit unde voluptas voluptatem.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/li&gt; &lt;!-- /slide 4 --&gt;
+  &lt;/ul&gt; &lt;!-- /slider images --&gt;
+&nbsp;
+  &lt;div class=&quot;slider__pills slider__pills--bottom&quot;&gt;
+    &lt;label for=&quot;slide-1&quot;&gt;&bull;&lt;/label&gt;
+    &lt;label for=&quot;slide-2&quot;&gt;&bull;&lt;/label&gt;
+    &lt;label for=&quot;slide-3&quot;&gt;&bull;&lt;/label&gt;
+    &lt;label for=&quot;slide-4&quot;&gt;&bull;&lt;/label&gt;
+  &lt;/div&gt; &lt;!-- /.slider__pills --&gt;
+&nbsp;
+  &lt;div class=&quot;slider__arrows&quot;&gt;
+    &lt;label for=&quot;slide-1&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;
+    &lt;label for=&quot;slide-2&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;
+    &lt;label for=&quot;slide-3&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;
+    &lt;label for=&quot;slide-4&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;
+    &lt;label for=&quot;slide-1&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;
+    &lt;label for=&quot;slide-4&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;
+  &lt;/div&gt; &lt;!-- /.slider__arrows --&gt;
+&nbsp;
+&lt;/div&gt; &lt;!-- /.slider --&gt;</code></pre>
+            </div>
+          </article>
+          <article id="tabs">
+            <h1><a href="#tabs">Tabs</a></h1>
+            <p>Like in <a href="#accordion">accordion</a>, this component is used to show informations in limited amount of space. Instead of accordion, tabs shows data in form of table or bookmarks. <strong>Note:</strong> Because of absolute positioning of each tab content it need to set to the <code class="html">.tab__content</code> class height property (default: 200px) and equivalent <code class="html">margin-bottom</code> for tabs container.</p>
+            <div>
+              <div class="row">
+                <div class="tabs-width-opt col-xs-6">
+                  <h3>Width options</h3>
+                  <div class="input-group">
+                    <input type="radio" name="tabs-width" data-class-name="--full-width" checked id="tabs-width-1">
+                    <label for="tabs-width-1">Full width</label>
+                  </div>
+                  <div class="input-group">
+                    <input type="radio" name="tabs-width" data-class-name="--fixed-width" id="tabs-width-2">
+                    <label for="tabs-width-2">Fixed width - default 70%</label>
+                  </div>
+                </div>
+                <div class="tabs-theme-opt col-xs-6">
+                  <h3>Theme</h3>
+                  <div class="input-group">
+                    <input type="checkbox" name="tabs-theme" data-class-name="tabs--blue" checked id="tabs-theme">
+                    <label for="tabs-theme">Theme</label>
+                  </div>
+                </div>
+              </div>
+              <ul class="tabs tabs--full-width tabs--blue">
+                <li>
+                  <input type="radio" name="tabs" id="tabs-1" checked>
+                  <label for="tabs-1">tab 1</label>
+                  <div class="tab__content">
+                    <h2>Tab #1</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, amet, architecto consequuntur culpa eius eligendi est et eveniet ipsam laudantium minima modi nobis quam, quisquam repudiandae sunt veniam! Ad, molestias!</p>
+                  </div>
+                </li>
+                <li>
+                  <input type="radio" name="tabs" id="tabs-2">
+                  <label for="tabs-2">tab 2</label>
+                  <div class="tab__content">
+                    <h2>Tab #2</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, inventore, nisi! Accusantium ad aliquam beatae culpa dignissimos eligendi esse explicabo fugit laboriosam maxime modi nam nulla, obcaecati odit, provident vero!</p>
+                  </div>
+                </li>
+                <li>
+                  <input type="radio" name="tabs" id="tabs-3">
+                  <label for="tabs-3">tab 3</label>
+                  <div class="tab__content">
+                    <h2>Tab #3</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis non, nostrum obcaecati quos suscipit temporibus ut! Animi, blanditiis culpa ducimus et fuga illo illum pariatur quam, quo rerum sunt, totam.</p>
+                  </div>
+                </li>
+                <li>
+                  <input type="radio" name="tabs" id="tabs-4">
+                  <label for="tabs-4">tab 4</label>
+                  <div class="tab__content">
+                    <h2>Tab #4</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab architecto assumenda dicta dolor eligendi eos esse, et eum ex hic illo inventore laboriosam maiores nisi quia sit unde voluptas voluptatem.</p>
+                  </div>
+                </li>
+              </ul>
+              <pre><code class="html">&lt;ul class=&quot;tabs tabs--full-width tabs--blue&quot;&gt;
+&nbsp;
+  &lt;li&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;tabs&quot; id=&quot;tab1&quot checked&gt;
+    &lt;label for=&quot;tab1&quot;&gt;tab1 header&lt;/label&gt;
+    &lt;div class=&quot;tab__content&quot;&gt;
+      &lt;h2&gt;Tab 1&lt;/h2&gt;
+       &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, amet, architecto consequuntur culpa eius eligendi est et eveniet ipsam laudantium minima modi nobis quam, quisquam repudiandae sunt veniam! Ad, molestias!&lt;/p&gt;
+    &lt;/div&gt; &lt;!-- /.tab__content --&gt;
+  &lt;/li&gt; &lt;!-- /tab element --&gt;
+&nbsp;
+  &lt;li&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;tabs&quot; id=&quot;tab2&quot;&gt;
+    &lt;label for=&quot;tab2&quot;&gt;tab2 header&lt;/label&gt;
+    &lt;div class=&quot;tab__content&quot;&gt;
+      &lt;h2&gt;Tab 2&lt;/h2&gt;
+      &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, inventore, nisi! Accusantium ad aliquam beatae culpa dignissimos eligendi esse explicabo fugit laboriosam maxime modi nam nulla, obcaecati odit, provident vero!&lt;/p&gt;
+    &lt;/div&gt; &lt;!-- /.tab__content --&gt;
+  &lt;/li&gt; &lt;!-- /tab element --&gt;
+&nbsp;
+  &lt;li&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;tabs&quot; id=&quot;tab3&quot;&gt;
+    &lt;label for=&quot;tab3&quot;&gt;tab3 header&lt;/label&gt;
+    &lt;div class=&quot;tab__content&quot;&gt;
+      &lt;h2&gt;Tab 3&lt;/h2&gt;
+       &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis non, nostrum obcaecati quos suscipit temporibus ut! Animi, blanditiis culpa ducimus et fuga illo illum pariatur quam, quo rerum sunt, totam.&lt;/p&gt;
+    &lt;/div&gt; &lt;!-- /.tab__content --&gt;
+  &lt;/li&gt; &lt;!-- /tab element --&gt;
+&nbsp;
+  &lt;li&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;tabs&quot; id=&quot;tab4&quot;&gt;
+    &lt;label for=&quot;tab4&quot;&gt;tab4 header&lt;/label&gt;
+    &lt;div class=&quot;tab__content&quot;&gt;
+      &lt;h2&gt;Tab 4&lt;/h2&gt;
+      &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab architecto assumenda dicta dolor eligendi eos esse, et eum ex hic illo inventore laboriosam maiores nisi quia sit unde voluptas voluptatem.&lt;/p&gt;
+    &lt;/div&gt; &lt;!-- /.tab__content --&gt;
+  &lt;/li&gt; &lt;!-- /tab element --&gt;
+&nbsp;
+&lt;/ul&gt; &lt;!-- /.tabs --&gt;</code></pre>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="main-footer">
+    <div class="container">
+      <p class="copyright">Pure CSS Components designed and developed by <a href="http://galias.com">Paweł Galias</a></p>
+      <p><small>Code licensed <a href="https://github.com/pgalias/pure-css-components/blob/master/LICENCE.md">MIT</a>, docs created with <a href="https://github.com/larsonjj/generator-yeogurt">Yeoman Generator Yeogurt</a></small></p>
+      <p><small>If you spot any bugs or if you have any ideas how to improve this project don&apos;t hesitate to create new issue or open pull request</small></p>
+      <nav>
+        <ul class="inline">
+          <li><a href="https://github.com/pgalias/pure-css-components">GitHub</a></li>
+          <li><a href="https://github.com/pgalias/pure-css-components/issues">Issues</a></li>
+          <li><a href="/components">Components</a></li>
+          <li><a href="/get-started">Get started</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad()</script>
+</body></html>
