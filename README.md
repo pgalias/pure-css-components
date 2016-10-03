@@ -20,7 +20,7 @@ Read [get started](http://pgalias.github.io/pure-css-components/get-started/) pa
 Documentation included in this repo in `docs` branch is created with [Yeoman Generator Yeogurt](https://github.com/larsonjj/generator-yeogurt) and hosted on Github Pages at address [http://pgalias.github.io/pure-css-components/](http://pgalias.github.io/pure-css-components/)
 
 ## Bugs and requests
-Spotted bug or have a feature request? Please first search for opened and closed (issues)[https://github.com/pgalias/pure-css-components/issues]. If you don't find your problem or request then open new issue.
+Spotted bug or have a feature request? Please first search for opened and closed [issues](https://github.com/pgalias/pure-css-components/issues). If you don't find your problem or request then open new issue.
 
 ## Changelog
 See [changelog](https://github.com/pgalias/pure-css-components/blob/master/CHANGELOG.md)
