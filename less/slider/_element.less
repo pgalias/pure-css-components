@@ -1,3 +1,7 @@
+@import "_variables";
+@import "../_mixins";
+@import "../_themes";
+
 .slider {
   position: relative;
   .center-horizontal;
@@ -88,6 +92,15 @@
       border-radius: @blue-border-radius;
     }
   }
+
+  &--finite {
+    input[type=radio]:first-of-type:checked ~ .slider__arrows label:last-of-type {
+      visibility: hidden;
+    }
+    input[type=radio]:last-of-type:checked ~ .slider__arrows label:nth-last-of-type(2) {
+      visibility: hidden;
+    }
+  }
 }
 .create-selector(@pattern, @iterator:1, @count: @max-slides) {
   @repeat: ~'@{pattern}';
@@ -103,23 +116,30 @@
   })()`;
 }
 & {
-  .create-selector('.slider--blue input[type=radio]:nth-of-type( $i ):checked ~ .slider__arrows label:nth-of-type( $imm ),\n.slider--blue input[type=radio]:nth-of-type( $i ):checked ~ .slider__arrows label:nth-of-type( $ipp ),');
+  .create-selector('.slider input[type=radio]:nth-of-type( $i ):checked ~ .slider__arrows label:nth-of-type( $imm ),\n.slider input[type=radio]:nth-of-type( $i ):checked ~ .slider__arrows label:nth-of-type( $ipp ),');
   @{result} {
     display: flex;
   }
 }
 & {
-  .create-selector('.slider--blue input[type=radio]:nth-of-type( $i ):checked ~ .slider__arrows label:nth-of-type( $imm ) span::after,');
+  .create-selector('.slider input[type=radio]:nth-of-type( $i ):checked ~ .slider__arrows label:nth-of-type( $imm ) span::after,');
   @{result} {
     content: '\003c';
     display: block;
   }
 }
 & {
-  .create-selector('.slider--blue input[type=radio]:nth-of-type( $i ):checked ~ .slider__arrows label:nth-of-type( $ipp ) span::after,');
+  .create-selector('.slider input[type=radio]:nth-of-type( $i ):checked ~ .slider__arrows label:nth-of-type( $ipp ) span::after,');
   @{result} {
     content: '\003e';
     display: block;
+  }
+}
+& {
+  .create-selector('.slider input[type=radio]:nth-of-type( $i ):checked ~ .slider__pills label:nth-of-type( $i ),');
+  @{result} {
+    color: fade(#000, 80%);
+    font-weight: 900;
   }
 }
 & {

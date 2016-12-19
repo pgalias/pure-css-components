@@ -1,3 +1,7 @@
+@import "_variables";
+@import "../_mixins";
+@import "../_themes";
+
 .slider {
   label {
     cursor: pointer;
@@ -48,12 +52,22 @@
     position: absolute;
     .same(0, top left);
 
+    @size: unit(@slider-border-width * 2, px);
+    .same(calc(~"100% - @{size}"), height width);
+
+    margin: @slider-border-width;
+
     display: flex;
     justify-content: space-between;
 
     label {
       display: none;
       height: 100%;
+
+      color: #000;
+      font-size: 2em;
+      margin: 0;
+      padding: @arrows-padding;
 
       flex-direction: column;
       justify-content: center;
@@ -65,14 +79,7 @@
       color: @blue-header-color;
     }
     .slider__arrows {
-      height: calc(~"100% - @{slider-border-width}*2");
-      width: calc(~"100% - @{slider-border-width}*2");
-      margin: @slider-border-width;
-
       label {
-        margin: 0;
-        padding: @arrows-padding;
-
         color: @blue-header-color;
         font-size: 3.5em;
 

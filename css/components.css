@@ -342,21 +342,6 @@ li.dropdown > ul.dropdown__menu > li.dropdown {
 .slider input[type=radio]:nth-of-type(10):checked ~ ul > li:first-of-type {
   margin-left: -900%;
 }
-.slider input[type=radio]:nth-of-type(11):checked ~ ul > li:first-of-type {
-  margin-left: -1000%;
-}
-.slider input[type=radio]:nth-of-type(12):checked ~ ul > li:first-of-type {
-  margin-left: -1100%;
-}
-.slider input[type=radio]:nth-of-type(13):checked ~ ul > li:first-of-type {
-  margin-left: -1200%;
-}
-.slider input[type=radio]:nth-of-type(14):checked ~ ul > li:first-of-type {
-  margin-left: -1300%;
-}
-.slider input[type=radio]:nth-of-type(15):checked ~ ul > li:first-of-type {
-  margin-left: -1400%;
-}
 .slider input[type=radio]:first-of-type:checked ~ .slider__arrows label:last-of-type {
   -ms-flex-order: 1;
       order: 1;
@@ -404,74 +389,73 @@ li.dropdown > ul.dropdown__menu > li.dropdown {
   border: 5px solid #00bac7;
   border-radius: 5px;
 }
-.slider--blue input[type=radio]:nth-of-type(1):checked ~ .slider__arrows label:last-of-type,
-.slider--blue input[type=radio]:nth-of-type(1):checked ~ .slider__arrows label:nth-of-type(2),
-.slider--blue input[type=radio]:nth-of-type(2):checked ~ .slider__arrows label:nth-of-type(1),
-.slider--blue input[type=radio]:nth-of-type(2):checked ~ .slider__arrows label:nth-of-type(3),
-.slider--blue input[type=radio]:nth-of-type(3):checked ~ .slider__arrows label:nth-of-type(2),
-.slider--blue input[type=radio]:nth-of-type(3):checked ~ .slider__arrows label:nth-of-type(4),
-.slider--blue input[type=radio]:nth-of-type(4):checked ~ .slider__arrows label:nth-of-type(3),
-.slider--blue input[type=radio]:nth-of-type(4):checked ~ .slider__arrows label:nth-of-type(5),
-.slider--blue input[type=radio]:nth-of-type(5):checked ~ .slider__arrows label:nth-of-type(4),
-.slider--blue input[type=radio]:nth-of-type(5):checked ~ .slider__arrows label:nth-of-type(6),
-.slider--blue input[type=radio]:nth-of-type(6):checked ~ .slider__arrows label:nth-of-type(5),
-.slider--blue input[type=radio]:nth-of-type(6):checked ~ .slider__arrows label:nth-of-type(7),
-.slider--blue input[type=radio]:nth-of-type(7):checked ~ .slider__arrows label:nth-of-type(6),
-.slider--blue input[type=radio]:nth-of-type(7):checked ~ .slider__arrows label:nth-of-type(8),
-.slider--blue input[type=radio]:nth-of-type(8):checked ~ .slider__arrows label:nth-of-type(7),
-.slider--blue input[type=radio]:nth-of-type(8):checked ~ .slider__arrows label:nth-of-type(9),
-.slider--blue input[type=radio]:nth-of-type(9):checked ~ .slider__arrows label:nth-of-type(8),
-.slider--blue input[type=radio]:nth-of-type(9):checked ~ .slider__arrows label:nth-of-type(10),
-.slider--blue input[type=radio]:nth-of-type(10):checked ~ .slider__arrows label:nth-of-type(9),
-.slider--blue input[type=radio]:nth-of-type(10):checked ~ .slider__arrows label:nth-of-type(11),
-.slider--blue input[type=radio]:nth-of-type(11):checked ~ .slider__arrows label:nth-of-type(10),
-.slider--blue input[type=radio]:nth-of-type(11):checked ~ .slider__arrows label:nth-of-type(12),
-.slider--blue input[type=radio]:nth-of-type(12):checked ~ .slider__arrows label:nth-of-type(11),
-.slider--blue input[type=radio]:nth-of-type(12):checked ~ .slider__arrows label:nth-of-type(13),
-.slider--blue input[type=radio]:nth-of-type(13):checked ~ .slider__arrows label:nth-of-type(12),
-.slider--blue input[type=radio]:nth-of-type(13):checked ~ .slider__arrows label:nth-of-type(14),
-.slider--blue input[type=radio]:nth-of-type(14):checked ~ .slider__arrows label:nth-of-type(13),
-.slider--blue input[type=radio]:nth-of-type(14):checked ~ .slider__arrows label:nth-of-type(15),
-.slider--blue input[type=radio]:nth-of-type(15):checked ~ .slider__arrows label:nth-of-type(14),
-.slider--blue input[type=radio]:nth-of-type(15):checked ~ .slider__arrows label:first-of-type {
+.slider--finite input[type=radio]:first-of-type:checked ~ .slider__arrows label:last-of-type {
+  visibility: hidden;
+}
+.slider--finite input[type=radio]:last-of-type:checked ~ .slider__arrows label:nth-last-of-type(2) {
+  visibility: hidden;
+}
+.slider input[type=radio]:nth-of-type(1):checked ~ .slider__arrows label:last-of-type,
+.slider input[type=radio]:nth-of-type(1):checked ~ .slider__arrows label:nth-of-type(2),
+.slider input[type=radio]:nth-of-type(2):checked ~ .slider__arrows label:nth-of-type(1),
+.slider input[type=radio]:nth-of-type(2):checked ~ .slider__arrows label:nth-of-type(3),
+.slider input[type=radio]:nth-of-type(3):checked ~ .slider__arrows label:nth-of-type(2),
+.slider input[type=radio]:nth-of-type(3):checked ~ .slider__arrows label:nth-of-type(4),
+.slider input[type=radio]:nth-of-type(4):checked ~ .slider__arrows label:nth-of-type(3),
+.slider input[type=radio]:nth-of-type(4):checked ~ .slider__arrows label:nth-of-type(5),
+.slider input[type=radio]:nth-of-type(5):checked ~ .slider__arrows label:nth-of-type(4),
+.slider input[type=radio]:nth-of-type(5):checked ~ .slider__arrows label:nth-of-type(6),
+.slider input[type=radio]:nth-of-type(6):checked ~ .slider__arrows label:nth-of-type(5),
+.slider input[type=radio]:nth-of-type(6):checked ~ .slider__arrows label:nth-of-type(7),
+.slider input[type=radio]:nth-of-type(7):checked ~ .slider__arrows label:nth-of-type(6),
+.slider input[type=radio]:nth-of-type(7):checked ~ .slider__arrows label:nth-of-type(8),
+.slider input[type=radio]:nth-of-type(8):checked ~ .slider__arrows label:nth-of-type(7),
+.slider input[type=radio]:nth-of-type(8):checked ~ .slider__arrows label:nth-of-type(9),
+.slider input[type=radio]:nth-of-type(9):checked ~ .slider__arrows label:nth-of-type(8),
+.slider input[type=radio]:nth-of-type(9):checked ~ .slider__arrows label:nth-of-type(10),
+.slider input[type=radio]:nth-of-type(10):checked ~ .slider__arrows label:nth-of-type(9),
+.slider input[type=radio]:nth-of-type(10):checked ~ .slider__arrows label:first-of-type {
   display: -ms-flexbox;
   display: flex;
 }
-.slider--blue input[type=radio]:nth-of-type(1):checked ~ .slider__arrows label:last-of-type span::after,
-.slider--blue input[type=radio]:nth-of-type(2):checked ~ .slider__arrows label:nth-of-type(1) span::after,
-.slider--blue input[type=radio]:nth-of-type(3):checked ~ .slider__arrows label:nth-of-type(2) span::after,
-.slider--blue input[type=radio]:nth-of-type(4):checked ~ .slider__arrows label:nth-of-type(3) span::after,
-.slider--blue input[type=radio]:nth-of-type(5):checked ~ .slider__arrows label:nth-of-type(4) span::after,
-.slider--blue input[type=radio]:nth-of-type(6):checked ~ .slider__arrows label:nth-of-type(5) span::after,
-.slider--blue input[type=radio]:nth-of-type(7):checked ~ .slider__arrows label:nth-of-type(6) span::after,
-.slider--blue input[type=radio]:nth-of-type(8):checked ~ .slider__arrows label:nth-of-type(7) span::after,
-.slider--blue input[type=radio]:nth-of-type(9):checked ~ .slider__arrows label:nth-of-type(8) span::after,
-.slider--blue input[type=radio]:nth-of-type(10):checked ~ .slider__arrows label:nth-of-type(9) span::after,
-.slider--blue input[type=radio]:nth-of-type(11):checked ~ .slider__arrows label:nth-of-type(10) span::after,
-.slider--blue input[type=radio]:nth-of-type(12):checked ~ .slider__arrows label:nth-of-type(11) span::after,
-.slider--blue input[type=radio]:nth-of-type(13):checked ~ .slider__arrows label:nth-of-type(12) span::after,
-.slider--blue input[type=radio]:nth-of-type(14):checked ~ .slider__arrows label:nth-of-type(13) span::after,
-.slider--blue input[type=radio]:nth-of-type(15):checked ~ .slider__arrows label:nth-of-type(14) span::after {
+.slider input[type=radio]:nth-of-type(1):checked ~ .slider__arrows label:last-of-type span::after,
+.slider input[type=radio]:nth-of-type(2):checked ~ .slider__arrows label:nth-of-type(1) span::after,
+.slider input[type=radio]:nth-of-type(3):checked ~ .slider__arrows label:nth-of-type(2) span::after,
+.slider input[type=radio]:nth-of-type(4):checked ~ .slider__arrows label:nth-of-type(3) span::after,
+.slider input[type=radio]:nth-of-type(5):checked ~ .slider__arrows label:nth-of-type(4) span::after,
+.slider input[type=radio]:nth-of-type(6):checked ~ .slider__arrows label:nth-of-type(5) span::after,
+.slider input[type=radio]:nth-of-type(7):checked ~ .slider__arrows label:nth-of-type(6) span::after,
+.slider input[type=radio]:nth-of-type(8):checked ~ .slider__arrows label:nth-of-type(7) span::after,
+.slider input[type=radio]:nth-of-type(9):checked ~ .slider__arrows label:nth-of-type(8) span::after,
+.slider input[type=radio]:nth-of-type(10):checked ~ .slider__arrows label:nth-of-type(9) span::after {
   content: '\003c';
   display: block;
 }
-.slider--blue input[type=radio]:nth-of-type(1):checked ~ .slider__arrows label:nth-of-type(2) span::after,
-.slider--blue input[type=radio]:nth-of-type(2):checked ~ .slider__arrows label:nth-of-type(3) span::after,
-.slider--blue input[type=radio]:nth-of-type(3):checked ~ .slider__arrows label:nth-of-type(4) span::after,
-.slider--blue input[type=radio]:nth-of-type(4):checked ~ .slider__arrows label:nth-of-type(5) span::after,
-.slider--blue input[type=radio]:nth-of-type(5):checked ~ .slider__arrows label:nth-of-type(6) span::after,
-.slider--blue input[type=radio]:nth-of-type(6):checked ~ .slider__arrows label:nth-of-type(7) span::after,
-.slider--blue input[type=radio]:nth-of-type(7):checked ~ .slider__arrows label:nth-of-type(8) span::after,
-.slider--blue input[type=radio]:nth-of-type(8):checked ~ .slider__arrows label:nth-of-type(9) span::after,
-.slider--blue input[type=radio]:nth-of-type(9):checked ~ .slider__arrows label:nth-of-type(10) span::after,
-.slider--blue input[type=radio]:nth-of-type(10):checked ~ .slider__arrows label:nth-of-type(11) span::after,
-.slider--blue input[type=radio]:nth-of-type(11):checked ~ .slider__arrows label:nth-of-type(12) span::after,
-.slider--blue input[type=radio]:nth-of-type(12):checked ~ .slider__arrows label:nth-of-type(13) span::after,
-.slider--blue input[type=radio]:nth-of-type(13):checked ~ .slider__arrows label:nth-of-type(14) span::after,
-.slider--blue input[type=radio]:nth-of-type(14):checked ~ .slider__arrows label:nth-of-type(15) span::after,
-.slider--blue input[type=radio]:nth-of-type(15):checked ~ .slider__arrows label:first-of-type span::after {
+.slider input[type=radio]:nth-of-type(1):checked ~ .slider__arrows label:nth-of-type(2) span::after,
+.slider input[type=radio]:nth-of-type(2):checked ~ .slider__arrows label:nth-of-type(3) span::after,
+.slider input[type=radio]:nth-of-type(3):checked ~ .slider__arrows label:nth-of-type(4) span::after,
+.slider input[type=radio]:nth-of-type(4):checked ~ .slider__arrows label:nth-of-type(5) span::after,
+.slider input[type=radio]:nth-of-type(5):checked ~ .slider__arrows label:nth-of-type(6) span::after,
+.slider input[type=radio]:nth-of-type(6):checked ~ .slider__arrows label:nth-of-type(7) span::after,
+.slider input[type=radio]:nth-of-type(7):checked ~ .slider__arrows label:nth-of-type(8) span::after,
+.slider input[type=radio]:nth-of-type(8):checked ~ .slider__arrows label:nth-of-type(9) span::after,
+.slider input[type=radio]:nth-of-type(9):checked ~ .slider__arrows label:nth-of-type(10) span::after,
+.slider input[type=radio]:nth-of-type(10):checked ~ .slider__arrows label:first-of-type span::after {
   content: '\003e';
   display: block;
+}
+.slider input[type=radio]:nth-of-type(1):checked ~ .slider__pills label:nth-of-type(1),
+.slider input[type=radio]:nth-of-type(2):checked ~ .slider__pills label:nth-of-type(2),
+.slider input[type=radio]:nth-of-type(3):checked ~ .slider__pills label:nth-of-type(3),
+.slider input[type=radio]:nth-of-type(4):checked ~ .slider__pills label:nth-of-type(4),
+.slider input[type=radio]:nth-of-type(5):checked ~ .slider__pills label:nth-of-type(5),
+.slider input[type=radio]:nth-of-type(6):checked ~ .slider__pills label:nth-of-type(6),
+.slider input[type=radio]:nth-of-type(7):checked ~ .slider__pills label:nth-of-type(7),
+.slider input[type=radio]:nth-of-type(8):checked ~ .slider__pills label:nth-of-type(8),
+.slider input[type=radio]:nth-of-type(9):checked ~ .slider__pills label:nth-of-type(9),
+.slider input[type=radio]:nth-of-type(10):checked ~ .slider__pills label:nth-of-type(10) {
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 900;
 }
 .slider--blue input[type=radio]:nth-of-type(1):checked ~ .slider__pills label:nth-of-type(1),
 .slider--blue input[type=radio]:nth-of-type(2):checked ~ .slider__pills label:nth-of-type(2),
@@ -482,12 +466,7 @@ li.dropdown > ul.dropdown__menu > li.dropdown {
 .slider--blue input[type=radio]:nth-of-type(7):checked ~ .slider__pills label:nth-of-type(7),
 .slider--blue input[type=radio]:nth-of-type(8):checked ~ .slider__pills label:nth-of-type(8),
 .slider--blue input[type=radio]:nth-of-type(9):checked ~ .slider__pills label:nth-of-type(9),
-.slider--blue input[type=radio]:nth-of-type(10):checked ~ .slider__pills label:nth-of-type(10),
-.slider--blue input[type=radio]:nth-of-type(11):checked ~ .slider__pills label:nth-of-type(11),
-.slider--blue input[type=radio]:nth-of-type(12):checked ~ .slider__pills label:nth-of-type(12),
-.slider--blue input[type=radio]:nth-of-type(13):checked ~ .slider__pills label:nth-of-type(13),
-.slider--blue input[type=radio]:nth-of-type(14):checked ~ .slider__pills label:nth-of-type(14),
-.slider--blue input[type=radio]:nth-of-type(15):checked ~ .slider__pills label:nth-of-type(15) {
+.slider--blue input[type=radio]:nth-of-type(10):checked ~ .slider__pills label:nth-of-type(10) {
   color: rgba(0, 186, 199, 0.8);
   text-shadow: 0 0 6px #666;
 }
@@ -537,6 +516,9 @@ li.dropdown > ul.dropdown__menu > li.dropdown {
   position: absolute;
   top: 0;
   left: 0;
+  height: calc(100% - 10px);
+  width: calc(100% - 10px);
+  margin: 5px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
@@ -545,6 +527,10 @@ li.dropdown > ul.dropdown__menu > li.dropdown {
 .slider__arrows label {
   display: none;
   height: 100%;
+  color: #000;
+  font-size: 2em;
+  margin: 0;
+  padding: 0 30px;
   -ms-flex-direction: column;
       flex-direction: column;
   -ms-flex-pack: center;
@@ -553,14 +539,7 @@ li.dropdown > ul.dropdown__menu > li.dropdown {
 .slider--blue label {
   color: #000;
 }
-.slider--blue .slider__arrows {
-  height: calc(100% - 5px*2);
-  width: calc(100% - 5px*2);
-  margin: 5px;
-}
 .slider--blue .slider__arrows label {
-  margin: 0;
-  padding: 0 30px;
   color: #000;
   font-size: 3.5em;
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
