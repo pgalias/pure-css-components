@@ -86,16 +86,24 @@
             <h2>Available Gulp commands</h2>
             <ul>
               <li>
-                <pre><code class="bash">gulp less:compile</code></pre>
-                <p>Generates CSS file with maps in css/ folder</p>
+                <pre><code class="bash">gulp components</code></pre>
+                <p>Generates CSS file without themes in css directory</p>
               </li>
               <li>
-                <pre><code class="bash">gulp less:watch</code></pre>
-                <p>Watches for any LESS file changes and regenerates it to CSS file</p>
+                <pre><code class="bash">gulp theme --name filename_without_extension</code></pre>
+                <p>Generates CSS file of themes in css directory</p>
               </li>
               <li>
-                <pre><code class="bash">gulp css:minify</code></pre>
-                <p>Minifies CSS file and save it with .min suffix</p>
+                <pre><code class="bash">gulp compile</code></pre>
+                <p>Generates CSS file with components and themes in css directory</p>
+              </li>
+              <li>
+                <pre><code class="bash">gulp minify</code></pre>
+                <p>Minifies all CSS files in css directory</p>
+              </li>
+              <li>
+                <pre><code class="bash">gulp [default]</code></pre>
+                <p>Runs compile and minify tasks</p>
               </li>
             </ul>
           </article>

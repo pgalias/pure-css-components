@@ -4,7 +4,6 @@ block config
   //- Correct base url pathing for this page
   - var baseUrl = '../'
   - title = 'Get Started'
-  - var currentVersion = 'v2.0.0'
 
 block side-menu
   ul.side-menu
@@ -51,18 +50,28 @@ block main
       li
         pre
           code.bash
-            | gulp less:compile
-        p Generates CSS file with maps in css/ folder
+            | gulp components
+        p Generates CSS file without themes in css directory
       li
         pre
           code.bash
-            | gulp less:watch
-        p Watches for any LESS file changes and regenerates it to CSS file
+            | gulp theme --name filename_without_extension
+        p Generates CSS file of themes in css directory
       li
         pre
           code.bash
-            | gulp css:minify
-        p Minifies CSS file and save it with .min suffix
+            | gulp compile
+        p Generates CSS file with components and themes in css directory
+      li
+        pre
+          code.bash
+            | gulp minify
+        p Minifies all CSS files in css directory
+      li
+        pre
+          code.bash
+            | gulp [default]
+        p Runs compile and minify tasks
   article#usage
     h1 #[a(href='#usage') Usage]
     p PCC provides three CSS files in dist. You can use it in your project in three various ways
