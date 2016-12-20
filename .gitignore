@@ -1,3 +1,4 @@
 .idea/
 node_modules/
 test.html
+.fuse_hidden*
