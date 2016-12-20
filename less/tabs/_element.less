@@ -81,6 +81,7 @@
 
     color: @blue-header-color;
     border-radius: @blue-border-radius @blue-border-radius 0 0;
+    border: none;
     background: @blue-not-active;
     &:hover {
       background: @blue-tab-hover;
@@ -93,11 +94,13 @@
       top: 0;
       background: @blue-base;
     }
+    &:checked ~ .tab__content {
+      border: extract(@blue-border,1)*3 extract(@blue-border,2) extract(@blue-border,3);
+    }
   }
 
   .tab__content {
     background: @blue-content-background;
     color: @blue-text-color;
-    border: extract(@blue-border,1)*3 extract(@blue-border,2) extract(@blue-border,3);
   }
 }
