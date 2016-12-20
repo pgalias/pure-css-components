@@ -461,7 +461,7 @@
             <p>Also known as carousel or slideshow. This component can be a convenient way to display multiple images, videos, slides with text, etc. on website. <strong>Note:</strong> If you do not want to have slider pills (navigation dots) or slider arrows in your page simply delete div <code class="html">.slider__pills</code> or <code class="html">.slider__arrows</code> with their content from this code snippet.</p>
             <div>
               <div class="row">
-                <div class="slider-width-opt col-xs-4">
+                <div class="slider-width-opt col-xs-3">
                   <h3>Width options</h3>
                   <div class="input-group">
                     <input type="radio" name="slider-width" data-class-name="--full-width" id="slider-width-1">
@@ -472,7 +472,7 @@
                     <label for="slider-width-2">Fixed width - default 80%</label>
                   </div>
                 </div>
-                <div class="slider-pills-position-opt col-xs-4">
+                <div class="slider-pills-position-opt col-xs-3">
                   <h3>Pills position</h3>
                   <div class="input-group">
                     <input type="radio" name="slider-pills" data-class-name="bottom" checked id="slider-pills-1">
@@ -491,7 +491,14 @@
                     <label for="slider-pills-4">Right</label>
                   </div>
                 </div>
-                <div class="slider-theme-opt col-xs-4">
+                <div class="slider-finite-opt col-xs-3">
+                  <h3>Finite sliding</h3>
+                  <div class="input-group">
+                    <input type="checkbox" name="slider-finite" data-class-name=" slider--finite" id="slider-finite">
+                    <label for="slider-finite">Finite</label>
+                  </div>
+                </div>
+                <div class="slider-theme-opt col-xs-3">
                   <h3>Theme</h3>
                   <div class="input-group">
                     <input type="checkbox" name="slider-theme" data-class-name="slider--blue" checked id="slider-theme">
@@ -597,7 +604,7 @@
           </article>
           <article id="tabs">
             <h1><a href="#tabs">Tabs</a></h1>
-            <p>Like in <a href="#accordion">accordion</a>, this component is used to show informations in limited amount of space. Instead of accordion, tabs shows data in form of table or bookmarks. <strong>Note:</strong> Because of absolute positioning of each tab content it need to set to the <code class="html">.tab__content</code> class height property (default: 200px) and equivalent <code class="html">margin-bottom</code> for tabs container.</p>
+            <p>Like in <a href="#accordion">accordion</a>, this component is used to show informations in limited amount of space. Instead of accordion, tabs shows data in form of table or bookmarks. <strong>Note:</strong> Because of absolute positioning of each tab content it need to set to the <code class="html">.tab__content</code> class height property (default: 200px) and equivalent <code class="html">margin-bottom</code> for tabs container. To make a container scrollable simply put <code class="html">.tab__content--scrollable</code> class.</p>
             <div>
               <div class="row">
                 <div class="tabs-width-opt col-xs-6">

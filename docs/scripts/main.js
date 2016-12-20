@@ -109,6 +109,17 @@ $(function () {
     self.closest('article').find('.accordion, .tabs, .slider, .first-dd, .modal__dialog').toggleClass(txt);
   });
 
+  $('.slider-finite-opt ' + check).on('change', function () {
+    var self = $(this);
+    var txt = self.attr('data-class-name');
+    var regexp = /\sslider--finite/;
+    var child = '.hljs-tag:first .hljs-string';
+
+    (0, _onchange2.default)(self, child, regexp, '', true);
+
+    self.closest('article').find('.slider').toggleClass(txt);
+  });
+
   var url = 'https://api.github.com/repos/pgalias/pure-css-components/';
   var spanVersion = $('span.version');
   var pckageDwn = $('a.package-dwn');
@@ -139,6 +150,7 @@ function onChange(self, child, regexp) {
 
   var txt = self.attr('data-class-name');
   var selector = self.closest('article').find('pre').find(child);
+  console.log($(selector));
   var type = child === 'code' ? 'html' : 'text';
   var code = selector[type]();
 

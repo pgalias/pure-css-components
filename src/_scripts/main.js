@@ -64,6 +64,17 @@ $(() => {
     self.closest('article').find('.accordion, .tabs, .slider, .first-dd, .modal__dialog').toggleClass(txt);
   });
 
+  $(`.slider-finite-opt ${check}`).on('change', function() {
+    const self = $(this);
+    const txt = self.attr('data-class-name');
+    const regexp = /\sslider--finite/;
+    const child = '.hljs-tag:first .hljs-string';
+
+    onChange(self, child, regexp, '', true);
+
+    self.closest('article').find('.slider').toggleClass(txt);
+  });
+
   const url = 'https://api.github.com/repos/pgalias/pure-css-components/';
   const spanVersion = $('span.version');
   const pckageDwn = $('a.package-dwn');

@@ -358,7 +358,7 @@ block main
     p Also known as carousel or slideshow. This component can be a convenient way to display multiple images, videos, slides with text, etc. on website. #[strong Note:] If you do not want to have slider pills (navigation dots) or slider arrows in your page simply delete div #[code.html .slider__pills] or #[code.html .slider__arrows] with their content from this code snippet.
     div
       .row
-        .slider-width-opt.col-xs-4
+        .slider-width-opt.col-xs-3
           h3 Width options
           .input-group
             input(type='radio' name='slider-width' data-class-name='--full-width')#slider-width-1
@@ -366,7 +366,7 @@ block main
           .input-group
             input(type='radio' name='slider-width' data-class-name='--fixed-width' checked)#slider-width-2
             label(for='slider-width-2') Fixed width - default 80%
-        .slider-pills-position-opt.col-xs-4
+        .slider-pills-position-opt.col-xs-3
           h3 Pills position
           .input-group
             input(type='radio' name='slider-pills' data-class-name='bottom' checked)#slider-pills-1
@@ -380,7 +380,12 @@ block main
           .input-group
             input(type='radio' name='slider-pills' data-class-name='right')#slider-pills-4
             label(for='slider-pills-4') Right
-        .slider-theme-opt.col-xs-4
+        .slider-finite-opt.col-xs-3
+          h3 Finite sliding
+          .input-group
+            input(type='checkbox' name='slider-finite' data-class-name=' slider--finite')#slider-finite
+            label(for='slider-finite') Finite
+        .slider-theme-opt.col-xs-3
           h3 Theme
           .input-group
             input(type='checkbox' name='slider-theme' data-class-name='slider--blue' checked)#slider-theme
@@ -466,7 +471,7 @@ block main
 
   article#tabs
     h1 #[a(href='#tabs') Tabs]
-    p Like in #[a(href='#accordion') accordion], this component is used to show informations in limited amount of space. Instead of accordion, tabs shows data in form of table or bookmarks. #[strong Note:] Because of absolute positioning of each tab content it need to set to the #[code.html .tab__content] class height property (default: 200px) and equivalent #[code.html margin-bottom] for tabs container.
+    p Like in #[a(href='#accordion') accordion], this component is used to show informations in limited amount of space. Instead of accordion, tabs shows data in form of table or bookmarks. #[strong Note:] Because of absolute positioning of each tab content it need to set to the #[code.html .tab__content] class height property (default: 200px) and equivalent #[code.html margin-bottom] for tabs container. To make a container scrollable simply put #[code.html .tab__content--scrollable] class.
     div
       .row
         .tabs-width-opt.col-xs-6

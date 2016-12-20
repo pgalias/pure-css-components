@@ -1,6 +1,7 @@
 export default function onChange(self, child, regexp, replace = '', checkbox = false) {
   const txt = self.attr('data-class-name');
   const selector = self.closest('article').find('pre').find(child);
+  console.log($(selector));
   const type = child === 'code' ? 'html' : 'text';
   const code = selector[type]();
 
