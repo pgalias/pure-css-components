@@ -102,6 +102,7 @@ li.dropdown > ul.dropdown__menu > li.dropdown {
   box-sizing: border-box;
   font-size: 0.925em;
   background-color: #fff;
+  padding: 0;
 }
 .dropdown input[type=checkbox]:not(:checked) ~ .dropdown__menu {
   visibility: hidden;
@@ -133,13 +134,17 @@ li.dropdown > ul.dropdown__menu > li.dropdown {
   left: 0;
 }
 .dropdown--out.dropdown--down > input[type=checkbox]:checked ~ .dropdown__menu {
-  transform: translateY(100%);
+  transform: translateY(0);
+  top: 100%;
+  margin-top: 0;
 }
 .dropdown--out.dropdown--down > input[type=checkbox]:not(:checked) ~ .dropdown__menu {
   transform: translateY(-30px);
 }
 .dropdown--out.dropdown--up > input[type=checkbox]:checked ~ .dropdown__menu {
-  transform: translateY(-18px);
+  transform: translateY(0);
+  bottom: 100%;
+  margin-bottom: 0;
 }
 .dropdown--out.dropdown--up > input[type=checkbox]:not(:checked) ~ .dropdown__menu {
   transform: translateY(-30px);
@@ -149,16 +154,21 @@ li.dropdown > ul.dropdown__menu > li.dropdown {
   left: 0;
 }
 .dropdown--out.dropdown--left > input[type=checkbox]:checked ~ .dropdown__menu {
-  transform: translate(-100%, calc(100% - 0.925em));
+  left: -100%;
 }
 .dropdown--out.dropdown--left > input[type=checkbox]:not(:checked) ~ .dropdown__menu {
   transform: translateX(30px);
 }
 .dropdown--out.dropdown--right > input[type=checkbox]:checked ~ .dropdown__menu {
-  transform: translate(100%, calc(100% - 0.925em));
+  left: 100%;
 }
 .dropdown--out.dropdown--right > input[type=checkbox]:not(:checked) ~ .dropdown__menu {
   transform: translateX(-30px);
+}
+.dropdown--out.dropdown--left > input[type=checkbox]:checked ~ .dropdown__menu,
+.dropdown--out.dropdown--right > input[type=checkbox]:checked ~ .dropdown__menu {
+  transform: translateX(0);
+  top: 0;
 }
 .dropdown--in > .dropdown__menu {
   transition: visibility 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55), height 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55), padding 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55), transform 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
