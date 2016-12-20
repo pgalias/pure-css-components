@@ -491,6 +491,10 @@ li.dropdown > ul.dropdown__menu > li.dropdown {
   color: rgba(0, 186, 199, 0.8);
   text-shadow: 0 0 6px #666;
 }
+.slider {
+  margin-top: 3.5em;
+  margin-bottom: 3.5em;
+}
 .slider label {
   cursor: pointer;
 }
@@ -636,6 +640,7 @@ li.dropdown > ul.dropdown__menu > li.dropdown {
   transition: top 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55), background 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55), padding 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   color: #000;
   border-radius: 5px 5px 0 0;
+  border: none;
   background: rgba(0, 186, 199, 0.5);
 }
 .tabs--blue label:hover {
@@ -646,10 +651,12 @@ li.dropdown > ul.dropdown__menu > li.dropdown {
   top: 0;
   background: #00bac7;
 }
+.tabs--blue input[type=radio]:checked ~ .tab__content {
+  border: 3px solid #00bac7;
+}
 .tabs--blue .tab__content {
   background: #fff;
   color: #666;
-  border: 3px solid #00bac7;
 }
 
 /*# sourceMappingURL=components.css.map */
