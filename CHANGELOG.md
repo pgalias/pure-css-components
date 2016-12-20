@@ -1,6 +1,7 @@
 # v2.1.1
 - Added new gulp tasks
 - Separated themes and components files, now it can be used alone
+
 # v2.1.0
 - Dropdown
     - removed transparent background of menu without any theme
