@@ -1,6 +1,5 @@
 @import "_variables";
 @import "../_mixins";
-@import "../_themes";
 
 .modal {
   &__dialog {
@@ -27,6 +26,7 @@
   &__header {
     position: relative;
     .text-align(c);
+    padding: @modal-header-padding;
     label.close {
       font-size: 2.5em;
       cursor: pointer;
@@ -43,35 +43,5 @@
   }
   &__body {
     padding: 15px;
-  }
-
-  &__dialog--blue {
-    border-radius: @blue-border-radius;
-    border: extract(@blue-border, 1) * 5 extract(@blue-border, 2) extract(@blue-border, 3);
-
-    background: @blue-content-background;
-    color: @blue-text-color;
-
-    padding: @blue-modal-padding;
-
-    & > .modal__header {
-      padding: @modal-header-padding;
-      & > * {
-        padding: inherit;
-      }
-
-      &::after {
-        content: '';
-        display: block;
-        width: 70%;
-        height: 2px;
-        background: @blue-divider-color;
-        border-radius: 3px;
-        margin: auto;
-      }
-      label.close {
-        color: @blue-close-icon;
-      }
-    }
   }
 }

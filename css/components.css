@@ -47,19 +47,6 @@
   /* styles for each accordion element */
   margin: 0;
 }
-.accordion--blue label.accordion__header {
-  background: #00bac7;
-  border-radius: 5px 5px 0 0;
-  color: #000;
-}
-.accordion--blue label.accordion__header:hover {
-  background: #00eafa;
-}
-.accordion--blue .accordion__content {
-  background: #fff;
-  color: #666;
-  border-radius: 0 0 5px 5px;
-}
 .dropdown {
   position: relative;
   z-index: 1000;
@@ -203,23 +190,6 @@ li.dropdown > ul.dropdown__menu > li.dropdown {
 .dropdown--right > input[type=checkbox]:not(:checked) ~ label > .trigger.arrow {
   background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0MDcuNDM2IDQwNy40MzYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQwNy40MzYgNDA3LjQzNjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+Cjxwb2x5Z29uIHBvaW50cz0iMTEyLjgxNCwwIDkxLjU2NiwyMS4xNzggMjczLjUxMiwyMDMuNzE4IDkxLjU2NiwzODYuMjU4IDExMi44MTQsNDA3LjQzNiAzMTUuODY5LDIwMy43MTggIiBmaWxsPSIjMDAwMDAwIi8+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=);
 }
-.dropdown--blue {
-  background: #00bac7;
-}
-.dropdown--blue:hover {
-  background: #00eafa;
-}
-.dropdown--blue .dropdown__menu {
-  background: #fff;
-  border: 2px solid #00bac7;
-}
-.dropdown--blue .dropdown__menu a,
-.dropdown--blue .dropdown__menu label {
-  color: #666;
-}
-.dropdown--blue .dropdown--in .dropdown__menu {
-  border: 0;
-}
 .modal__trigger[type=checkbox] {
   display: none;
 }
@@ -284,6 +254,7 @@ li.dropdown > ul.dropdown__menu > li.dropdown {
 .modal__header {
   position: relative;
   text-align: center;
+  padding: 20px 0;
 }
 .modal__header label.close {
   font-size: 2.5em;
@@ -299,31 +270,6 @@ li.dropdown > ul.dropdown__menu > li.dropdown {
 }
 .modal__body {
   padding: 15px;
-}
-.modal__dialog--blue {
-  border-radius: 5px;
-  border: 5px solid #00bac7;
-  background: #fff;
-  color: #666;
-  padding: 10px 20px;
-}
-.modal__dialog--blue > .modal__header {
-  padding: 20px 0;
-}
-.modal__dialog--blue > .modal__header > * {
-  padding: inherit;
-}
-.modal__dialog--blue > .modal__header::after {
-  content: '';
-  display: block;
-  width: 70%;
-  height: 2px;
-  background: #4d4d4d;
-  border-radius: 3px;
-  margin: auto;
-}
-.modal__dialog--blue > .modal__header label.close {
-  color: #00bac7;
 }
 .slider {
   position: relative;
@@ -405,11 +351,6 @@ li.dropdown > ul.dropdown__menu > li.dropdown {
 .slider--fixed-width ul {
   height: 400px;
 }
-.slider--blue ul {
-  background: #00bac7;
-  border: 5px solid #00bac7;
-  border-radius: 5px;
-}
 .slider--finite input[type=radio]:first-of-type:checked ~ .slider__arrows label:last-of-type {
   visibility: hidden;
 }
@@ -477,19 +418,6 @@ li.dropdown > ul.dropdown__menu > li.dropdown {
 .slider input[type=radio]:nth-of-type(10):checked ~ .slider__pills label:nth-of-type(10) {
   color: rgba(0, 0, 0, 0.8);
   font-weight: 900;
-}
-.slider--blue input[type=radio]:nth-of-type(1):checked ~ .slider__pills label:nth-of-type(1),
-.slider--blue input[type=radio]:nth-of-type(2):checked ~ .slider__pills label:nth-of-type(2),
-.slider--blue input[type=radio]:nth-of-type(3):checked ~ .slider__pills label:nth-of-type(3),
-.slider--blue input[type=radio]:nth-of-type(4):checked ~ .slider__pills label:nth-of-type(4),
-.slider--blue input[type=radio]:nth-of-type(5):checked ~ .slider__pills label:nth-of-type(5),
-.slider--blue input[type=radio]:nth-of-type(6):checked ~ .slider__pills label:nth-of-type(6),
-.slider--blue input[type=radio]:nth-of-type(7):checked ~ .slider__pills label:nth-of-type(7),
-.slider--blue input[type=radio]:nth-of-type(8):checked ~ .slider__pills label:nth-of-type(8),
-.slider--blue input[type=radio]:nth-of-type(9):checked ~ .slider__pills label:nth-of-type(9),
-.slider--blue input[type=radio]:nth-of-type(10):checked ~ .slider__pills label:nth-of-type(10) {
-  color: rgba(0, 186, 199, 0.8);
-  text-shadow: 0 0 6px #666;
 }
 .slider {
   margin-top: 3.5em;
@@ -560,24 +488,7 @@ li.dropdown > ul.dropdown__menu > li.dropdown {
       flex-direction: column;
   -ms-flex-pack: center;
       justify-content: center;
-}
-.slider--blue label {
-  color: #000;
-}
-.slider--blue .slider__arrows label {
-  color: #000;
-  font-size: 3.5em;
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-.slider--blue .slider__arrows label:hover {
-  color: #00bac7;
-  font-weight: bolder;
-}
-.slider--full-width.slider--blue .slider__arrows label {
-  background: rgba(0, 0, 0, 0.4);
-}
-.slider--full-width.slider--blue .slider__arrows label:hover {
-  background: rgba(0, 0, 0, 0.6);
 }
 .tabs {
   list-style: none;
@@ -590,6 +501,7 @@ li.dropdown > ul.dropdown__menu > li.dropdown {
   margin-right: auto;
   margin-bottom: 220px;
   padding: 0;
+  transition: top 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55), background 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55), padding 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 .tabs li {
   -ms-flex-positive: 1;
@@ -635,9 +547,110 @@ li.dropdown > ul.dropdown__menu > li.dropdown {
 .tabs--fixed-width {
   width: 70%;
 }
+/*
+ * accordion
+ */
+.accordion--blue label.accordion__header {
+  background: #00bac7;
+  border-radius: 5px 5px 0 0;
+  color: #000;
+}
+.accordion--blue label.accordion__header:hover {
+  background: #00eafa;
+}
+.accordion--blue .accordion__content {
+  background: #fff;
+  color: #666;
+  border-radius: 0 0 5px 5px;
+}
+/*
+ * dropdown
+ */
+.dropdown--blue {
+  background: #00bac7;
+}
+.dropdown--blue:hover {
+  background: #00eafa;
+}
+.dropdown--blue .dropdown__menu {
+  background: #fff;
+  border: 2px solid #00bac7;
+}
+.dropdown--blue .dropdown__menu a,
+.dropdown--blue .dropdown__menu label {
+  color: #666;
+}
+.dropdown--blue .dropdown--in .dropdown__menu {
+  border: 0;
+}
+/*
+ * modalbox
+ */
+.modal__dialog--blue {
+  border-radius: 5px;
+  border: 5px solid #00bac7;
+  background: #fff;
+  color: #666;
+  padding: 10px 20px;
+}
+.modal__dialog--blue > .modal__header > * {
+  padding: inherit;
+}
+.modal__dialog--blue > .modal__header::after {
+  content: '';
+  display: block;
+  width: 70%;
+  height: 2px;
+  background: #4d4d4d;
+  border-radius: 3px;
+  margin: auto;
+}
+.modal__dialog--blue > .modal__header label.close {
+  color: #00bac7;
+}
+/*
+ * slider
+ */
+.slider--blue ul {
+  background: #00bac7;
+  border: 5px solid #00bac7;
+  border-radius: 5px;
+}
+.slider--blue label {
+  color: #000;
+}
+.slider--blue .slider__arrows label {
+  color: #000;
+  font-size: 3.5em;
+}
+.slider--blue .slider__arrows label:hover {
+  color: #00bac7;
+  font-weight: bolder;
+}
+.slider--full-width.slider--blue .slider__arrows label {
+  background: rgba(0, 0, 0, 0.4);
+}
+.slider--full-width.slider--blue .slider__arrows label:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+.slider--blue input[type=radio]:nth-of-type(1):checked ~ .slider__pills label:nth-of-type(1),
+.slider--blue input[type=radio]:nth-of-type(2):checked ~ .slider__pills label:nth-of-type(2),
+.slider--blue input[type=radio]:nth-of-type(3):checked ~ .slider__pills label:nth-of-type(3),
+.slider--blue input[type=radio]:nth-of-type(4):checked ~ .slider__pills label:nth-of-type(4),
+.slider--blue input[type=radio]:nth-of-type(5):checked ~ .slider__pills label:nth-of-type(5),
+.slider--blue input[type=radio]:nth-of-type(6):checked ~ .slider__pills label:nth-of-type(6),
+.slider--blue input[type=radio]:nth-of-type(7):checked ~ .slider__pills label:nth-of-type(7),
+.slider--blue input[type=radio]:nth-of-type(8):checked ~ .slider__pills label:nth-of-type(8),
+.slider--blue input[type=radio]:nth-of-type(9):checked ~ .slider__pills label:nth-of-type(9),
+.slider--blue input[type=radio]:nth-of-type(10):checked ~ .slider__pills label:nth-of-type(10) {
+  color: rgba(0, 186, 199, 0.8);
+  text-shadow: 0 0 6px #666;
+}
+/*
+ * tabs
+ */
 .tabs--blue label {
   top: 5px;
-  transition: top 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55), background 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55), padding 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   color: #000;
   border-radius: 5px 5px 0 0;
   border: none;

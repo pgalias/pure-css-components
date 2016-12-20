@@ -1,6 +1,6 @@
 @import "_variables";
 @import "../_mixins";
-@import "../_themes";
+@import "../themes";
 
 .slider {
   margin-top: 3.5em;
@@ -74,34 +74,8 @@
 
       flex-direction: column;
       justify-content: center;
-    }
-  }
 
-  &--blue {
-    label {
-      color: @blue-header-color;
-    }
-    .slider__arrows {
-      label {
-        color: @blue-header-color;
-        font-size: 3.5em;
-
-        .transition(background color, @arrows-transition);
-        &:hover {
-          color: @blue-base;
-          font-weight: bolder;
-        }
-      }
-    }
-  }
-  &--full-width&--blue {
-    .slider__arrows {
-      label {
-        background: fade(@blue-header-color, 40%);
-        &:hover {
-          background: fade(@blue-header-color, 60%);
-        }
-      }
+      .transition(background color, @arrows-transition);
     }
   }
 }

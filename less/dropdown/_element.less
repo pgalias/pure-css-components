@@ -1,6 +1,5 @@
 @import "_variables";
 @import "../_mixins";
-@import "../_themes";
 
 .dropdown {
   &__menu {
@@ -151,24 +150,4 @@
     .loop-through-directions(@i+1);
   }
   .loop-through-directions;
-}
-
-.dropdown--blue {
-  background: @blue-base;
-  &:hover {
-    background: @blue-hover;
-  }
-
-  .dropdown__menu {
-    background: @blue-content-background;
-    border: extract(@blue-border,1)*2 extract(@blue-border,2) extract(@blue-border,3);
-
-    a,
-    label {
-      color: @blue-text-color;
-    }
-  }
-  .dropdown--in .dropdown__menu {
-    border: 0;
-  }
 }

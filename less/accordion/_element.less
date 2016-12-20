@@ -1,3 +1,6 @@
+@import "_variables";
+@import "../_mixins";
+
 .accordion {
   &__object {
     margin: @margin;
@@ -36,27 +39,6 @@
 
   &__content {
     /* styles for each accordion element */
-
-
     margin: @content-margin;
-  }
-
-  &--blue {
-    label.accordion__header {
-      background: @blue-base;
-      border-radius: @blue-border-radius @blue-border-radius 0 0;
-
-      color: @blue-header-color;
-
-      &:hover {
-        background: @blue-hover;
-      }
-    }
-
-    .accordion__content {
-      background: @blue-content-background;
-      color: @blue-text-color;
-      border-radius: 0 0 @blue-border-radius @blue-border-radius;
-    }
   }
 }

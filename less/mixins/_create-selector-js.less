@@ -1,0 +1,13 @@
+.create-selector(@pattern, @iterator:1, @count: @max-slides) {
+  @repeat: ~'@{pattern}';
+  @result: ~`(function() {
+    var result = '';
+    for (var i=@{iterator}; i <= @{count}; i++) {
+      result += "@{repeat}\n"
+        .replace(/\:nth-of-type\(\s*\$ipp\s*\)/g, i + 1 > @{count} ? ':first-of-type' : ':nth-of-type(' + (i + 1) + ')')
+      	.replace(/\:nth-of-type\(\s*\$imm\s*\)/g, i - 1 == 0 ? ':last-of-type' : ':nth-of-type(' + (i - 1) + ')')
+        .replace(/\s*\$i\s*/g, i);
+    }
+    return result.replace(/[,\s]+$/,'');
+  })()`;
+}
