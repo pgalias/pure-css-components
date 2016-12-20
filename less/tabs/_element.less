@@ -1,3 +1,7 @@
+@import "_variables";
+@import "../_mixins";
+@import "../_themes";
+
 .tabs {
   list-style: none;
   position: relative;
@@ -8,6 +12,8 @@
   .center-horizontal;
 
   margin-bottom: @tab-content-height + @tabs-margin-bottom;
+
+  padding: 0;
 
   li {
     flex-grow: 1;
@@ -33,17 +39,30 @@
     position: relative;
 
     display: block;
+
+    border-radius: 5px 5px 0 0;
   }
   .tab__content {
     position: absolute;
     left: 0;
-    transform: translateY(100%);
+    //transform: translateY(100%);
 
     width: 100%;
     height: @tab-content-height;
     padding: @tab-content-padding;
 
     box-sizing: border-box;
+
+    overflow-y: hidden;
+
+    &--scrollable {
+      overflow-y: scroll;
+    }
+  }
+
+  input[type=radio]:checked ~ .tab__content,
+  label {
+    border: 1px solid #cecece;
   }
 }
 
