@@ -64,4 +64,21 @@ $(() => {
     self.closest('article').find('.accordion, .tabs, .slider, .first-dd, .modal__dialog').toggleClass(txt);
   });
 
+  const url = 'https://api.github.com/repos/pgalias/pure-css-components/';
+  const spanVersion = $('span.version');
+  const pckageDwn = $('a.package-dwn');
+
+  $.ajax(`${url}tags`)
+      .done(function(data) {
+        if (spanVersion.length === 1) {
+          spanVersion.text(data[0].name);
+          console.log('dupa');
+        }
+      });
+  $.ajax(`${url}releases`)
+      .done(function(data) {
+        if (pckageDwn.length === 1) {
+          pckageDwn.attr('href', data[0].zipball_url);
+        }
+      });
 });

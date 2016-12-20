@@ -3,7 +3,8 @@
     "type": "radio",
     "name": "tabs",
     "id": "tabs-1",
-    "checked": true
+    "checked": true,
+    "scrollable": false
   },
   "content": {
     "heading": "Tab #1",
@@ -14,18 +15,20 @@
     "type": "radio",
     "name": "tabs",
     "id": "tabs-2",
-    "checked": false
+    "checked": false,
+    "scrollable": true
   },
   "content": {
     "heading": "Tab #2",
-    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, inventore, nisi! Accusantium ad aliquam beatae culpa dignissimos eligendi esse explicabo fugit laboriosam maxime modi nam nulla, obcaecati odit, provident vero!"
+    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, inventore, nisi! Accusantium ad aliquam beatae culpa dignissimos eligendi esse explicabo fugit laboriosam maxime modi nam nulla, obcaecati odit, provident vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, inventore, nisi! Accusantium ad aliquam beatae culpa dignissimos eligendi esse explicabo fugit laboriosam maxime modi nam nulla, obcaecati odit, provident vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, inventore, nisi! Accusantium ad aliquam beatae culpa dignissimos eligendi esse explicabo fugit laboriosam maxime modi nam nulla, obcaecati odit, provident vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, inventore, nisi! Accusantium ad aliquam beatae culpa dignissimos eligendi esse explicabo fugit laboriosam maxime modi nam nulla, obcaecati odit, provident vero! Admirals walk from metamorphosis like remarkable girls. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, inventore, nisi! Accusantium ad aliquam beatae culpa dignissimos eligendi esse explicabo fugit laboriosam maxime modi nam nulla, obcaecati odit, provident vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, inventore, nisi! Accusantium ad aliquam beatae culpa dignissimos eligendi esse explicabo fugit laboriosam maxime modi nam nulla, obcaecati odit, provident vero!"
   }
 }, {
   "input": {
     "type": "radio",
     "name": "tabs",
     "id": "tabs-3",
-    "checked": false
+    "checked": false,
+    "scrollable": false
   },
   "content": {
     "heading": "Tab #3",
@@ -36,7 +39,8 @@
     "type": "radio",
     "name": "tabs",
     "id": "tabs-4",
-    "checked": false
+    "checked": false,
+    "scrollable": false
   },
   "content": {
     "heading": "Tab #4",

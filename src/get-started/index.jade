@@ -15,7 +15,7 @@ block side-menu
 block main
   article#download
     h1 #[a(href='#download') Download]
-    p PCC (now in #{currentVersion}) can be downloaded in two different ways.
+    p PCC (now in #[span.version]) can be downloaded in two different ways.
     .row
       .col-xs-12.col-sm-6
         h3 Compiled
@@ -24,7 +24,7 @@ block main
       .col-xs-12.col-sm-6
         h3 Source
         p Source LESS code and Gulp file. Requires LESS compiler to compiling code and Gulp to running tasks.
-        a(href='https://github.com/pgalias/pure-css-components/archive/#{currentVersion}.zip').btn.btn-lg.btn-blue-inverse Download source
+        a(href='#').btn.btn-lg.btn-blue-inverse.package-dwn Download source
   article#clone-repo
     h1 #[a(href='#clone-repo') Clone Repo]
     p Use following command in terminal

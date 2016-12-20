@@ -326,6 +326,7 @@ block main
         input(type='checkbox' name='modal')#modal.modal__trigger
         label(for='modal').btn.btn-lg.btn-blue-inverse Launch Modal
         .modal__overlay
+          label(for='modal').modal__overlay--dismiss
           .modal__dialog.modal__dialog--fixed-size.modal__dialog--blue
             .modal__header
               h3 Modal
@@ -339,6 +340,7 @@ block main
           |   &lt;input type=&quot;checkbox&quot; name=&quot;modal&quot; id=&quot;modal&quot; class=&quot;modal__trigger&quot;&gt;
           |   &lt;label for=&quot;modal&quot; class=&quot;btn btn-lg btn-blue-inverse&quot;&gt;Launch modal&lt;/label&gt;
           |   &lt;div class=&quot;modal__overlay&quot; role=&quot;dialog&quot;&gt;
+          |     &lt;label for=&quot;modal&quot; class=&quot;modal__overlay--dismiss&quot;&gt;&lt;/label&gt;
           |     &lt;div class=&quot;modal__dialog modal__dialog--fixed-size modal__dialog--blue"&gt;
           |       &lt;div class=&quot;modal__header"&gt;
           |         &lt;h3&gt;Modal&lt;/h3&gt;
@@ -486,7 +488,7 @@ block main
           li
             input(type=tab.input.type, name=tab.input.name, id=tab.input.id, checked=tab.input.checked)
             label(for=tab.input.id) #{tab.input.id.replace('s-', ' ')}
-            .tab__content
+            .tab__content(class=tab.input.scrollable ? "tab__content--scrollable" : "")
               h2 #{tab.content.heading}
               p #{tab.content.paragraph}
       pre
@@ -505,9 +507,9 @@ block main
           |   &lt;li&gt;
           |     &lt;input type=&quot;radio&quot; name=&quot;tabs&quot; id=&quot;tab2&quot;&gt;
           |     &lt;label for=&quot;tab2&quot;&gt;tab2 header&lt;/label&gt;
-          |     &lt;div class=&quot;tab__content&quot;&gt;
+          |     &lt;div class=&quot;tab__content tab__content--scrollable&quot;&gt;
           |       &lt;h2&gt;Tab 2&lt;/h2&gt;
-          |       &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, inventore, nisi! Accusantium ad aliquam beatae culpa dignissimos eligendi esse explicabo fugit laboriosam maxime modi nam nulla, obcaecati odit, provident vero!&lt;/p&gt;
+          |       &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, inventore, nisi! Accusantium ad aliquam beatae culpa dignissimos eligendi esse explicabo fugit laboriosam maxime modi nam nulla, obcaecati odit, provident vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, inventore, nisi! Accusantium ad aliquam beatae culpa dignissimos eligendi esse explicabo fugit laboriosam maxime modi nam nulla, obcaecati odit, provident vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, inventore, nisi! Accusantium ad aliquam beatae culpa dignissimos eligendi esse explicabo fugit laboriosam maxime modi nam nulla, obcaecati odit, provident vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, inventore, nisi! Accusantium ad aliquam beatae culpa dignissimos eligendi esse explicabo fugit laboriosam maxime modi nam nulla, obcaecati odit, provident vero! Admirals walk from metamorphosis like remarkable girls. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, inventore, nisi! Accusantium ad aliquam beatae culpa dignissimos eligendi esse explicabo fugit laboriosam maxime modi nam nulla, obcaecati odit, provident vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, inventore, nisi! Accusantium ad aliquam beatae culpa dignissimos eligendi esse explicabo fugit laboriosam maxime modi nam nulla, obcaecati odit, provident vero!&lt;/p&gt;
           |     &lt;/div&gt; &lt;!-- /.tab__content --&gt;
           |   &lt;/li&gt; &lt;!-- /tab element --&gt;
           |&nbsp;

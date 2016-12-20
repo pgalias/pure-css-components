@@ -5,3 +5,4 @@ build
 .grunt
 .DS_Store
 .idea/
+test.html
