@@ -1,3 +1,6 @@
+@import "_variables";
+@import "../_mixins";
+
 .modal {
   &__overlay {
     position: fixed;
@@ -8,5 +11,11 @@
     background: @overlay-background;
 
     z-index: 10000;
+
+    &--dismiss {
+      .same(100%, width height);
+      cursor: pointer;
+      display: block;
+    }
   }
 }

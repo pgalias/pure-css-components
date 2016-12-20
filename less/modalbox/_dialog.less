@@ -1,5 +1,10 @@
+@import "_variables";
+@import "../_mixins";
+@import "../_themes";
+
 .modal {
   &__dialog {
+    background-color: #fff;
     .center-both;
     box-sizing: border-box;
     &--wide {
@@ -35,6 +40,9 @@
         display: block;
       }
     }
+  }
+  &__body {
+    padding: 15px;
   }
 
   &__dialog--blue {
